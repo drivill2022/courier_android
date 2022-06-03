@@ -23,6 +23,16 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            storeFile file('/app/drivillcourier.jks')
+//            privatekey file ('/app/private_key.pepk')
+            storePassword 'drivill50'
+            keyAlias 'key0'
+            keyPassword 'drivill50'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
