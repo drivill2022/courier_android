@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_notification"
+        android:title="@string/notification"
+        android:actionLayout="@layout/notification_bag_layout"
+        android:visible="true"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/shareApp"
+        android:icon="@drawable/share_icon"
+        android:title="@string/share"
+        android:visible="false"
+        app:showAsAction="always" />
+</menu>

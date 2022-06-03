@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<!--
+        tools:itemCount="10"
+        tools:listitem="@layout/recycler_pickup_item"-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/delivery_RY"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ProgressBar
+            android:id="@+id/progrssBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/noDataTxt"
+            style="@style/textStyleRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_50sdp"
+            android:gravity="center"
+            android:text="@string/no_data_available"
+            android:textColor="@color/gary"
+            android:textSize="@dimen/headingText" />
+
+    </FrameLayout>
+</layout>

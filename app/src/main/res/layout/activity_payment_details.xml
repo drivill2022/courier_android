@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_2sdp"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/Close_Popup"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/cancel_icon_red"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentEnd="true"/>
+
+
+                <TextView
+                    android:id="@+id/tv_nodata"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_data_available"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    style="@style/textStyleMedium"
+                    android:textSize="@dimen/buttonText"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:layout_below="@+id/Close_Popup"
+                    android:visibility="gone"/>
+
+                      <LinearLayout
+                android:id="@+id/LL_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="4"
+                          android:layout_below="@+id/tv_nodata"
+                android:background="@drawable/backround_top_corner_blue">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Shipment\nID"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/hintText"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    style="@style/textStyleBold">
+
+                </TextView>
+
+                <View
+                    android:layout_width="1dp"
+                    android:background="@color/bordercolor"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="COD"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/hintText"
+                    style="@style/textStyleBold">
+
+                </TextView>
+                <View
+                    android:layout_width="1dp"
+                    android:background="@color/bordercolor"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Cost"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/hintText"
+                    style="@style/textStyleBold">
+
+                </TextView>
+                <View
+                    android:layout_width="1dp"
+                    android:background="@color/bordercolor"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Available\nBalance"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/hintText"
+                    style="@style/textStyleBold">
+
+                </TextView>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/Rv_PayDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/LL_header"
+                    android:background="@drawable/backround_black_border"
+                    android:layout_above="@+id/Tv_totalAvlblnc">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <TextView
+                    android:id="@+id/Tv_totalAvlblnc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:gravity="end"
+                    style="@style/textStyleBold"
+                    android:textSize="@dimen/nameTexth"
+                    android:background="@drawable/backround_gray"
+                    android:padding="@dimen/_8sdp"
+                    android:layout_alignParentBottom="true"
+                    android:paddingEnd="@dimen/_8sdp">
+
+                </TextView>
+
+        </RelativeLayout>
+
+</LinearLayout>

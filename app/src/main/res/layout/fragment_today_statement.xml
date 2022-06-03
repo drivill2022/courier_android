@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:context=".fragment.TodayStatementFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/riderScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/picked_up"
+                        android:textColor="@color/gary"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        android:id="@+id/pickUpTxt"
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="start|center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/delivered"
+                        android:textColor="@color/gary"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        android:id="@+id/deliveryTxt"
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="start|center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/cancelled"
+                        android:textColor="@color/gary"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        android:id="@+id/cancelTxt"
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="start|center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/pending"
+                        android:textColor="@color/gary"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        android:id="@+id/pendingTxt"
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="start|center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/total_cod_earned"
+                        android:textColor="@color/gary"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        android:id="@+id/totalCodTxt"
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:drawableStart="@drawable/taka"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="start|center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:visibility="invisible">
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/select_date"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        android:id="@+id/selectDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/backround_input"
+                        android:gravity="start|center_vertical"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:paddingVertical="@dimen/_2sdp"
+                        android:text="From date to Date"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/merchantScollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="start|center_vertical"
+                        android:text="Total Packages Shipped"
+                        android:textColor="@color/gary"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        android:id="@+id/packagesTxt"
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="start|center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="start|center_vertical"
+                        android:text="Total Packages Delivered"
+                        android:textColor="@color/gary"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        android:id="@+id/packagedeliveryTxt"
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="start|center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="start|center_vertical"
+                        android:text="Total Packages Return"
+                        android:textColor="@color/gary"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        android:id="@+id/packagesReturnTxt"
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="start|center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="start|center_vertical"
+                        android:text="Total Packages Pending"
+                        android:textColor="@color/gary"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        android:id="@+id/totalPendingTxt"
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="start|center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp">
+
+                        <TextView
+                            style="@style/textStyleRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="start|center_vertical"
+                            android:text="Total Cash Collected"
+                            android:textColor="@color/gary"
+                            android:textSize="@dimen/nameText" />
+
+                        <TextView
+                            android:id="@+id/totalCashTxt"
+                            style="@style/textStyleRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:drawableStart="@drawable/taka"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:gravity="start|center_vertical"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/nameText"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp">
+
+                        <TextView
+                            style="@style/textStyleRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="start|center_vertical"
+                            android:text="Total Refund From Drivill"
+                            android:textColor="@color/gary"
+                            android:textSize="@dimen/nameText" />
+
+                        <TextView
+                            android:id="@+id/totalDrivillReturnTxt"
+                            style="@style/textStyleRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:drawableStart="@drawable/taka"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:gravity="start|center_vertical"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/nameText"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp">
+
+                        <TextView
+                            style="@style/textStyleRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="start|center_vertical"
+                            android:text="Total Drivill Service Charge"
+                            android:textColor="@color/gary"
+                            android:textSize="@dimen/nameText" />
+
+                        <TextView
+                            android:id="@+id/totalDrivillChargeTxt"
+                            style="@style/textStyleRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:drawableStart="@drawable/taka"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:gravity="start|center_vertical"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/nameText"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp">
+
+                        <TextView
+                            style="@style/textStyleRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="start|center_vertical"
+                            android:text="Total Available For Payout"
+                            android:textColor="@color/gary"
+                            android:textSize="@dimen/nameText" />
+
+                        <TextView
+                            android:id="@+id/totalAvailPayTxt"
+                            style="@style/textStyleRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:drawableStart="@drawable/taka"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:gravity="start|center_vertical"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/nameText"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

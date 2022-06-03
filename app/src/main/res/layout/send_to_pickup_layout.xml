@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainRLAdapter"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_3sdp"
+    android:background="@drawable/backround_input"
+    android:padding="@dimen/_5sdp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/itemImg"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:src="@drawable/splash_logo" />
+
+    <TextView
+        android:id="@+id/itemNameTxt"
+        style="@style/textStyleMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_toStartOf="@+id/kmTxt"
+        android:layout_toEndOf="@+id/itemImg"
+        android:gravity="start"
+        android:text="Trisha Enterprise"
+        android:textColor="@color/black"
+        android:textSize="@dimen/nameText" />
+
+    <TextView
+        android:id="@+id/mobileNumTxt"
+        style="@style/textStyleRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/itemNameTxt"
+        android:layout_margin="@dimen/_2sdp"
+        android:layout_toEndOf="@+id/itemImg"
+        android:drawableStart="@drawable/telephone_icon"
+        android:drawablePadding="@dimen/_5sdp"
+        android:gravity="start"
+        android:text="88177777"
+        android:textColor="@color/gary"
+        android:textSize="@dimen/hintText" />
+
+
+    <TextView
+        android:id="@+id/locationTxt"
+        style="@style/textStyleRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mobileNumTxt"
+        android:layout_marginHorizontal="@dimen/_2sdp"
+        android:layout_toEndOf="@+id/itemImg"
+        android:drawableStart="@drawable/location_icon"
+        android:drawablePadding="@dimen/_5sdp"
+        android:maxLines="2"
+        android:text=""
+        android:textColor="@color/gary"
+        android:textSize="@dimen/hintText" />
+
+    <TextView
+        android:id="@+id/kmTxt"
+        style="@style/textStyleRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@drawable/backround_button_blue_extra_round"
+        android:padding="@dimen/_5sdp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/hintText" />
+
+</RelativeLayout>

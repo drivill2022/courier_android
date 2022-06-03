@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sign_up_graph"
+    app:startDestination="@id/mechantHomeFragment">
+    <fragment
+        android:id="@+id/mechantHomeFragment"
+        android:name="com.drivill.courier.merchantModul.fragment.MerchantHomeFragment"
+        android:label="fragment_mechant_home"
+        tools:layout="@layout/fragment_mechant_home">
+        <action
+            android:id="@+id/action_mechantHomeFragment_to_currentOrderFragment"
+            app:destination="@id/currentOrderFragment" />
+        <action
+            android:id="@+id/action_mechantHomeFragment_to_scheduledFragment"
+            app:destination="@id/scheduledFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/currentOrderFragment"
+        android:name="com.drivill.courier.merchantModul.fragment.CurrentOrderFragment"
+        android:label="fragment_current_order"
+        tools:layout="@layout/fragment_current_order">
+        <action
+            android:id="@+id/action_currentOrderFragment_to_mechantHomeFragment"
+            app:destination="@id/mechantHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scheduledFragment"
+        android:name="com.drivill.courier.merchantModul.fragment.ScheduledFragment"
+        android:label="ScheduledFragment"
+        tools:layout="@layout/fragment_scheduled" >
+        <action
+            android:id="@+id/action_scheduledFragment_to_cancellationFragment"
+            app:destination="@id/cancellationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cancellationFragment"
+        android:name="com.drivill.courier.merchantModul.fragment.CancellationFragment"
+        android:label="fragment_cancellation"
+        tools:layout="@layout/fragment_cancellation" >
+        <action
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_cancellationFragment_to_mechantHomeFragment"
+            app:destination="@id/mechantHomeFragment" />
+    </fragment>
+</navigation>

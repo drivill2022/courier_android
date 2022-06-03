@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white_light">
+
+                <androidx.appcompat.widget.Toolbar
+
+                    android:id="@+id/allItemToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:menu="@menu/toolbar_menu_detail">
+
+                    <ImageView
+                        android:id="@+id/backBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/forword_arrow" />
+
+                    <TextView
+                        android:id="@+id/toolbarTitleTxt"
+                        style="@style/textStyleMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|center_vertical"
+                        android:gravity="center"
+                        android:text="@string/all_items"
+                        android:textSize="@dimen/toolbarTitle" />
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <TextView
+                android:id="@+id/recentTxt"
+                style="@style/textStyleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:layout_margin="@dimen/_10sdp"
+                android:gravity="center"
+                android:text="@string/recent_delivery"
+                android:textSize="@dimen/nameText" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/allItemRV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/noDataTxt"
+            style="@style/textStyleRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/_50sdp"
+            android:gravity="center"
+            android:text="@string/no_data_available"
+            android:textColor="@color/gary"
+            android:textSize="@dimen/headingText" />
+    </RelativeLayout>
+</layout>

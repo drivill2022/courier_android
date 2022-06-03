@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Use DrawerLayout as root container for activity -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="data"
+            type="com.drivill.courier.merchantModul.activity.DashboardActivityMerchant" />
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white">
+
+                <!---->
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:titleTextAppearance="@style/toolbarTheme">
+
+
+                        <TextView
+                            android:id="@+id/toolbarTitleTxt"
+                            style="@style/textStyleMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_gravity="center|center_vertical"
+                            android:text=""
+                            android:textSize="@dimen/toolbarTitle" />
+
+
+                        <ImageView
+                            android:id="@+id/centerImageTool"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center|center_vertical"
+                            android:padding="@dimen/_10sdp"
+                            android:src="@drawable/splash_l" />
+
+                </androidx.appcompat.widget.Toolbar>
+                <!-- Layout to contain contents of main body of screen (drawer will slide over this) -->
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/nav_host_fragmentMechant"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@id/bottomNV"
+                    app:defaultNavHost="true"
+                    app:navGraph="@navigation/nav_graph_merchant" />
+
+                <ImageView
+                    android:id="@+id/addNewBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:src="@drawable/add_new_icon"
+                    android:translationZ="@dimen/_10sdp" />
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottomNV"
+                    style="@style/bottomBarTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/white"
+                    app:itemTextAppearanceActive="@style/bottomBarTheme"
+                    app:itemTextAppearanceInactive="@style/bottomBarTheme"
+                    app:labelVisibilityMode="labeled"
+                    app:menu="@menu/bottom_menu" />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <!-- Container for contents of drawer - use NavigationView to make configuration easier -->
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_viewMerchant"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/headerLayoutDrawerMerchant"
+                    layout="@layout/drawer_header_layout_merchant" />
+
+                <include
+                    android:id="@+id/drawerActionMerchant"
+                    layout="@layout/drawer_action_layout_merchant" />
+
+            </LinearLayout>
+        </com.google.android.material.navigation.NavigationView>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</layout>

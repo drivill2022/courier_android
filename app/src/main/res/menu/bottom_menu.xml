@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/homeBV"
+        android:icon="@drawable/home_blue"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/ern_payBV"
+        android:icon="@drawable/earn_apy_icon"
+        android:title="@string/earn_pay" />
+    <item
+        android:id="@+id/AddBV"
+        android:title=""
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/helpBV"
+        android:icon="@drawable/get_and_quat_icon"
+        android:title="@string/help" />
+    <item
+        android:id="@+id/messageBV"
+        android:icon="@drawable/bicycle_rider"
+        android:title="@string/trucking" />
+</menu>

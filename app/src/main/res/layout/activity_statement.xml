@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.drivill.courier.activity.StatementActivity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.StatementActivity">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white_light"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/forword_arrow" />
+
+            <TextView
+                android:id="@+id/titleNotification"
+                style="@style/textStyleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="@string/statements"
+                android:textColor="@color/black"
+                android:textSize="@dimen/toolbarTitle" />
+        </RelativeLayout>
+
+     <!--   <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E7E7E7">-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#E7E7E7">
+
+                <androidx.constraintlayout.motion.widget.MotionLayout
+                    android:id="@+id/constraintLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layoutDescription="@xml/activity_statement_xml_constraintlayout2_scene">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardViewTop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_15sdp"
+                        android:visibility="visible"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:background="@drawable/backround_gray"
+                            android:padding="@dimen/_5sdp">
+
+                            <TextView
+                                android:id="@+id/dateTxt"
+                                style="@style/textStyleRegular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:text=""
+                                android:textColor="@color/hint_color"
+                                android:textSize="@dimen/hintText" />
+
+                            <TextView
+                                android:id="@+id/codCollectTxt"
+                                style="@style/textStyleMedium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/dateTxt"
+                                android:layout_alignParentStart="true"
+                                android:text="@string/total_cod_collected"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/nameText" />
+
+                            <TextView
+                                android:id="@+id/amountTxt"
+                                style="@style/textStyleBold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/codCollectTxt"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:drawableStart="@drawable/taka_blue"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:text="0"
+                                android:textColor="@color/theme_color"
+                                android:textSize="@dimen/headingText" />
+
+                            <TextView
+                                android:id="@+id/paymentHistoryBtnTxt"
+                                style="@style/textStyleRegular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/amountTxt"
+                                android:layout_alignParentEnd="true"
+                                android:background="@drawable/backround_blue_transe"
+                                android:drawableEnd="@drawable/forword_blue"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:gravity="center"
+                                android:paddingHorizontal="@dimen/_6sdp"
+                                android:paddingVertical="@dimen/_2sdp"
+                                android:text="@string/payment_history"
+                                android:textColor="@color/theme_color"
+                                android:textSize="@dimen/nameText"
+                                app:drawableTint="@color/theme_color" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+
+                        android:id="@+id/cardViewCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_15sdp"
+                        android:visibility="invisible"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/backround_gray"
+                                android:padding="@dimen/_5sdp">
+
+                                <TextView
+                                    android:id="@+id/dateTxtCode"
+                                    style="@style/textStyleRegular"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:text=""
+                                    android:textColor="@color/hint_color"
+                                    android:textSize="@dimen/hintText" />
+
+                                <TextView
+                                    android:id="@+id/codDepositTxt"
+                                    style="@style/textStyleMedium"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/dateTxtCode"
+                                    android:layout_alignParentStart="true"
+                                    android:text="@string/cod_to_deposit"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/nameText" />
+
+                                <TextView
+                                    android:id="@+id/amountTxtDeposit"
+                                    style="@style/textStyleBold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/codDepositTxt"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:drawableStart="@drawable/taka_blue"
+                                    android:drawablePadding="@dimen/_5sdp"
+                                    android:text="0"
+                                    android:textColor="@color/theme_color"
+                                    android:textSize="@dimen/headingText" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/amountTxtDeposit"
+                                    android:layout_alignParentEnd="true"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/textStyleMedium"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:visibility="invisible"
+                                        android:text="@string/drivill_s_commission"
+                                        android:textColor="@color/hint_color"
+                                        android:textSize="@dimen/hintText" />
+
+                                    <TextView
+                                        android:id="@+id/drivillCommisionTxt"
+                                        style="@style/textStyleMedium"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+                                        android:gravity="end"
+                                        android:text=""
+                                        android:visibility="invisible"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/nameText"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/payHistTxtBtn"
+                                    style="@style/textStyleRegular"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_centerVertical="true"
+                                    android:drawablePadding="@dimen/_5sdp"
+                                    android:gravity="center"
+                                    android:paddingHorizontal="@dimen/_6sdp"
+                                    android:paddingVertical="@dimen/_2sdp"
+                                    android:text="@string/payment_history"
+                                    android:textColor="@color/theme_color"
+                                    android:textSize="@dimen/nameText"
+                                    app:drawableEndCompat="@drawable/forword_blue"
+                                    app:drawableTint="@color/theme_color" />
+
+                                <TextView
+                                    android:id="@+id/depositTxt"
+                                    style="@style/textStyleMedium"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="end"
+                                    android:layout_marginVertical="@dimen/_5sdp"
+                                    android:background="@drawable/backround_blue_transe"
+                                    android:gravity="end"
+                                    android:paddingHorizontal="@dimen/_6sdp"
+                                    android:paddingVertical="@dimen/_2sdp"
+                                    android:text="@string/deposit"
+                                    android:visibility="gone"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/theme_color"
+                                    android:textSize="@dimen/nameText"
+                                    app:drawableTint="@color/theme_color" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:id="@+id/buttonLL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardViewTop">
+
+                        <TextView
+                            android:id="@+id/ridingTxt"
+                            style="@style/textStyleMedium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/backround_dark_gray"
+                            android:gravity="center"
+                            android:paddingVertical="@dimen/_5sdp"
+                            android:text="Riding Summary"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/buttonTextSmall" />
+
+                        <TextView
+                            android:id="@+id/codeTxt"
+                            style="@style/textStyleMedium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/backround_input"
+                            android:gravity="center"
+                            android:paddingVertical="@dimen/_5sdp"
+                            android:text="@string/cod_statement"
+                            android:textColor="@color/gary"
+                            android:textSize="@dimen/buttonTextSmall" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:id="@+id/fragmentContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/buttonLL" />
+
+
+                </androidx.constraintlayout.motion.widget.MotionLayout>
+
+
+            </LinearLayout>
+
+    <!--    </ScrollView>-->
+    </LinearLayout>
+
+</layout>

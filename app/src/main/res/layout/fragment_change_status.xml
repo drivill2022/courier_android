@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.drivill.courier.fragment.ChangeStatusFragment" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/changeStatusFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp">
+
+                <TextView
+                    style="@style/textStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:text="Delivery ID"
+                    android:textColor="@color/hint_color"
+                    android:textSize="@dimen/nameText" />
+
+                <TextView
+                    android:id="@+id/shipmentIdTxt"
+                    style="@style/textStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/nameText" />
+            </RelativeLayout>
+
+            <TextView
+                style="@style/textStyleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/select_current_status"
+                android:textColor="@color/black"
+                android:textSize="@dimen/nameText" />
+
+            <LinearLayout
+                android:id="@+id/pickLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/pickupTxtBtn"
+                        style="@style/textStyleRegular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/pick_up"
+                        android:gravity="center"
+                        android:text="@string/picked_up"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        android:id="@+id/orderCancelTxtPick"
+                        style="@style/textStyleRegular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/order_cancel"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText"
+                        app:drawableTopCompat="@drawable/order_cancel" />
+
+                    <TextView
+                        android:id="@+id/inTransitTxtBtn"
+                        style="@style/textStyleRegular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/in_trns_icon"
+                        android:gravity="center"
+                        android:text="@string/inTrans"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/transferredPickup"
+                        style="@style/textStyleRegular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/transeferred_icon"
+                        android:gravity="center"
+                        android:text="@string/transferred"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        android:id="@+id/merchantNotTxtBtn"
+                        style="@style/textStyleRegular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/merchant_not_avail_icon"
+                        android:gravity="center"
+                        android:text="@string/merchant_not_available"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText"
+                        android:visibility="visible" />
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/merchant_not_avail_icon"
+                        android:gravity="center"
+                        android:text="@string/transferred"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText"
+                        android:visibility="invisible" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/deliLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/deliverTxtBtn"
+                        style="@style/textStyleRegular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/pick_up_icon"
+                        android:gravity="center"
+                        android:text="@string/delivered"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        android:id="@+id/orderCancelTxtDeliver"
+                        style="@style/textStyleRegular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/order_cancel_icon"
+                        android:gravity="center"
+                        android:text="@string/order_cancel"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        android:id="@+id/transferredDeliverTxtBt"
+                        style="@style/textStyleRegular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/transeferred_icon"
+                        android:gravity="center"
+                        android:text="@string/transferred"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/customerNotTxtBtn"
+                        style="@style/textStyleRegular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/merchant_not_avail_icon"
+                        android:gravity="center"
+                        android:text="@string/customer_not_available"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/inTransitDeliveryTxtBtn"
+                        style="@style/textStyleRegular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/in_trns_icon"
+                        android:gravity="center"
+                        android:text="@string/inTrans"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/merchant_not_avail_icon"
+                        android:gravity="center"
+                        android:text="@string/transferred"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText"
+                        android:visibility="invisible" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

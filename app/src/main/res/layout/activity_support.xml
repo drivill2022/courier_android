@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.drivill.courier.activity.supportActivity.SupportActivity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        tools:context=".activity.notificationActivity.NotificationActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white_light"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/forword_arrow" />
+
+
+            <TextView
+                android:id="@+id/titleTxt"
+                style="@style/textStyleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="@string/supports"
+                android:textColor="@color/black"
+                android:textSize="@dimen/toolbarTitle" />
+        </RelativeLayout>
+
+        <TextView
+            style="@style/textStyleRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_15sdp"
+            android:gravity="start"
+            android:text="@string/contact_us_for_supports_with_your_courier_id_or_account_id"
+            android:textColor="@color/black"
+            android:textSize="@dimen/nameText" />
+
+        <RelativeLayout
+            android:id="@+id/emergencyLL"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="@dimen/_10sdp">
+
+
+            <TextView
+                android:id="@+id/mobileTxt"
+                style="@style/textStyleRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/img_2"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/nameText"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/timingTxt"
+                style="@style/textStyleRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mobileTxt"
+                android:layout_toEndOf="@+id/img_2"
+                android:text="@string/office_time"
+                android:textColor="@color/shadowColor"
+                android:textSize="@dimen/hintText" />
+
+            <ImageView
+                android:id="@+id/img_2"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/phone_icon"
+                app:tint="@color/black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mailRL"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="@dimen/_10sdp">
+
+
+            <TextView
+                android:id="@+id/mailTxt"
+                style="@style/textStyleRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/img_3"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/nameText"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/resTxt"
+                style="@style/textStyleRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mailTxt"
+                android:layout_toEndOf="@+id/img_3"
+                android:text="@string/response_right_away"
+                android:textColor="@color/shadowColor"
+                android:textSize="@dimen/hintText" />
+
+            <ImageView
+                android:id="@+id/img_3"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/mail"
+                app:tint="@color/black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/FAQ_RL"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="@dimen/_10sdp">
+
+
+            <TextView
+                android:id="@+id/faqTxt"
+                style="@style/textStyleRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/img_4"
+                android:text="@string/faqs"
+                android:textColor="@color/black"
+                android:textSize="@dimen/nameText"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/questAnsTxt"
+                style="@style/textStyleRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/faqTxt"
+                android:layout_toEndOf="@+id/img_4"
+                android:text="Question and Answers Forum"
+                android:textColor="@color/hint_color"
+                android:textSize="@dimen/hintText" />
+
+            <ImageView
+                android:id="@+id/img_4"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/help_icon_gray"
+                app:tint="@color/black" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@color/gary" />
+
+        <RelativeLayout
+            android:id="@+id/termsRL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp">
+
+            <TextView
+                android:id="@+id/nameTxt2"
+                style="@style/textStyleRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:text="@string/terms_of_use"
+                android:textColor="@color/black"
+                android:textSize="@dimen/nameText"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/_5sdp"
+                android:rotation="180"
+                android:src="@drawable/forword_arrow"
+                app:tint="@color/black" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/privacyRL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="@dimen/_10sdp">
+
+            <TextView
+                style="@style/textStyleRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:text="@string/privacy_policy"
+                android:textColor="@color/black"
+                android:textSize="@dimen/nameText"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/_5sdp"
+                android:rotation="180"
+                android:src="@drawable/forword_arrow"
+                app:tint="@color/black" />
+
+        </RelativeLayout>
+
+        <TextView
+            style="@style/textStyleMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:text="@string/follow_us_on_social_media"
+            android:textColor="@color/black"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/buttonText"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_30sdp"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_5sdp">
+
+                <ImageView
+                    android:id="@+id/img_fb"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@drawable/backround_theme_border"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:src="@drawable/facebook_icon" />
+
+                <ImageView
+                    android:id="@+id/img_Insta"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:src="@drawable/instagram_logo"
+                    android:padding="@dimen/_2sdp"
+                    android:background="@drawable/backround_theme_border"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_toEndOf="@+id/img_fb"/>
+
+                <ImageView
+                    android:id="@+id/img_linkedIn"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:src="@drawable/linkedin_logo"
+                    android:padding="@dimen/_5sdp"
+                    android:background="@drawable/backround_theme_border"
+                    android:layout_toEndOf="@+id/img_Insta"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</layout>

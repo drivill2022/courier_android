@@ -1,0 +1,407 @@
+<resources>
+    <string name="app_name">Drivill Courier</string>
+
+
+    <!--  <string name="MAPS_API_KEY">AIzaSyC7_HKyXZNrb-QckbpQT1FyGOdEpwIQPfA</string>-->
+
+    <string name="splash2">Best Service\nFor Your Product\nDelivery</string>
+    <string name="splash3">Drivill Mart\nIs Here For Your\nDaily Necessary</string>
+    <string name="splash4">Our Qualified\nRiders Always\nWith You</string>
+    <string name="please_login_to_your_account">Please login to your account</string>
+    <string name="email">Email</string>
+    <string name="mobile">Mobile</string>
+    <string name="weWillSendYou">We will send you a OTP message</string>
+    <string name="login">Login</string>
+    <string name="sendOTP">SEND OTP</string>
+    <string name="password_txt">Password</string>
+    <string name="password_hint">     <font size="12">  Enter Your Password </font></string>
+    <string name="enter_email_address_hint">     <font size="12">  Enter Email Address</font></string>
+    <string name="enter_mobile_hint">     <font size="12">  Enter Mobile Number</font></string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="forgot_password2">Forgot Password</string>
+    <string name="enter_num">Enter Your Mobile Number</string>
+    <string name="enter_num2"><font size="12">Enter Your Mobile Number</font></string>
+    <string name="signup">Signup</string>
+    <string name="verification">Verification</string>
+    <string name="enter_the_otp_sent_to_your_number">Enter the OTP sent to your number</string>
+    <string name="full_name">Full Name</string>
+    <string name="enter_your_name"><font size="12">  Enter your name </font></string>
+    <string name="enter_email_business"><font size="12">  Enter your business mail </font></string>
+    <string name="enter_address"><font size="12">  Enter House/Road no., Village </font></string>
+    <string name="enter_hub_id"><font size="12">  Enter your Hub Id </font></string>
+    <string name="address">Address</string>
+    <string name="referral_code_optional">Referral Code <font size="12">(optional) </font></string>
+    <string name="continue_txt">CONTINUE</string>
+    <string name="hub_id">Hub Id</string>
+    <string name="personal_information">Personal Information</string>
+    <string name="nid_number">NID Number</string>
+    <string name="fatherNid_number">Father\'s NID Number</string>
+    <string name="plate_number">Plate Number</string>
+    <string name="enter_13_digit_nid_number"><font size="12">  Enter 13 digit NID number </font></string>
+    <string name="enter_plate_number"><font size="12">  Enter Plate number </font></string>
+    <string name="enter_driving_number"><font size="12">  Enter Driving License number </font></string>
+    <string name="enter_token_number"><font size="12">  Enter Token number </font></string>
+    <string name="father_s_nid_photo">Father\'s NID Photo</string>
+    <string name="addjpgImageTxt">Add pdf/jpeg file(s) or take a photo</string>
+    <string name="vehicle_information">Vehicle Information</string>
+    <string name="select_vehicle">Select Vehicle</string>
+    <string name="motorcycle">Motorcycle</string>
+    <string name="cycle">Cycle</string>
+    <string name="driving_license_number">Driving License Number</string>
+    <string name="driving_license_photo">Driving License Photo</string>
+    <string name="registration_photo">Registration Photo</string>
+    <string name="motorcycle_s_brand">Motorcycle\'s Brand</string>
+    <string name="motorcycle_s_model">Motorcycle\'s Model</string>
+    <string name="region">Region</string>
+    <string name="category">Category</string>
+    <string name="tokenNum">Token Number</string>
+    <string name="set_password">Set Password</string>
+    <string name="enter_8_character_password">Enter 8 Character Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="password_must_contain_a_uppercase_and_a_number">Password must contain a uppercase and a number</string>
+    <string name="for_registration_with_us">For registration with us</string>
+    <string name="thank_you">Thank You</string>
+    <string name="youracountprocess">Your account still under review.\nWe\'ll get back to you soon</string>
+
+
+    <!-- //Arrays-->
+    <string-array name="brand_array">
+        <item><font size="14">Brand Name </font></item>
+        <item>Honda</item>
+        <item>KTM</item>
+        <item>Hero</item>
+        <item>RR</item>
+    </string-array>
+    <string-array name="model_array">
+        <item><font size="14">Model Name </font></item>
+        <item>Pulser-50</item>
+        <item>Discover</item>
+        <item>Platina</item>
+    </string-array>
+    <string-array name="region_array">
+        <item>Select Region</item>
+        <item>Dhaka Metro</item>
+        <item>Indore Metro</item>
+        <item>Khuina Metro</item>
+    </string-array>
+    <string-array name="SelectPType">
+        <item><font size="14">Select Product Type </font></item>
+        <item>Document</item>
+        <item> Heavy Weight</item>
+    </string-array>
+
+    <string-array name="SelectWType">
+        <item><font size="14">Select Weight</font></item>
+        <item>1kg</item>
+        <item> 2kg</item>
+        <item> 5kg</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="your_today_s_assign_work">Your assign work</string>
+    <string name="have_a_good_day">Have a good day</string>
+    <string name="pickup">Pickup</string>
+    <string name="delivery">Delivery</string>
+    <string name="become_a_rider">Become a Rider</string>
+    <string name="become_a_seller">Become a Seller</string>
+    <string name="become_a_merchant">Become a Merchant</string>
+    <string name="map">Map</string>
+    <string name="change_status">Change Status</string>
+    <string name="details">Details</string>
+    <string name="available_cod_amount">Available COD Amount</string>
+
+
+    <!-- //Calender-->
+    <string name="material_calendar_today_button">Today</string>
+    <string name="material_calendar_positive_button">OK</string>
+    <string name="material_calendar_negative_button">Cancel</string>
+    <string name="enable">Enable</string>
+    <string name="location">Location</string>
+    <string name="disable">Disable</string>
+    <string name="supports">Supports</string>
+    <string name="contact_us_for_supports_with_your_courier_id_or_account_id">Contact us for supports with your Courier ID or Account ID.</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="faqs">FAQs</string>
+    <string name="terms_of_use">Terms of Use</string>
+    <string name="done">Done</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="logout">Logout</string>
+    <string name="are_you_sure_to_logout">Are you sure to logout?</string>
+    <string name="are_you_sure_to_transfer">Are you sure transfer this shipment?</string>
+    <string name="plse_provide_location">Location permission must required</string>
+    <string name="are_you_sure_to_home">Are you sure back to Home?</string>
+    <string name="permission">Permission</string>
+    <string name="gps_permission">Please enable your GPS</string>
+    <string name="logout_or_you_can_move_another_account">Logout or you can move another account</string>
+    <string name="next">Next</string>
+    <string name="increase_nyour_sales_nwith_us">Increase \nYour Sales \nWith Us</string>
+    <string name="skip">Skip</string>
+    <string name="don_t_have_an_account">Don\'t have an account? </string>
+    <string name="sign_up">Sign Up</string>
+    <string name="order_cancel">Order Cancel</string>
+    <string name="transferred">Transferred</string>
+    <string name="select_current_status">Select Current Status</string>
+    <string name="customer_not_available">Delivery attempt failed</string>
+    <string name="merchant_not_available">Merchant\nNot Available</string>
+    <string name="resend">Resend</string>
+    <string name="din_t_get_otp">Didn\'t get OTP?</string>
+    <string name="not_get_yet">Not get message yet?</string>
+    <string name="create_rider_account">Create Rider account</string>
+    <string name="select_gender">Select Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="i_agree_to_drivill_s_terms_of_use_and_i_have_read_nprivacy_policy">I agree to drivill\'s Terms of Use and I have read Privacy Policy</string>
+    <string name="submit">Submit</string>
+    <string name="quit">Quit Now</string>
+    <string name="profile">Profile</string>
+    <string name="riding_statements">Riding Statements</string>
+    <string name="settings">Settings</string>
+    <string name="notification">Notification</string>
+    <string name="business_name">Business Name</string>
+    <string name="phone">Phone</string>
+    <string name="emergency_mobile_number">Emergency Mobile Number</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="receive_notifications">Receive notifications</string>
+    <string name="camera_access">Camera access</string>
+    <string name="cod_to_deposit">COD to Deposit</string>
+    <string name="drivill_s_commission">Drivill\'s Commission</string>
+    <string name="total_cod_collected">Total COD Collected</string>
+    <string name="statements">Statements</string>
+    <string name="deposit">Deposit</string>
+    <string name="cod_statement">COD Statement</string>
+    <string name="select_date">Select Date</string>
+    <string name="total_cod_earned">Total COD Earned</string>
+    <string name="from_date_to_date">From Date to Date</string>
+    <string name="all_cod_collected">All COD Collected</string>
+    <string name="cancel">Cancel</string>
+    <string name="delivery_to">Delivery To:</string>
+    <string name="check_internet">Check Internet Connection</string>
+    <string name="all_field_required">All Field Are Required</string>
+    <string name="email_invalid">Email is invalid</string>
+    <string name="mobile_num_is_invalid">Mobile number is invalid</string>
+    <string name="url_is_invalid">Enter valid facebook url</string>
+    <string name="enter_mobile_num">Please Enter Mobile Number </string>
+    <string name="try_again">Server error try after some time</string>
+    <string name="invalid_otp">invalid otp</string>
+    <string name="pls_select_gender">Please Select Gender</string>
+    <string name="pls_accept_term">Please Accept Terms of Policy</string>
+    <string name="nid_photo">NID Photo</string>
+    <string name="select_photo">Please Select Photo</string>
+    <string name="please_select_pic">Please Select Photo</string>
+    <string name="please_enter_mail">Please Enter Mail Id</string>
+    <string name="plse_enter_pass">Please Enter Password</string>
+    <string name="select_category">Select Category</string>
+    <string name="re_enter_password"><font size="12">  Re-Enter Password </font></string>
+    <string name="enter_new_password"><font size="12">  Enter new password </font></string>
+    <string name="profile_photo">Profile Photo</string>
+    <string name="product_type">Product Type:</string>
+    <string name="shipping_type">Shipping Type:</string>
+    <string name="express_delivery">Express Delivery</string>
+    <string name="weight">Weight:</string>
+    <string name="total_cod_cost">Total COD Cost:</string>
+    <string name="product_detail">Product Detail:</string>
+    <string name="call_customer">Call Customer</string>
+    <string name="call_merchant">Call Merchant</string>
+    <string name="call_customer_service">Call Customer\nService</string>
+    <string name="hub">HUB</string>
+    <string name="rider">Rider</string>
+    <string name="my_location">My Location</string>
+    <string name="delivery_detail">Delivery Detail</string>
+    <string name="hub_nearby">HUB Nearby</string>
+    <string name="rider_nearby">Rider Nearby</string>
+    <string name="otp">OTP</string>
+    <string name="match_otp">Match OTP</string>
+    <string name="pickupOtp">Pickup OTP</string>
+    <string name="deliverOtp">Deliver OTP</string>
+    <string name="take_the_parcel_from_this_and_nsend_to_this">Take the parcel from this...... and\nsend to this.....</string>
+    <string name="the_otp_has_matched">The OTP has matched.</string>
+
+
+    <!--=================below merchant string names=======================================================================================================================================-->
+    <string name="create_seller_account">Create Merchant account</string>
+    <string name="create_account">Create your account</string>
+    <string name="enter_17_digit_nid_number"><font size="12">  NID no. should be minimum 9 digit. </font></string>
+    <string name="business_information">Business Information</string>
+    <string name="enter_business_name"><font size="12">  Enter your business name </font></string>
+    <string name="enter_business_phone"><font size="12">  Enter business phone number </font></string>
+    <string name="enter_business_address"><font size="12">  Enter business address </font></string>
+    <string name="enter_facebook_link"><font size="12">  Enter facebook link </font></string>
+    <string name="business_phone_number">Business Phone Number</string>
+    <string name="business_address">Business Address</string>
+    <string name="facebook_page_url">Facebook Page URL</string>
+    <string name="trade_licence_copy_if_any">Trade Licence Copy (if any)</string>
+    <string name="select_your_product_type_s">Select your product type\'s</string>
+    <string name="select_payment_method">Select your payment method</string>
+    <string name="select_product_first">Please select product First</string>
+    <string name="business_logo">Business Logo</string>
+    <string name="shipping_history">Shipping History</string>
+    <string name="ship_package">Ship Package</string>
+    <string name="earn_pay"><![CDATA[Earn & Pay]]></string>
+    <string name="get_a_quota">Get a Quote</string>
+    <string name="trucking">Tracking</string>
+    <string name="offer_news"><![CDATA[Offer & News]]></string>
+    <string name="orders">Orders</string>
+    <string name="total_listed_items">Total Listed Items</string>
+    <string name="recent_delivery">Recent Delivered</string>
+    <string name="see_more">See More</string>
+    <string name="home">Home</string>
+    <string name="message">Message</string>
+    <string name="current">Current</string>
+    <string name="scheduled">Scheduled</string>
+    <string name="shipped">Shipped</string>
+    <string name="order_id">Order ID:</string>
+    <string name="search">Search</string>
+    <string name="one_the_way">One the way</string>
+    <string name="not_received">Not received</string>
+    <string name="all_items">All Items</string>
+    <string name="share">Share</string>
+    <string name="returntxt">Return</string>
+    <string name="_06_mar_05_may">06,Mar-05,May</string>
+    <string name="shipping_left_to_reach_next_level">Shipping left to reach next level</string>
+    <string name="today">Today</string>
+    <string name="you_have_completed_6_shipping_today">You have completed 0 shipping today.</string>
+    <string name="you_have_more_shipping">You have 6 time shipping More.</string>
+    <string name="see_all_activity">See all activity</string>
+    <string name="payment_breakdown">Payment Breakdown</string>
+    <string name="shipping_database">Shipping Database</string>
+    <string name="quote">Quotes</string>
+    <string name="pickup_location">Pickup Location</string>
+    <string name="delivery_location">Delivery Location</string>
+    <string name="packaging">Packaging</string>
+    <string name="receiver_name">Receiver Details</string>
+    <string name="receiver_phone_number">Receiver Phone Number</string>
+    <string name="product_weight">Product Weight</string>
+    <string name="type_product_details">Type product details</string>
+    <string name="note">Notes (Optional)</string>
+    <string name="note_colon">Note:</string>
+    <string name="type_notes">Type notes</string>
+    <string name="delivery_cost">Delivery Cost</string>
+    <string name="cost">Cost</string>
+    <string name="cost_colon">Cost:</string>
+    <string name="_2_2_30_hours">2-2:30 hours</string>
+    <string name="back_to_home">Back To Home</string>
+    <string name="process_to_pickup">Process To Pickup</string>
+    <string name="pickup_address">Pickup Address</string>
+    <string name="delivery_address">Delivery Address</string>
+    <string name="documents">Documents</string>
+    <string name="add_more_pickup">Add More Pickup</string>
+    <string name="request_for_pickup">Request for Pickup</string>
+    <string name="pickup_items">Pickup Items</string>
+    <string name="send_to_pickup">Send to Pickup</string>
+    <string name="deliver_to">Deliver to:</string>
+    <string name="select_hub">Select HUB</string>
+    <string name="pickup_request">Pickup Request</string>
+    <string name="write_notes">Write notes</string>
+    <string name="show_within_10km">Show within 10km</string>
+    <string name="sent">Sent</string>
+    <string name="your_request_for_has_successfully_accepted_nthanks_to_choose_drivill">Your request for has successfully accepted.<b>\n\nThanks to Choose Drivill</b></string>
+    <string name="edit">Edit</string>
+    <string name="okay">Okay</string>
+    <string name="cancel_delivery">Cancel Delivery</string>
+    <string name="yes_cancel">Yes,Cancel</string>
+    <string name="yes_delete">Yes,Delete</string>
+    <string name="are_you_realy_want_to_cancel_the_delivery">Are you really want to cancel the delivery</string>
+    <string name="are_you_realy_want_to_delete_the_shipment">Are you really want to delete the shipment</string>
+    <string name="trxid">TrxID:</string>
+    <string name="cod_amount">Cash collection Amount </string>
+    <string name="paid_by">Paid By:</string>
+    <string name="payment_history">Payment History</string>
+    <string name="select_divi">Select Division</string>
+    <string name="select_district">Select District</string>
+    <string name="select_thana">Select Thana</string>
+    <string name="pls_select_dvision">Please Select Division</string>
+    <string name="pls_select_dist">Please Select District</string>
+    <string name="pls_select_thana">Please Select Thana</string>
+    <string name="pls_enter_riciv_name">Please Enter Receiver Name</string>
+    <string name="pls_enter_riciv_contect">Please Enter Receiver Phone Number</string>
+    <string name="select_product">Please Select Product Type</string>
+    <string name="select_productW">Please Select Product Weight</string>
+    <string name="enter_product">Enter Product Detail</string>
+    <string name="trucking_id">Tracking ID</string>
+    <string name="truck_id_hint">e.g: DC123456</string>
+    <string name="truck_location">Track a package</string>
+    <string name="tracking_number">Tracking Number:</string>
+    <string name="order_creation">Order Creation:</string>
+    <string name="estimated_delivery">Estimated Delivery:</string>
+    <string name="dear_valued_customer_your_order_is_now_pending_to_confirm_drivill">Dear valued customer, Your order is now pending to confirm- Drivill</string>
+    <string name="on_the_way_to_delivery">On The Way To Delivery</string>
+    <string name="order_is_picked_up_by_our_rider_drivill">Order is picked up by our rider. -Drivill</string>
+    <string name="payment_has_completed_order_is_selected_for_processing_drivill">Payment has completed. Order is selected for processing. -Drivill</string>
+    <string name="confirm">Confirm</string>
+    <string name="your_order_is_confirmed_by_seller_drivill">Your order is confirmed by seller. -Drivill</string>
+    <string name="document">Document</string>
+    <string name="heavy_Weight">Heavy Weight</string>
+    <string name="package_">Package </string>
+    <string name="help">Help</string>
+    <string name="select_pickup_date">Select Pickup Date</string>
+    <string name="dd_mm_yyyy">DD-MM-YYYY</string>
+    <string name="pls_select_date">Please Select Pickup Date</string>
+    <string name="cancelled_by">Cancelled by:</string>
+    <string name="cancellation">Cancellation</string>
+    <string name="cancel_order">Cancel Order</string>
+    <string name="cancelled_by_user">Cancelled by user</string>
+    <string name="wrong_item_send">Wrong item send</string>
+    <string name="wrong_address_shown">Wrong address shown</string>
+    <string name="rider_isn_t_here">Rider isn\'t here</string>
+    <string name="ready_to_shipping">Ready To Shipping</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="required_minimum_order">Required Minimum 2 Order. Please Add More Pickup.</string>
+    <string name="account_not_active">
+    Your account is not Active. Please contact with Drivill Administrator
+</string>
+    <string name="stndr_delivery">Standard Delivery</string>
+    <string name="reports">Reports------------------------------------------------------------</string>
+    <string name="no_data_available">No Data Available</string>
+    <string name="send_request">Send Request</string>
+    <string name="enter_cod_amount">Enter COD Amount</string>
+    <string name="add_courier">Add Shipment</string>
+    <string name="step_1">Step 1 Of 3</string>
+    <string name="step_2">Step 2 Of 3</string>
+    <string name="sender_location">Sender Location</string>
+    <string name="receiver_location">Receiver Location</string>
+    <string name="shipment_id">Shipment ID</string>
+    <string name="courier_details">Courier Details</string>
+    <string name="house_road_no_village">House/Road no., Village</string>
+    <string name="cod_amountt">Total Cash Collection Amount</string>
+    <string name="date">Date</string>
+    <string name="invoice">Invoice</string>
+    <string name="add_bank_details">Add Bank Details</string>
+    <string name="bank_details">Bank Details</string>
+    <string name="bank_name">BANK NAME</string>
+    <string name="account_number">Account Number</string>
+    <string name="account_holder_name">Account Holder Name</string>
+    <string name="branch_name">Branch Name</string>
+    <string name="save">Save</string>
+    <string name="FBPage_url">https://www.facebook.com/drivill.official/</string>
+    <string name="LinkedInPage_url">https://www.linkedin.com/company/drivill/</string>
+    <string name="InstaPage_url">https://www.instagram.com/drivill.official/</string>
+    <string name="follow_us_on_social_media">Follow us on social media</string>
+    <string name="hubhint">Submit delivery to HUB</string>
+
+   <!-- Tracking Logs-->
+    <string name="On_going_delivery">On going delivery</string>
+    <string name="Rejected">Rejected</string>
+    <string name="Onboarding">Onboarding</string>
+    <string name="cancel_bformark">Cancel by admin/merchant before mark pickup</string>
+    <string name="customer_attempt_failed">Delivery attempt failed</string>
+    <string name="pending">Pending</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="delivered">Delivered</string>
+    <string name="picked_up">Picked Up</string>
+    <string name="inTrans">In Transit</string>
+    <string name="completed">Completed</string>
+    <string name="requested">Requested</string>
+    <string name="assigned">Assigned</string>
+    <string name="cancelled_by_rider">Cancelled by rider</string>
+    <string name="updateapp">Update DriVill Courier</string>
+    <string name="updateappmsg">DriVill Courier recommends that you update to the latest version for a seamless and enhanced performance of the app.</string>
+    <string name="office_time">10 am to 6 pm except Friday</string>
+    <string name="response_right_away">Response right away</string>
+    <string name="delete">Delete</string>
+    <string name="cancelalertmsg">This shipment is Cancelled</string>
+    <string name="req_orders">Requested Orders</string>
+    <string name="delete_order">Delete Order</string>
+
+</resources>

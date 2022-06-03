@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.drivill.courier.fragment.SignUp1Fragment" />
+
+        <variable
+            name="data"
+            type="com.drivill.courier.model.model.SignUpModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true">
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:layoutDescription="@xml/activity_sign_up2_scene">
+
+            <TextView
+                android:id="@+id/personalInfoTxt"
+                style="@style/textStyleMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:text="@string/personal_information"
+                android:textColor="@color/black"
+                android:textSize="@dimen/hintText"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:background="@color/gary"
+                app:layout_constraintBottom_toBottomOf="@+id/personalInfoTxt" />
+
+            <LinearLayout
+                android:id="@+id/profileLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/personalInfoTxt">
+
+                <TextView
+                    style="@style/textStyleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/profile_photo"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/hintText" />
+
+                <TextView
+                    android:id="@+id/profilePhotoTxt"
+                    style="@style/textStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:hint="@string/addjpgImageTxt"
+                    android:textColor="@color/hint_color"
+                    android:textSize="@dimen/hintText" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:gravity="center|center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/profilePicFromFile"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:background="@drawable/backround_input"
+                        android:padding="1.5dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/add_icon_with_boder" />
+
+                    <ImageView
+                        android:id="@+id/profilePicFromCam"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:background="@drawable/backround_input"
+                        android:padding="1.5dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/cam_icon_with_boder" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/nidLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/profileLL">
+
+                <TextView
+                    style="@style/textStyleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/nid_number"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/hintText" />
+
+                <EditText
+                    android:id="@+id/nidNumET"
+                    style="@style/textStyleRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/backround_input"
+                    android:hint="@string/enter_13_digit_nid_number"
+                    android:inputType="text"
+                    android:maxLength="13"
+                    android:paddingHorizontal="5dp"
+                    android:textSize="@dimen/inputText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/button_continue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nidLayout">
+
+                <TextView
+                    style="@style/textStyleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/nid_photo"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/hintText" />
+
+                <TextView
+                    android:id="@+id/nidPhotoTxt"
+                    style="@style/textStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:hint="@string/addjpgImageTxt"
+                    android:textColor="@color/hint_color"
+                    android:textSize="@dimen/hintText" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:gravity="center|center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/nidPicAddFromFile"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:background="@drawable/backround_input"
+                        android:padding="1.5dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/add_icon_with_boder" />
+
+                    <ImageView
+                        android:id="@+id/nidPicAddFromCam"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:background="@drawable/backround_input"
+                        android:padding="1.5dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/cam_icon_with_boder" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/textStyleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/fatherNid_number"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/hintText" />
+
+                <EditText
+                    android:id="@+id/fatherNidET"
+                    style="@style/textStyleRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="5dp"
+                    android:maxLength="13"
+                    android:background="@drawable/backround_input"
+                    android:hint="@string/enter_13_digit_nid_number"
+                    android:inputType="text"
+                    android:paddingHorizontal="5dp"
+                    android:textSize="@dimen/inputText" />
+
+                <TextView
+                    style="@style/textStyleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="start"
+                    android:text="@string/father_s_nid_photo"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/hintText" />
+
+                <TextView
+                    android:id="@+id/fatherNidPicTxt"
+                    style="@style/textStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:hint="@string/addjpgImageTxt"
+                    android:textColor="@color/hint_color"
+                    android:textSize="@dimen/hintText" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:gravity="center|center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/fatherNidPickFromFile"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:background="@drawable/backround_input"
+                        android:padding="1.5dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/add_icon_with_boder" />
+
+                    <ImageView
+                        android:id="@+id/fatherNidPicFromCam"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:background="@drawable/backround_input"
+                        android:padding="1.5dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/cam_icon_with_boder" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/button_continue"
+                style="@style/textStyleMedium"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/theme_background_button"
+                android:gravity="center"
+                android:text="@string/continue_txt"
+                android:textColor="@color/white"
+                android:textSize="@dimen/buttonTextSmall"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+
+
+    </ScrollView>
+
+</layout>

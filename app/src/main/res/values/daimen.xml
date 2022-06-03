@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="hintText">10sp</dimen>
+    <dimen name="toolbarSize">40dp</dimen>
+    <dimen name="toolbarTitle">16sp</dimen>
+    <dimen name="buttonText">15sp</dimen>
+    <dimen name="buttonTextSmall">12sp</dimen>
+    <dimen name="nameText">12sp</dimen>
+    <dimen name="nameTexth">13sp</dimen>
+    <dimen name="headingText">18dp</dimen>
+    <dimen name="inputText">15sp</dimen>
+    <dimen name="headingText1">20sp</dimen>
+    <dimen name="headingText2">20dp</dimen>
+    <dimen name="largeText">25dp</dimen>
+    <dimen name="margin">10dp</dimen>
+</resources>

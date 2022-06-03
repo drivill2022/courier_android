@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/theme_color"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:padding="@dimen/_4sdp"
+                android:backgroundTint="@color/white"
+                android:focusable="true"
+                android:background="@drawable/forword_arrow" />
+
+            <TextView
+                android:id="@+id/titleNotification"
+                style="@style/textStyleBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="@string/add_courier"
+                android:textColor="@color/white"
+                android:textSize="@dimen/toolbarTitle" />
+        </RelativeLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:background="@drawable/backround_top_corner_40dp"
+            android:layout_marginTop="@dimen/_30sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/personalInfoTxt">
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="vertical"
+                     android:padding="@dimen/_15sdp"
+                     android:background="@drawable/background_blue_curve">
+
+                    <TextView
+                        style="@style/textStyleMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="@string/pickup_location"
+                        android:textColor="@color/gary"
+                        android:textSize="@dimen/hintText" />
+
+                    <Spinner
+                        android:id="@+id/selectDivisionSpinner"
+                        style="@style/SpinnerTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:popupBackground="@drawable/backround_input"
+                        android:spinnerMode="dropdown" />
+
+                    <Spinner
+                        android:id="@+id/selectDisSpinner"
+                        style="@style/SpinnerTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:popupBackground="@drawable/backround_input"
+                        android:spinnerMode="dropdown" />
+
+                    <Spinner
+                        android:id="@+id/selectThanaSpinner"
+                        style="@style/SpinnerTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:popupBackground="@drawable/backround_input"
+                        android:spinnerMode="dropdown" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/_10sdp">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/pickup_addressET"
+                            style="@style/textStyleRegular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/backround_input"
+                            android:hint="@string/house_road_no_village"
+                            android:inputType="textMultiLine"
+                            android:minHeight="46dp"
+                            android:padding="5dp" />
+
+                    </LinearLayout>
+
+                 </LinearLayout>
+
+                <!--  &lt;!&ndash;  unused view date &ndash;&gt;
+                   <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:visibility="invisible">
+
+                                        <TextView
+                                            style="@style/textStyleMedium"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="start"
+                                            android:text="@string/select_pickup_date"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/hintText" />
+
+                                        <TextView
+                                            android:id="@+id/selectDateText"
+                                            style="@style/SpinnerTheme"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="45dp"
+                                            android:layout_marginTop="@dimen/_10sdp"
+                                            android:hint="@string/dd_mm_yyyy"
+                                            android:paddingStart="@dimen/_5sdp"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/nameText" />
+
+                                    </LinearLayout>-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_15sdp"
+                        android:background="@drawable/background_blue_curve"
+                        app:layout_constraintTop_toBottomOf="@+id/personalInfoTxt">
+
+                        <TextView
+                            style="@style/textStyleMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text="@string/delivery_location"
+                            android:textColor="@color/gary"
+                            android:textSize="@dimen/hintText" />
+
+                        <Spinner
+                            android:id="@+id/selectDivisionSpinnerLocation"
+                            style="@style/SpinnerTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:popupBackground="@drawable/backround_input"
+                            android:spinnerMode="dropdown" />
+
+                        <Spinner
+                            android:id="@+id/selectDisSpinnerLocation"
+                            style="@style/SpinnerTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:popupBackground="@drawable/backround_input"
+                            android:spinnerMode="dropdown" />
+
+                        <Spinner
+                            android:id="@+id/selectThanaSpinnerLocation"
+                            style="@style/SpinnerTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:popupBackground="@drawable/backround_input"
+                            android:spinnerMode="dropdown" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="vertical">
+<!--
+                            <TextView
+                                style="@style/textStyleMedium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:text="@string/delivery_address"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/hintText" />-->
+
+                            <AutoCompleteTextView
+                                android:id="@+id/delivery_addressET"
+                                style="@style/textStyleRegular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/backround_input"
+                                android:hint="@string/house_road_no_village"
+                                android:inputType="textMultiLine"
+                                android:minHeight="46dp"
+                                android:padding="5dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/nextBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/theme_background_button"
+                        android:paddingHorizontal="@dimen/_30sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:text="@string/continue_txt"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/buttonTextSmall"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <FrameLayout
+            android:id="@+id/fragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginTop="@dimen/_30sdp"/>
+
+    </RelativeLayout>
+
+</layout>

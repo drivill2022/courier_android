@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white_light"
+            android:orientation="horizontal">
+
+        <ImageView
+
+                android:id="@+id/backBtn"
+                android:padding="@dimen/_5sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/_10sdp"
+                android:src="@drawable/forword_arrow" />
+
+            <TextView
+                android:id="@+id/toolbarTitleTxt"
+                style="@style/textStyleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="#DC2563656"
+                android:textColor="@color/black"
+                android:textSize="@dimen/toolbarTitle" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/LL_tandc"
+            android:layout_below="@+id/toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/editItemTxt"
+                    style="@style/textStyleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:drawableStart="@drawable/edit_icon"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:text="@string/edit"
+                    android:textColor="@color/theme_color"
+                    android:textSize="@dimen/nameText"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/recieverNameTxt"
+                    style="@style/textStyleMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="28dp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:text="Jhon Doe"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/nameText" />
+
+                <TextView
+                    android:id="@+id/txtReciverPhonTxt"
+                    style="@style/textStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:drawableStart="@drawable/telephone_icon"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:text="+ 97 5564"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/hintText" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@color/gary" />
+
+
+                <TextView
+                    android:id="@+id/shipmentTxt"
+                    style="@style/textStyleMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:text="#DC020404"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/nameText" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="start"
+                        android:text="@string/pickup_address"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/hintText" />
+
+                    <TextView
+                        android:id="@+id/address_divTxt"
+                        style="@style/textStyleMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="start"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/inputText" />
+
+                    <TextView
+                        android:id="@+id/addressExctTxt"
+                        style="@style/textStyleMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="start"
+                        android:text="Foothill Blvd,inddle,ssdd,ssss"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="start"
+                        android:text="@string/delivery_address"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/hintText" />
+
+                    <TextView
+                        android:id="@+id/address_divTxtDeleivery"
+                        style="@style/textStyleMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="start"
+                        android:text="6467,inddle,ssdd,ssss"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/inputText" />
+
+                    <TextView
+                        android:id="@+id/addressExctTxtDelivery"
+                        style="@style/textStyleMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="start"
+                        android:text="Foothill Blvd,inddle,ssdd,ssss"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="start"
+                        android:text="@string/product_type"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        android:id="@+id/productTypeTxt"
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="end"
+                        android:text="@string/documents"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:text="@string/shipping_type"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+
+                        android:id="@+id/shipingTypeTxt"
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:text="@string/express_delivery"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:text="@string/weight"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        android:id="@+id/weightTxt"
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:text="N/A"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:text="@string/cost_colon"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        android:id="@+id/costTxt"
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:drawableStart="@drawable/taka"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/textStyleBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:text="@string/product_detail"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        android:id="@+id/productDetailTxt"
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="start"
+                        android:text="Foothill Blvd,inddle,\n adasdasdasffafafafkjfklajhfkhssdd,ssss"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/textStyleBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="start"
+                        android:text="@string/note_colon"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+
+                    <TextView
+                        android:id="@+id/productNoteTxt"
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="start"
+                        android:text="Foothill Blvd,inddle,\n adasdasdasffafafafkjfklajhfkhssdd,ssss"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/LL_tandc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_above="@+id/bottomLL"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center_vertical|center">
+
+            <CheckBox
+                android:id="@+id/checkbox_T_and_C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:clickable="false"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_1sdp"
+                android:text="I'm agree with Drivill's terms and conditions"
+                android:textSize="@dimen/nameText" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:gravity="center_vertical|center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/addMorePickupBtn"
+                style="@style/textStyleMedium"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/backround_theme_border"
+                android:gravity="center"
+                android:text="@string/add_more_pickup"
+                android:textColor="@color/theme_color"
+                android:visibility="gone"
+                android:textSize="@dimen/buttonTextSmall" />
+
+            <TextView
+                android:id="@+id/oky_btn"
+                style="@style/textStyleMedium"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/theme_background_button"
+                android:gravity="center"
+                android:text="@string/okay"
+                android:textColor="@color/white"
+                android:textSize="@dimen/buttonTextSmall"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/processPickup"
+                style="@style/textStyleMedium"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/theme_background_button"
+                android:gravity="center"
+                android:text="@string/send_request"
+                android:textColor="@color/white"
+                android:textSize="@dimen/buttonTextSmall" />
+
+            <TextView
+                android:id="@+id/cancel_btn"
+                style="@style/textStyleMedium"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/backround_red_border"
+                android:gravity="center"
+                android:text="@string/cancel_delivery"
+                android:textColor="@color/red"
+                android:textSize="@dimen/buttonTextSmall"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</layout>

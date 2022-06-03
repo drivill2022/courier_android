@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:autoTransition="animateToEnd"
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+        <KeyFrameSet></KeyFrameSet>
+        <OnClick motion:targetId="@+id/nextText" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:transitionEasing="cubic(0.2,0.23,0.8,0.8)" />
+        <Constraint
+            android:id="@+id/headingText"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:alpha="0"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toTopOf="@+id/nextText"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:transitionEasing="cubic(0.21,0.21,0.61,0.59)" />
+        <Constraint
+            android:id="@+id/imageView"
+            android:layout_width="468dp"
+            android:layout_height="586dp"
+            android:alpha="0"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_editor_absoluteX="-57dp"
+            motion:layout_editor_absoluteY="145dp" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end"></ConstraintSet>
+</MotionScene>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/backround_input"
+        android:orientation="vertical"
+        android:padding="@dimen/_5sdp">
+
+        <TextView
+            android:id="@+id/headingTitleTxt"
+            style="@style/textStyleMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/_3sdp"
+            android:text="@string/submit"
+            android:textAllCaps="true"
+            android:textSize="@dimen/inputText"
+            android:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="@dimen/_50sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@color/gary" />
+
+        <TextView
+            android:id="@+id/titleTxt"
+            style="@style/textStyleRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_5sdp"
+            android:gravity="center"
+            android:text=""
+            android:textSize="@dimen/nameText" />
+
+        <TextView
+            android:id="@+id/shipIdTxt"
+            style="@style/textStyleBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="Submit pickup to HUB"
+            android:textSize="@dimen/nameText"
+            android:focusable="true"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/ET_return_note"
+                style="@style/textStyleRegular"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backround_input"
+                android:hint="@string/note_colon"
+                android:inputType="textMultiLine"
+                android:maxLines="3"
+                android:minHeight="46dp"
+                android:focusableInTouchMode="true"
+                android:visibility="gone"
+                android:padding="5dp" />
+
+        <LinearLayout
+            android:id="@+id/bottomLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:gravity="center_vertical|center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/cancelBtn"
+                style="@style/textStyleMedium"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/backround_red_border"
+                android:gravity="center"
+                android:text="@string/cancel"
+                android:textColor="@color/red"
+                android:textSize="@dimen/buttonTextSmall" />
+
+            <TextView
+                android:id="@+id/submitBtn"
+                style="@style/textStyleMedium"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/theme_background_button"
+                android:gravity="center"
+                android:text="@string/okay"
+                android:textColor="@color/white"
+                android:textSize="@dimen/buttonTextSmall" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</layout>

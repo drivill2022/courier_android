@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/mainlayoutTransfer"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_3sdp"
+    android:background="@drawable/backround_white_round"
+    android:padding="@dimen/_5sdp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/itemImg"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:background="@drawable/backround_gray" />
+
+
+    <TextView
+        android:id="@+id/businessAddressTxt"
+        style="@style/textStyleRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/businessNameTxt"
+        android:layout_marginHorizontal="@dimen/_2sdp"
+        android:layout_toStartOf="@+id/endImg"
+        android:layout_toEndOf="@+id/itemImg"
+        android:drawableStart="@drawable/location_icon"
+        android:drawablePadding="@dimen/_5sdp"
+        android:maxLines="2"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/nameText" />
+
+    <TextView
+        android:id="@+id/businessNameTxt"
+        style="@style/textStyleMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_toStartOf="@+id/endImg"
+        android:layout_toEndOf="@+id/itemImg"
+        android:drawablePadding="@dimen/_5sdp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/nameText"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/endImg"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"
+        android:rotation="180"
+        android:src="@drawable/forword_arrow"
+        app:tint="@color/black" />
+
+
+</RelativeLayout>

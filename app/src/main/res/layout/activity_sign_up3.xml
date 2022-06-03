@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.drivill.courier.activity.SignUp3Activity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/toolSignup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/theme_color"
+            android:gravity="center_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/topSignupImage"
+                android:layout_width="150dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                app:srcCompat="@drawable/app_logo_white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/heding1Signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/toolSignup">
+
+            <TextView
+                style="@style/textStyleMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/signup"
+                android:textColor="@color/black"
+                android:textSize="@dimen/headingText" />
+
+            <TextView
+                style="@style/textStyleRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/create_rider_account"
+                android:textColor="@color/hint_color"
+                android:textSize="@dimen/hintText" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.motion.widget.MotionLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutDescription="@xml/activity_sign_up3_xml_constraintlayout_scene">
+
+                <TextView
+                    android:id="@+id/personalInfoTxt"
+                    style="@style/textStyleMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:text="@string/vehicle_information"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/hintText"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:background="@color/gary"
+                    app:layout_constraintBottom_toBottomOf="@+id/personalInfoTxt" />
+
+                <LinearLayout
+                    android:id="@+id/selectVehicleLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/personalInfoTxt">
+
+                    <TextView
+                        style="@style/textStyleMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="@string/select_vehicle"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/hintText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            style="@style/RadioBtnStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_weight="1"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/motorcycle"
+                            android:textSize="@dimen/hintText" />
+
+                        <RadioButton
+                            style="@style/RadioBtnStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_weight="1"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/cycle"
+                            android:textSize="@dimen/hintText" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/driPhotoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/selectVehicleLayout">
+
+                    <LinearLayout
+                        android:id="@+id/licenceLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/textStyleMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text="@string/driving_license_number"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/hintText" />
+
+                        <EditText
+                            android:id="@+id/referralET_SignUp"
+                            style="@style/textStyleRegular"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/backround_input"
+                            android:hint="@string/enter_driving_number"
+                            android:inputType="textEmailAddress"
+                            android:paddingHorizontal="5dp"
+                            android:textSize="@dimen/inputText" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/textStyleMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:gravity="start"
+                        android:text="@string/driving_license_photo"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/hintText" />
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="@string/addjpgImageTxt"
+                        android:textColor="@color/hint_color"
+                        android:textSize="@dimen/hintText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60sdp"
+                        android:gravity="center|center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:src="@drawable/add_icon_with_boder" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:src="@drawable/cam_icon_with_boder" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/registrationLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/driPhotoLayout">
+
+                    <TextView
+                        style="@style/textStyleMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="@string/plate_number"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/hintText" />
+
+                    <EditText
+                        android:id="@+id/fatherNidET_SignUp"
+                        style="@style/textStyleRegular"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/backround_input"
+                        android:hint="@string/enter_plate_number"
+                        android:inputType="textEmailAddress"
+                        android:paddingHorizontal="5dp"
+                        android:textSize="@dimen/inputText" />
+
+                    <TextView
+                        style="@style/textStyleMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:gravity="start"
+                        android:text="@string/registration_photo"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/hintText" />
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="@string/addjpgImageTxt"
+                        android:textColor="@color/hint_color"
+                        android:textSize="@dimen/hintText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60sdp"
+                        android:gravity="center|center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:src="@drawable/add_icon_with_boder" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:src="@drawable/cam_icon_with_boder" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registrationLayout">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@+id/personalInfoTxt">
+
+                        <TextView
+                            style="@style/textStyleMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text="@string/motorcycle_s_brand"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/hintText" />
+
+
+                        <Spinner
+                            android:id="@+id/vehicleBrandSpinner"
+                            style="@style/SpinnerTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginTop="5dp"
+                            android:paddingHorizontal="5dp"
+                            android:popupBackground="@drawable/backround_input"
+                            android:spinnerMode="dropdown" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@+id/personalInfoTxt">
+
+                        <TextView
+                            style="@style/textStyleMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text="@string/motorcycle_s_model"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/hintText" />
+
+                        <Spinner
+                            android:id="@+id/vehicleModelSpinner"
+                            style="@style/SpinnerTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginTop="5dp"
+                            android:paddingHorizontal="5dp"
+                            android:popupBackground="@drawable/backround_input"
+                            android:spinnerMode="dropdown" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@+id/personalInfoTxt">
+
+                        <TextView
+                            style="@style/textStyleMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text="@string/region"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/hintText" />
+
+                        <Spinner
+                            android:id="@+id/vehicleRegionSpinner"
+                            style="@style/SpinnerTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginTop="5dp"
+                            android:paddingHorizontal="5dp"
+                            android:popupBackground="@drawable/backround_input"
+                            android:spinnerMode="dropdown" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@+id/personalInfoTxt">
+
+                        <TextView
+                            style="@style/textStyleMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text="@string/category"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/hintText" />
+
+                        <Spinner
+                            android:id="@+id/vehicleCategorySpinner"
+                            style="@style/SpinnerTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginTop="5dp"
+                            android:paddingHorizontal="5dp"
+                            android:popupBackground="@drawable/backround_input"
+                            android:spinnerMode="dropdown" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@+id/personalInfoTxt">
+
+                        <TextView
+                            style="@style/textStyleMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text="@string/tokenNum"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/hintText" />
+
+                        <EditText
+                            android:id="@+id/tokenNumET"
+                            style="@style/textStyleRegular"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/backround_input"
+                            android:hint="@string/enter_token_number"
+                            android:inputType="text"
+                            android:paddingHorizontal="5dp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/button_continue"
+                        style="@style/textStyleMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:background="@drawable/theme_background_button"
+                        android:gravity="center"
+                        android:text="@string/submit"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/rLayout" />
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.motion.widget.MotionLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+</layout>

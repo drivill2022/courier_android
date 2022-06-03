@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_2sdp"
+    android:background="@drawable/backround_input"
+    android:padding="@dimen/_5sdp">
+
+    <TextView
+        android:id="@+id/nameRV_PICKUP"
+        style="@style/textStyleMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_2sdp"
+        android:drawableStart="@drawable/customer_icon"
+        android:drawablePadding="@dimen/_5sdp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/nameTexth" />
+
+    <TextView
+        android:id="@+id/bussNameRV_PICKUP"
+        style="@style/textStyleRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameRV_PICKUP"
+        android:layout_margin="@dimen/_2sdp"
+        android:drawableStart="@drawable/customer_icon"
+        android:drawablePadding="@dimen/_5sdp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/nameTexth" />
+
+    <TextView
+        android:id="@+id/addressRV_PICKUP"
+        style="@style/textStyleRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bussNameRV_PICKUP"
+        android:layout_alignParentStart="true"
+        android:layout_margin="@dimen/_2sdp"
+        android:layout_toStartOf="@+id/call"
+        android:drawableStart="@drawable/location_icon"
+        android:drawablePadding="@dimen/_5sdp"
+        android:text=""
+        android:textColor="@color/theme_color"
+        android:textSize="@dimen/nameTexth" />
+
+    <TextView
+        android:id="@+id/phoneRV_PICKUP"
+        style="@style/textStyleRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addressRV_PICKUP"
+        android:layout_margin="@dimen/_2sdp"
+        android:drawableStart="@drawable/telephone_icon"
+        android:drawablePadding="@dimen/_5sdp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/nameTexth" />
+
+    <TextView
+        android:id="@+id/tv_PkgID"
+        style="@style/textStyleBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phoneRV_PICKUP"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/nameTexth" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_PkgID"
+        android:layout_margin="@dimen/_3sdp"
+        android:alpha=".7"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/mapLL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/backround_dark_red_extra_round"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_3sdp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:src="@drawable/repeat" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                style="@style/textStyleRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:gravity="center"
+                android:text="@string/returntxt"
+                android:textColor="@color/white"
+                android:textSize="@dimen/nameText" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/changeLL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/backround_button_dark"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_3sdp"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:src="@drawable/repeat" />
+
+            <TextView
+                style="@style/textStyleRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:gravity="center"
+                android:text="@string/change_status"
+                android:textColor="@color/white"
+                android:textSize="@dimen/nameText" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/detailLL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/backround_button_dark"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_3sdp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:src="@drawable/customer_detail_icon" />
+
+            <TextView
+                style="@style/textStyleRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:gravity="center"
+                android:text="@string/details"
+                android:textColor="@color/white"
+                android:textSize="@dimen/nameText" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/call"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/group_call_icon_black" />
+
+
+</RelativeLayout>

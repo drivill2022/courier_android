@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_sign_up2_scene">
+
+    <LinearLayout
+        android:id="@+id/toolSignup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/theme_color"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/topSignupImage"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:padding="10dp"
+            app:srcCompat="@drawable/app_logo_theme" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/heding1Signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/toolSignup">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/textStyleMedium"
+            android:text="@string/signup"
+            android:textColor="@color/black"
+            android:textSize="@dimen/headingText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            style="@style/textStyleRegular"
+            android:text="@string/create_rider_account"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/hintText" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/personalInfoTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        style="@style/textStyleMedium"
+        android:text="@string/personal_information"
+        android:textColor="@color/black"
+        android:textSize="@dimen/hintText"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heding1Signup" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:background="@color/gary"
+        app:layout_constraintBottom_toBottomOf="@+id/personalInfoTxt" />
+
+    <LinearLayout
+        android:id="@+id/nidLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/personalInfoTxt">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            style="@style/textStyleMedium"
+            android:text="@string/nid_number"
+            android:textColor="@color/black"
+            android:textSize="@dimen/hintText" />
+
+        <EditText
+            android:id="@+id/referralET_SignUp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            style="@style/textStyleRegular"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/backround_input"
+            android:hint="@string/enter_13_digit_nid_number"
+            android:inputType="textEmailAddress"
+            android:paddingHorizontal="5dp"
+            android:textSize="@dimen/inputText" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/button_continue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nidLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            style="@style/textStyleMedium"
+            android:text="NID Photo"
+            android:textColor="@color/black"
+            android:textSize="@dimen/hintText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            style="@style/textStyleRegular"
+            android:text="@string/addjpgImageTxt"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/hintText" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:gravity="center|center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_5sdp"
+                android:src="@drawable/add_icon_with_boder" />
+
+            <ImageView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_5sdp"
+                android:src="@drawable/cam_icon_with_boder" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            style="@style/textStyleMedium"
+            android:text="@string/fatherNid_number"
+            android:textColor="@color/black"
+            android:textSize="@dimen/hintText" />
+
+        <EditText
+            android:id="@+id/fatherNidET_SignUp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            style="@style/textStyleRegular"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/backround_input"
+            android:hint="@string/enter_13_digit_nid_number"
+            android:inputType="textEmailAddress"
+            android:paddingHorizontal="5dp"
+            android:textSize="@dimen/inputText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="start"
+            style="@style/textStyleMedium"
+            android:text="@string/father_s_nid_photo"
+            android:textColor="@color/black"
+            android:textSize="@dimen/hintText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            style="@style/textStyleRegular"
+            android:text="@string/addjpgImageTxt"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/hintText" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:gravity="center|center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_5sdp"
+                android:src="@drawable/add_icon_with_boder" />
+
+            <ImageView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_5sdp"
+                android:src="@drawable/cam_icon_with_boder" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/button_continue"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@drawable/theme_background_button"
+        android:gravity="center"
+        android:text="@string/continue_txt"
+        style="@style/textStyleMedium"
+        android:textColor="@color/white"
+        android:textSize="@dimen/buttonTextSmall"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

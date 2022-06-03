@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.drivill.courier.merchantModul.fragment.SignUp1Merchant" />
+
+        <variable
+            name="data"
+            type="com.drivill.courier.merchantModul.model.MerchantProfileModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/heding1Signup">
+
+
+            <TextView
+                android:id="@+id/personalInfoTxt"
+                style="@style/textStyleMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/business_information"
+                android:textColor="@color/black"
+                android:textSize="@dimen/hintText"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gary"
+                app:layout_constraintBottom_toBottomOf="@+id/personalInfoTxt" />
+
+            <LinearLayout
+                android:id="@+id/fullNameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/textStyleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/business_name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/hintText" />
+
+                <EditText
+                    android:id="@+id/business_nameET"
+                    style="@style/textStyleRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/backround_input"
+                    android:hint="@string/enter_business_name"
+                    android:inputType="textPersonName"
+                    android:paddingHorizontal="5dp"
+                    android:textSize="@dimen/inputText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/emailLayoutSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/fullNameLayout">
+
+                <TextView
+                    style="@style/textStyleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/business_phone_number"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/hintText" />
+
+                <EditText
+                    android:id="@+id/businessPhoneET"
+                    style="@style/textStyleRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/backround_input"
+                    android:hint="@string/enter_business_phone"
+                    android:inputType="number"
+                    android:paddingHorizontal="5dp"
+                    android:textSize="@dimen/inputText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/addressLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/emailLayoutSignUp">
+
+                <TextView
+                    style="@style/textStyleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/business_address"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/hintText" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/business_addressET"
+                    style="@style/textStyleRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/backround_input"
+                    android:hint="@string/enter_business_address"
+                    android:inputType="textPostalAddress"
+                    android:paddingHorizontal="5dp"
+                    android:textSize="@dimen/inputText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/referralLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/ganderLayout">
+
+                <TextView
+                    style="@style/textStyleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/facebook_page_url"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/hintText" />
+
+                <EditText
+                    android:id="@+id/fbET"
+                    style="@style/textStyleRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/backround_input"
+                    android:hint="@string/enter_facebook_link"
+                    android:inputType="text"
+                    android:paddingHorizontal="5dp"
+                    android:textSize="@dimen/inputText" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/ganderLayout">
+
+                <TextView
+                    style="@style/textStyleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/payment_method"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/hintText" />
+
+                <!--      <EditText
+                          android:id="@+id/referralET_SignUp"
+                          style="@style/textStyleRegular"
+                          android:layout_width="match_parent"
+                          android:layout_height="45dp"
+                          android:layout_marginTop="5dp"
+                          android:background="@drawable/backround_input"
+                          android:hint="@string/enter_hub_id"
+                          android:inputType="text"
+                          android:paddingHorizontal="5dp"
+                          android:textSize="@dimen/inputText" />
+                 -->
+
+                <Spinner
+                    android:id="@+id/choosePaySpinner"
+                    style="@style/SpinnerTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="5dp"
+                    android:paddingHorizontal="5dp"
+                    android:popupBackground="@drawable/backround_input"
+                    android:spinnerMode="dropdown" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tradeLicenceLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/personalInfoTxt">
+
+                <TextView
+                    style="@style/textStyleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/trade_licence_copy_if_any"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/hintText" />
+
+                <TextView
+                    android:id="@+id/tradeLicencePhotoTxt"
+                    style="@style/textStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:hint="@string/addjpgImageTxt"
+                    android:text="@{data.tradeLicense.name}"
+                    android:textColor="@color/hint_color"
+                    android:textSize="@dimen/hintText" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center|center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/addLicenceFromFile"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/backround_input"
+                        android:padding="1.5dp"
+                        android:scaleType="fitXY"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:src="@drawable/add_icon_with_boder" />
+
+                    <ImageView
+                        android:id="@+id/addLicenceFromCam"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/backround_input"
+                        android:padding="1.5dp"
+                        android:scaleType="fitXY"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:src="@drawable/cam_icon_with_boder" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/businessLogoLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/personalInfoTxt">
+
+                <TextView
+                    style="@style/textStyleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/business_logo"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/hintText" />
+
+                <TextView
+                    android:id="@+id/businessLogoPhotoTxt"
+                    style="@style/textStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:hint="@string/addjpgImageTxt"
+                    android:text="@{data.bussinessLogoFile.name}"
+                    android:textColor="@color/hint_color"
+                    android:textSize="@dimen/hintText" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center|center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/addBusinessLogoFromFile"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/backround_input"
+                        android:padding="1.5dp"
+                        android:scaleType="fitXY"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:src="@drawable/add_icon_with_boder" />
+
+                    <ImageView
+                        android:id="@+id/addBusinessLogoFromCam"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/backround_input"
+                        android:padding="1.5dp"
+                        android:scaleType="fitXY"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:src="@drawable/cam_icon_with_boder" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_5sdp">
+
+                <TextView
+                    android:id="@+id/button_continue"
+                    style="@style/textStyleMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/theme_background_button"
+                    android:gravity="center"
+                    android:text="@string/continue_txt"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSmall" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</layout>

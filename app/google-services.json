@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "252834157199",
+    "project_id": "drivillcourierapp",
+    "storage_bucket": "drivillcourierapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252834157199:android:c1074b85ae7b89919196fa",
+        "android_client_info": {
+          "package_name": "com.drivill.courier"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "252834157199-4dqa1t9v4og03htqlo1ku0p9490j4v2t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBNO1YCNKrGloRI3xD5kgGGVPF0X7owmM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "252834157199-4dqa1t9v4og03htqlo1ku0p9490j4v2t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

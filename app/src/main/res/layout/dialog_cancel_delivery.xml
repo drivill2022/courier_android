@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/backround_top_corner"
+        android:orientation="vertical"
+        android:padding="@dimen/_5sdp">
+
+        <TextView
+            android:id="@+id/title_d"
+            style="@style/textStyleMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/_3sdp"
+            android:text="@string/cancel"
+            android:textAllCaps="true"
+            android:textSize="@dimen/inputText" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="@dimen/_50sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@color/gary" />
+
+        <TextView
+            android:id="@+id/desc"
+            style="@style/textStyleRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_5sdp"
+            android:gravity="center"
+            android:text="@string/are_you_realy_want_to_cancel_the_delivery"
+            android:textSize="@dimen/nameText" />
+
+        <TextView
+            android:id="@+id/itemIdTxt"
+            style="@style/textStyleBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="#45457sda ?"
+            android:textSize="@dimen/nameText" />
+
+        <LinearLayout
+            android:id="@+id/bottomLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:gravity="center_vertical|center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/yescancelBtn"
+                style="@style/textStyleMedium"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/backround_red_border"
+                android:gravity="center"
+                android:text="@string/yes_cancel"
+                android:textColor="@color/red"
+                android:textSize="@dimen/buttonTextSmall" />
+
+            <TextView
+                android:id="@+id/noBtn"
+                style="@style/textStyleMedium"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/theme_background_button"
+                android:gravity="center"
+                android:text="@string/no"
+                android:textColor="@color/white"
+                android:textSize="@dimen/buttonTextSmall" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</layout>

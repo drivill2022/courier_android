@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llSortChangePopup"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/backround_input"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/readyLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_2sdp"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/right_duble_icon" />
+
+        <TextView
+            style="@style/textStyleRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/ready_to_shipping"
+            android:textColor="@color/black"
+            android:textSize="@dimen/nameText" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cancelLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_2sdp"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/cancel_icon_red" />
+
+        <TextView
+            style="@style/textStyleRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/delete_order"
+            android:textColor="@color/black"
+            android:textSize="@dimen/nameText" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/supportLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_2sdp"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/help_icon_gray" />
+
+        <TextView
+            style="@style/textStyleRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/supports"
+            android:textColor="@color/black"
+            android:textSize="@dimen/nameText" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
