@@ -286,7 +286,7 @@ public class OTPVerificationActivity extends BaseActivity implements OTPVerifica
             tckParcel.setText("Take the parcel from ".concat(mData.getMerchant().getName()) + " and\nsend to " + mData.getReceiverName());
         } else {
             pickBtn.setText(getString(R.string.delivered));
-            tckParcel.setText("Take COD Payments Tk. ".concat(mData.getCod_amount() + " \nand Handover the parcel to " + mData.getReceiverName()));
+            tckParcel.setText("Take COD Payments Tk. ".concat(mData.getCodAmount() + " \nand Handover the parcel to " + mData.getReceiverName()));
         }
 
         pickBtn.setOnClickListener(new View.OnClickListener() {

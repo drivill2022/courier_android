@@ -225,9 +225,9 @@ public class PackagingActivity extends BaseActivity {
 
     public void UpdatedHeadeerText(String from){
         if(from.equalsIgnoreCase("Act")){
-            mBinding.titleNotification.setText(getString(R.string.add_courier)+"\n"+getString(R.string.step_1));
+            mBinding.title.setText(getString(R.string.step_1));
         }else {
-            mBinding.titleNotification.setText(getString(R.string.add_courier)+"\n"+getString(R.string.step_2));
+            mBinding.title.setText(getString(R.string.step_2));
         }
     }
 
@@ -260,9 +260,8 @@ public class PackagingActivity extends BaseActivity {
 
     }
 
-    void settingDiviSpinner() {
-        CustomSpinnerAdapter spinnerArrayAdapter = new CustomSpinnerAdapter
-                (PackagingActivity.this, R.layout.spinner_item_layout, sDivision);
+    void settingDiviSpinner(){
+        CustomSpinnerAdapter spinnerArrayAdapter = new CustomSpinnerAdapter(PackagingActivity.this, R.layout.spinner_item_layout, sDivision);
         spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item_layout);
         mBinding.selectDivisionSpinner.setAdapter(spinnerArrayAdapter);
         mBinding.selectDivisionSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -289,7 +288,6 @@ public class PackagingActivity extends BaseActivity {
 
             }
         });
-
     }
 
     void settingDistSpinner() {

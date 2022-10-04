@@ -16,6 +16,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/white"
+        android:paddingHorizontal="@dimen/_5sdp"
         tools:context=".activity.notificationActivity.NotificationActivity">
 
         <RelativeLayout
@@ -37,11 +38,10 @@
 
             <TextView
                 android:id="@+id/titleTxt"
-                style="@style/textStyleMedium"
+                style="@style/monsterratSemiBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
+                android:layout_centerInParent="true"
                 android:gravity="center"
                 android:text="@string/supports"
                 android:textColor="@color/black"
@@ -49,44 +49,45 @@
         </RelativeLayout>
 
         <TextView
-            style="@style/textStyleRegular"
-            android:layout_width="wrap_content"
+            style="@style/montserrat_medium"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_15sdp"
             android:gravity="start"
             android:text="@string/contact_us_for_supports_with_your_courier_id_or_account_id"
             android:textColor="@color/black"
-            android:textSize="@dimen/nameText" />
+            android:textSize="13sp" />
 
         <RelativeLayout
             android:id="@+id/emergencyLL"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_35sdp"
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginHorizontal="15dp"
             android:layout_marginTop="@dimen/_10sdp">
 
 
             <TextView
                 android:id="@+id/mobileTxt"
-                style="@style/textStyleRegular"
+                style="@style/monsterratSemiBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/img_2"
-                android:text=""
+                android:text="+880 2345657436"
                 android:textColor="@color/black"
-                android:textSize="@dimen/nameText"
-                android:textStyle="bold" />
+                android:textSize="14sp"
+                />
 
             <TextView
                 android:id="@+id/timingTxt"
-                style="@style/textStyleRegular"
+                style="@style/montserrat_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/mobileTxt"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_toEndOf="@+id/img_2"
                 android:text="@string/office_time"
                 android:textColor="@color/shadowColor"
-                android:textSize="@dimen/hintText" />
+                android:textSize="12sp" />
 
             <ImageView
                 android:id="@+id/img_2"
@@ -96,7 +97,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:padding="@dimen/_5sdp"
-                android:src="@drawable/phone_icon"
+                android:src="@drawable/ic_call_new"
                 app:tint="@color/black" />
 
         </RelativeLayout>
@@ -105,31 +106,32 @@
             android:id="@+id/mailRL"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_35sdp"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="@dimen/_10sdp">
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="@dimen/_15sdp">
 
 
             <TextView
                 android:id="@+id/mailTxt"
-                style="@style/textStyleRegular"
+                style="@style/monsterratSemiBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/img_3"
-                android:text=""
+                android:text="supports@drivill.com"
                 android:textColor="@color/black"
-                android:textSize="@dimen/nameText"
-                android:textStyle="bold" />
+                android:textSize="14sp"
+                 />
 
             <TextView
                 android:id="@+id/resTxt"
-                style="@style/textStyleRegular"
+                style="@style/montserrat_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/mailTxt"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_toEndOf="@+id/img_3"
                 android:text="@string/response_right_away"
                 android:textColor="@color/shadowColor"
-                android:textSize="@dimen/hintText" />
+                android:textSize="12sp" />
 
             <ImageView
                 android:id="@+id/img_3"
@@ -139,41 +141,40 @@
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:padding="@dimen/_5sdp"
-                android:src="@drawable/mail"
+                android:src="@drawable/ic_mail_new"
                 app:tint="@color/black" />
 
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/FAQ_RL"
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_35sdp"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="@dimen/_10sdp">
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="@dimen/_15sdp">
 
 
             <TextView
                 android:id="@+id/faqTxt"
-                style="@style/textStyleRegular"
+                style="@style/monsterratSemiBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/img_4"
                 android:text="@string/faqs"
                 android:textColor="@color/black"
-                android:textSize="@dimen/nameText"
-                android:textStyle="bold" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/questAnsTxt"
-                style="@style/textStyleRegular"
+                style="@style/montserrat_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/faqTxt"
                 android:layout_toEndOf="@+id/img_4"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:text="Question and Answers Forum"
                 android:textColor="@color/hint_color"
-                android:textSize="@dimen/hintText" />
+                android:textSize="12sp" />
 
             <ImageView
                 android:id="@+id/img_4"
@@ -183,7 +184,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:padding="@dimen/_5sdp"
-                android:src="@drawable/help_icon_gray"
+                android:src="@drawable/ic_ques_new"
                 app:tint="@color/black" />
 
         </RelativeLayout>
@@ -191,18 +192,18 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_margin="@dimen/_10sdp"
+            android:layout_margin="@dimen/_15sdp"
             android:background="@color/gary" />
 
         <RelativeLayout
             android:id="@+id/termsRL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp">
+            android:layout_marginHorizontal="15dp">
 
             <TextView
                 android:id="@+id/nameTxt2"
-                style="@style/textStyleRegular"
+                style="@style/monsterratSemiBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -210,7 +211,7 @@
                 android:layout_marginHorizontal="@dimen/_10sdp"
                 android:text="@string/terms_of_use"
                 android:textColor="@color/black"
-                android:textSize="@dimen/nameText"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -231,11 +232,11 @@
             android:id="@+id/privacyRL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="@dimen/_10sdp">
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="@dimen/_15sdp">
 
             <TextView
-                style="@style/textStyleRegular"
+                style="@style/monsterratSemiBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -243,7 +244,7 @@
                 android:layout_marginHorizontal="@dimen/_10sdp"
                 android:text="@string/privacy_policy"
                 android:textColor="@color/black"
-                android:textSize="@dimen/nameText"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -268,6 +269,7 @@
             android:layout_gravity="center_horizontal"
             android:textSize="@dimen/buttonText"
             android:padding="@dimen/_5sdp"
+            android:visibility="gone"
             android:layout_marginTop="@dimen/_30sdp"/>
 
 
@@ -275,6 +277,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
+            android:visibility="gone"
             android:layout_marginTop="@dimen/_5sdp">
 
                 <ImageView

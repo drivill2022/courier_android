@@ -16,7 +16,7 @@
             android:background="@color/white_light"
             android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
 
                 android:id="@+id/backBtn"
                 android:padding="@dimen/_5sdp"

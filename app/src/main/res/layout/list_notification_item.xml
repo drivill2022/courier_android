@@ -20,37 +20,78 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_toLeftOf="@+id/tv_time"
+                android:src="@drawable/path" />
+
+
+            <TextView
+                android:id="@+id/tv_time"
+                style="@style/montserrat_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="end"
+                android:drawablePadding="@dimen/_10sdp"
+                android:text="@{viewModel.merchantNotificationModel.created_at_for_human}"
+                android:textColor="@color/greyish"
+                android:textSize="@dimen/_10sdp"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="10">
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
                 android:id="@+id/notificationImg"
                 android:layout_width="@dimen/_50sdp"
                 android:layout_height="@dimen/_50sdp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:layout_gravity="center"
-                android:layout_margin="@dimen/_8sdp"
-                android:src="@drawable/user_icon"
-                android:visibility="gone" />
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:scaleType="center"
+                android:src="@drawable/ic_notification"
+                android:visibility="visible" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/notificationImg"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/notificationTitle"
+                    style="@style/montserrat_medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Marijauna"
+
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp"
                     android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/notificationDesc"
+                    style="@style/montserrat_regular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autoLink="web"

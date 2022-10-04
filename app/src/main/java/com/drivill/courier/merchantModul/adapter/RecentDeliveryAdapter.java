@@ -44,6 +44,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.function.LongFunction;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -73,6 +74,7 @@ public class RecentDeliveryAdapter extends RecyclerView.Adapter<RecentDeliveryAd
     @Override
     public MyStatementHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
+
         if (tag.equals("home") || tag.equals("All")) {
             view = LayoutInflater.from(mContext).inflate(R.layout.recycler_recent_item, parent, false);
         } else {
@@ -84,18 +86,17 @@ public class RecentDeliveryAdapter extends RecyclerView.Adapter<RecentDeliveryAd
 
     @Override
     public void onBindViewHolder(@NonNull MyStatementHolder holder, int position) {
+
+        Log.e("dsabhjgashdghasd","dsgahgdhgsad"+tag);
         mBasePreferenceManager = new PrefsManager(mContext);
         if (dataArr != null && dataArr.size() != 0) {
            ShipmentModel  model = dataArr.get(position);
             if (model != null) {
                 if (tag.equals("home") || tag.equals("All")) {
-                    Glide.with(mContext)
-                            .load(((BaseActivity) mContext).getBusinessLogo())
-                            .into(holder.itemImg);
-
+                    Glide.with(mContext).load(((BaseActivity) mContext).getBusinessLogo()).into(holder.itemImg);
                      holder.tv_shipmentstatus.setText(_getStatus(mContext,model.getStatus()));
 
-                        if(model.getStatus() == 8 || model.getStatus() == 11 || model.getStatus() == 12){
+                     if(model.getStatus() == 8 || model.getStatus() == 11 || model.getStatus() == 12){
                             holder.tv_shipmentstatus.setTextColor(mContext.getResources().getColor(R.color.red));
                         }else {
                             holder.tv_shipmentstatus.setTextColor(mContext.getResources().getColor(R.color.theme_color));
@@ -107,12 +108,12 @@ public class RecentDeliveryAdapter extends RecyclerView.Adapter<RecentDeliveryAd
                 else
                     holder.orderIdTxt.setText("");
 
-                holder.dateTxt.setText(model.getCreated_date());
+                holder.dateTxt.setText(model.getCreatedDate());
                 if (dataArr.get(position).getReceiverName() != null)
                     holder.deliverPlaceName.setText(dataArr.get(position).getReceiverName());
 
-                if (model.getCod_amount() != null)
-                    holder.priceItem.setText(model.getCod_amount());
+                if (model.getCodAmount() != null)
+                    holder.priceItem.setText(model.getCodAmount());
                 else holder.priceItem.setText("0");
                 if (model.getdAddress() != null)
                     holder.businessName.setText(model.getdAddress());

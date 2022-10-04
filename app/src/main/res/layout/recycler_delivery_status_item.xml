@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="data"
+            type="com.drivill.courier.merchantModul.model.ShipmentModel"/>
+
+    </data>
+
+   <androidx.cardview.widget.CardView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:cardCornerRadius="@dimen/_10sdp"
+       android:layout_marginHorizontal="@dimen/_15sdp"
+       android:layout_marginVertical="@dimen/_7sdp"
+       android:background="#E7ECEF">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:background="#E7ECEF">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/delivery"
+                android:backgroundTint="@color/black" />
+
+            <TextView
+                android:id="@+id/txt_id"
+                style="@style/textStylePoppin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/backBtn"
+                android:text="@{data.shipmentNo.replace(`#`,``) + ' '}"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                tool:text="DR 12345" />
+
+            <TextView
+                android:id="@+id/titleTxt"
+                style="@style/poppinRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_toRightOf="@+id/txt_id"
+                android:background="@drawable/theme_background_button_round_orange"
+                android:gravity="center"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="@string/picked_up"
+                android:textColor="#FE7813"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+<!--            <TextView
+                android:id="@+id/titleTxtRequested"
+                style="@style/poppinRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/theme_background_button_round_blue"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="Requested"
+                android:textColor="#131BFE"
+                android:textStyle="bold"
+                android:visibility="@{data.status==1?View.VISIBLE:View.GONE}"
+                android:textSize="14dp"
+                />
+
+            <TextView
+                android:id="@+id/titleTxtAssigned"
+                style="@style/poppinRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/theme_background_button_round_green"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="Assigned"
+                android:textColor="#669E1E"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/titleTxtFailed"
+                style="@style/poppinRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/theme_background_button_round_sky"
+                android:gravity="center"
+                android:paddingVertical="7dp"
+                android:paddingHorizontal="@dimen/_7sdp"
+                android:text="Failed"
+                android:textColor="#F0394A"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:visibility="@{data.status==8?View.VISIBLE:View.GONE}"
+            />
+
+            <TextView
+                android:id="@+id/titleDelivered"
+                style="@style/poppinRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/theme_background_button_round_green_new"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="Delivered"
+                android:textColor="#04A317"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:visibility="@{data.status==6||data.status==7?View.VISIBLE:View.GONE}" />
+
+            <TextView
+                android:id="@+id/titletransit"
+                style="@style/poppinRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/theme_background_button_round_purple"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="In Transit"
+                android:textColor="#3C42DD"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:visibility="@{data.status==4||data.status==12?View.VISIBLE:View.GONE}" />
+
+            <TextView
+                android:id="@+id/titlereturnprocessing"
+                style="@style/poppinRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_toRightOf="@id/txt_id"
+                android:background="@drawable/theme_background_button_round_grey"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="Return Processing"
+                android:textColor="#242134"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/titleontheway"
+                style="@style/poppinRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_toRightOf="@id/titlereturnprocessing"
+                android:background="@drawable/theme_background_button_round_sky"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="On The Way"
+                android:textColor="#3CA9DE"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:visibility="@{data.status==5||data.status==10?View.VISIBLE:View.GONE}" />
+
+            <TextView
+                android:id="@+id/titlereturn"
+                style="@style/poppinRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/theme_background_button_round_grey"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="Returned"
+                android:textColor="#242134"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:visibility="gone" />-->
+
+            <TextView
+                style="@style/textStylePoppin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_toLeftOf="@id/money"
+                android:text="৳"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/money"
+                style="@style/textStylePoppin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                tool:text="750"
+                android:text="@{data.codAmount.toString()}"
+                android:textColor="@color/black"
+                android:textSize="21dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:gravity="center">
+
+               <View
+                   android:layout_width="@dimen/_100sdp"
+                   android:layout_height="1dp"
+                   android:background="@color/grey"
+                   android:layout_gravity="center_vertical"
+                   />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="@dimen/_10sdp"
+                   android:layout_marginRight="@dimen/_10sdp"
+                   android:text="Delivery"
+                   android:textSize="@dimen/_8sdp"
+                   android:gravity="center"/>
+
+               <View
+                   android:layout_width="@dimen/_100sdp"
+                   android:layout_height="1dp"
+                   android:background="@color/grey"
+                   android:layout_gravity="center_vertical" />
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginVertical="@dimen/_3sdp"
+               android:layout_marginHorizontal="@dimen/_10sdp"
+               android:gravity="left"
+               android:orientation="vertical">
+
+               <TextView
+                   style="@style/textStylePoppin"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:padding="@dimen/_1sdp"
+                   android:text="@{data.createdDate.toString()}"
+                   android:textColor="@color/grey"
+                   android:textSize="14dp"
+                   tool:text="2:30, 21 July 2022"
+                   android:visibility="@{data.status==6||data.status==7?View.VISIBLE:View.GONE}" />
+
+
+               <TextView
+                   style="@style/textStylePoppin"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:padding="@dimen/_1sdp"
+                   android:text="@{data.receiverName}"
+                   android:textColor="@color/black"
+                   android:textSize="16dp"
+                   android:textStyle="bold"
+                   tool:text="Engg. Abid Hasan" />
+
+               <TextView
+                   style="@style/textStylePoppin"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:padding="@dimen/_1sdp"
+                   android:text="@{data.rider.rider.address.toString()}"
+                   android:textColor="@color/grey"
+                   android:textSize="12dp"
+                   tool:text="Block #SE(D), Gulshan -1, dhaka" />
+
+               <TextView
+                   style="@style/textStylePoppin"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:padding="@dimen/_1sdp"
+                   android:text="@{data.contactNo}"
+                   android:textColor="@color/grey"
+                   android:textSize="12dp"
+                   tool:text="010123456789" />
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+
+                   <TextView
+                       style="@style/textStylePoppin"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:padding="@dimen/_1sdp"
+                       android:text="Delivery Charge: "
+                       android:textColor="@color/grey"
+                       android:textSize="12dp" />
+                   <TextView
+                       style="@style/textStylePoppin"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:padding="@dimen/_1sdp"
+                       android:text="৳"
+                       android:textColor="@color/black"
+                       android:textSize="14dp" />
+                   <TextView
+                       android:id="@+id/tv_deliveryCharges"
+                       style="@style/textStylePoppin"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:padding="@dimen/_1sdp"
+                       android:text="@{data.shipmentCost.toString()}"
+                       android:textColor="@color/black"
+                       android:textSize="14dp" />
+               </LinearLayout>
+
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:weightSum="1"
+                   android:layout_marginTop="@dimen/_10sdp">
+
+                   <LinearLayout
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:layout_weight="0.35"
+                       android:gravity="center_vertical"
+                       android:orientation="vertical">
+
+                       <TextView
+                           android:id="@+id/btn_trackk"
+                           style="@style/montserrat_semibold"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center_vertical"
+                           android:layout_centerVertical="true"
+                           android:background="@drawable/theme_background_button_round"
+                           android:drawableLeft="@drawable/track"
+                           android:paddingTop="7dp"
+                           android:paddingBottom="7dp"
+                           android:paddingLeft="10dp"
+                           android:paddingRight="10dp"
+                           android:drawablePadding="5dp"
+                           android:text="  Track"
+                           android:textColor="@color/white"
+                           android:textSize="14dp"
+                           android:textStyle="bold"
+                           android:visibility="@{data.status==6||data.status==7?View.VISIBLE:View.GONE}" />
+                   </LinearLayout>
+
+
+                   <LinearLayout
+                       android:id="@+id/payment_deposited"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal"
+                       android:layout_weight="0.65"
+                       android:gravity="center"
+                       android:layout_marginLeft="@dimen/_20sdp"
+                       android:background="@drawable/theme_background_button_round_grey_transparent"
+                       android:padding="7dp"
+                       android:visibility="@{data.status==6 ?View.VISIBLE:View.GONE}"
+                       tool:visibility="gone">
+
+
+                       <ImageView
+                           android:id="@+id/iv_process"
+                           android:layout_width="@dimen/_15sdp"
+                           android:layout_height="@dimen/_15sdp"
+                           android:layout_centerVertical="true"
+                           android:src="@drawable/process" />
+
+                       <TextView
+                           android:id="@+id/txt_process"
+                           style="@style/montserrat_semibold"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_centerVertical="true"
+                           android:layout_toRightOf="@+id/iv_process"
+                           android:gravity="center"
+                           android:text="  Payment on process"
+                           android:textColor="#B1AFAF"
+                           android:textSize="12dp"
+                           android:textStyle="bold"
+                           android:visibility="visible" />
+                   </LinearLayout>
+
+<!--                   <TextView-->
+<!--                       android:id="@+id/txt_deposit"-->
+<!--                       style="@style/montserrat_semibold"-->
+<!--                       android:layout_width="0dp"-->
+<!--                       android:layout_height="match_parent"-->
+<!--                       android:layout_weight="0.65"-->
+<!--                       android:background="@drawable/theme_background_button_round_green_boarder"-->
+<!--                       android:drawableLeft="@drawable/deposit"-->
+<!--                       android:gravity="center"-->
+<!--                       android:paddingTop="7dp"-->
+<!--                       android:paddingBottom="7dp"-->
+<!--                       android:paddingLeft="15dp"-->
+<!--                       android:paddingRight="7dp"-->
+<!--                       android:text="  Payment Deposited"-->
+<!--                       android:textColor="#04A317"-->
+<!--                       android:textSize="12dp"-->
+<!--                       android:textStyle="bold"-->
+<!--                       android:visibility="visible" />-->
+                       <!--android:visibility="@{data.statusLog.get(0).status==101||data.statusLog.get(0).status==102?View.VISIBLE:View.GONE}"-->
+
+                   <LinearLayout
+                       android:id="@+id/txt_deposit"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal"
+                       android:layout_weight="0.65"
+                       android:gravity="center"
+                       android:layout_marginLeft="@dimen/_20sdp"
+                       android:background="@drawable/theme_background_button_round_green_boarder"
+                       android:padding="7dp"
+                       android:visibility="@{data.statusLog.get(0).status==101||data.statusLog.get(0).status==102?View.VISIBLE:View.GONE}"
+                       tool:visibility="visible">
+
+                       <ImageView
+                           android:id="@+id/iv_deposit"
+                           android:layout_width="@dimen/_15sdp"
+                           android:layout_height="@dimen/_15sdp"
+                           android:layout_centerVertical="true"
+                           android:src="@drawable/deposit" />
+
+                       <TextView
+                           android:id="@+id/txt_depst"
+                           style="@style/montserrat_semibold"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_centerVertical="true"
+                           android:layout_toRightOf="@+id/iv_process"
+                           android:gravity="center"
+                           android:text="  Payment Deposited"
+                           android:textColor="#04A317"
+                           android:textSize="12dp"
+                           android:textStyle="bold"
+                           android:visibility="visible" />
+                   </LinearLayout>
+
+               </LinearLayout>
+
+           </LinearLayout>
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="@dimen/_2sdp"
+               android:layout_marginTop="@dimen/_5sdp" >
+
+               <TextView
+                   android:id="@+id/btn_delete"
+                   style="@style/montserrat_semibold"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentEnd="true"
+                   android:layout_marginRight="@dimen/_20sdp"
+                   android:background="@drawable/theme_background_button_round_red_transparent"
+                   android:drawableLeft="@drawable/del"
+                   android:padding="7dp"
+                   android:text="  Failed due to customer cancellation"
+                   android:textColor="#F0394A"
+                   android:textSize="10dp"
+                   android:textStyle="bold"
+                   android:visibility="@{data.status==8?View.VISIBLE:View.GONE}" />
+
+               <TextView
+                   android:id="@+id/btn_return"
+                   style="@style/montserrat_semibold"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentEnd="true"
+                   android:layout_marginRight="@dimen/_20sdp"
+                   android:background="@drawable/theme_background_button_round_red_transparent"
+                   android:drawableLeft="@drawable/del"
+                   android:padding="7dp"
+                   android:text="  Return due to customer cancellation"
+                   android:textColor="#F0394A"
+                   android:textSize="10dp"
+                   android:textStyle="bold"
+                   android:visibility="gone" />
+
+               <TextView
+                   android:id="@+id/txt_cancelled"
+                   style="@style/montserrat_semibold"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentEnd="true"
+                   android:layout_marginRight="@dimen/_20sdp"
+                   android:background="@drawable/theme_background_button_round_red_transparent"
+                   android:drawableLeft="@drawable/del"
+                   android:padding="7dp"
+                   android:text="  Cancelled by Merchant"
+                   android:textColor="#F0394A"
+                   android:textSize="10dp"
+                   android:textStyle="bold"
+                   android:visibility="gone" />
+
+<!--               <TextView-->
+<!--                   android:id="@+id/btn_edit"-->
+<!--                   style="@style/montserrat_semibold"-->
+<!--                   android:layout_width="wrap_content"-->
+<!--                   android:layout_height="@dimen/_25sdp"-->
+<!--                   android:layout_marginRight="@dimen/_20sdp"-->
+<!--                   android:layout_toLeftOf="@id/deelte"-->
+<!--                   android:background="@drawable/theme_background_button_round"-->
+<!--                   android:drawableLeft="@drawable/edit"-->
+<!--                   android:drawablePadding="@dimen/_6sdp"-->
+<!--                   android:gravity="center"-->
+<!--                   android:padding="@dimen/_4sdp"-->
+<!--                   android:paddingHorizontal="@dimen/_7sdp"-->
+<!--                   android:text=" Edit"-->
+<!--                   android:textColor="@color/white"-->
+<!--                   android:textSize="@dimen/_12sdp"-->
+<!--                   android:visibility="@{data.status==1?View.VISIBLE:View.GONE}" />-->
+
+               <TextView
+                   android:id="@+id/btn_edit"
+                   style="@style/montserrat_semibold"
+                   android:layout_width="wrap_content"
+                   android:layout_height="@dimen/_25sdp"
+                   android:layout_centerVertical="true"
+                   android:layout_marginRight="@dimen/_20sdp"
+                   android:layout_marginBottom="@dimen/_4sdp"
+                   android:layout_toLeftOf="@id/deelte"
+                   android:background="@drawable/theme_background_button_round"
+                   android:drawableLeft="@drawable/edit"
+                   android:paddingHorizontal="@dimen/_8sdp"
+                   android:paddingVertical="@dimen/_5sdp"
+                   android:text="  Edit"
+                   android:textColor="@color/white"
+                   android:textSize="14dp"
+                   android:textStyle="bold"
+                   android:visibility="@{data.status==1?View.VISIBLE:View.GONE}" />
+
+
+               <TextView
+                   android:id="@+id/deelte"
+                   style="@style/montserrat_semibold"
+                   android:layout_width="wrap_content"
+                   android:layout_height="@dimen/_25sdp"
+                   android:layout_alignParentRight="true"
+                   android:layout_centerVertical="true"
+                   android:layout_marginRight="@dimen/_5sdp"
+                   android:layout_marginBottom="@dimen/_4sdp"
+                   android:background="@drawable/theme_background_button_round_red"
+                   android:drawableLeft="@drawable/delete"
+                   android:paddingHorizontal="@dimen/_6sdp"
+                   android:paddingVertical="@dimen/_5sdp"
+                   android:text="  Delete"
+                   android:textColor="@color/white"
+                   android:textSize="14dp"
+                   android:textStyle="bold"
+                   android:visibility="@{data.status==1?View.VISIBLE:View.GONE}"
+                   tool:ignore="RtlHardcoded" />
+
+<!--               <androidx.appcompat.widget.AppCompatButton-->
+<!--                   android:id="@+id/deelte"-->
+<!--                   style="@style/montserrat_semibold"-->
+<!--                   android:layout_width="wrap_content"-->
+<!--                   android:layout_height="@dimen/_25sdp"-->
+<!--                   android:layout_alignParentRight="true"-->
+<!--                   android:layout_marginRight="@dimen/_5sdp"-->
+<!--                   android:background="@drawable/theme_background_button_round_red"-->
+<!--                   android:drawableLeft="@drawable/delete"-->
+<!--                   android:text="  Delete"-->
+<!--                   android:textColor="@color/white"-->
+<!--                   android:textSize="@dimen/_12sdp"-->
+<!--                   android:visibility="@{data.status==1?View.VISIBLE:View.GONE}"-->
+<!--                    />-->
+           </RelativeLayout>
+
+           <LinearLayout
+               android:id="@+id/view"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:gravity="center"
+               android:visibility="@{data.status==8||data.status==5||data.status==10?View.VISIBLE:View.GONE}"               >
+
+               <View
+                   android:layout_width="@dimen/_100sdp"
+                   android:layout_height="1dp"
+                   android:background="@color/grey"
+                   android:layout_gravity="center_vertical"
+                   />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="@dimen/_10sdp"
+                   android:layout_marginRight="@dimen/_10sdp"
+                   android:text="Rider"
+                   android:textSize="@dimen/_8sdp"
+                   android:gravity="center"/>
+
+               <View
+                   android:layout_width="@dimen/_100sdp"
+                   android:layout_height="1dp"
+                   android:background="@color/grey"
+                   android:layout_gravity="center_vertical" />
+           </LinearLayout>
+
+           <RelativeLayout
+               android:id="@+id/failed_TC"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:visibility="@{data.status==8||data.status==5||data.status==10?View.VISIBLE:View.GONE}"
+               android:layout_marginHorizontal="@dimen/_10sdp"
+               android:layout_marginVertical="@dimen/_2sdp"
+               >
+
+               <TextView
+                   android:id="@+id/txt_rider"
+                   style="@style/textStylePoppin"
+                   android:layout_width="150dp"
+                   android:layout_height="wrap_content"
+                   android:layout_marginRight="10dp"
+                   android:text="@{data.rider.rider.name.toString()}"
+                   android:textColor="@color/black"
+                   android:textSize="16dp"
+                   android:textStyle="bold" />
+
+               <TextView
+                   style="@style/textStylePoppin"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/txt_rider"
+                   android:layout_marginTop="@dimen/_5sdp"
+                   android:text="@{data.rider.riderId.toString()}"
+                   android:textColor="@color/grey"
+                   android:textSize="14dp" />
+
+               <TextView
+                   android:id="@+id/btn_track"
+                   style="@style/montserrat_semibold"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_centerVertical="true"
+                   android:layout_marginRight="45dp"
+                   android:layout_toLeftOf="@+id/img_rider_call"
+                   android:background="@drawable/theme_background_button_round"
+                   android:drawableLeft="@drawable/track"
+                   android:paddingHorizontal="@dimen/_7sdp"
+                   android:paddingVertical="@dimen/_5sdp"
+                   android:text="  Track"
+                   android:textColor="@color/white"
+                   android:textSize="14dp"
+                   android:textStyle="bold" />
+
+               <TextView
+                   android:id="@+id/btn_call"
+                   style="@style/montserrat_semibold"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentEnd="true"
+                   android:layout_centerVertical="true"
+                   android:background="@drawable/theme_background_button_round"
+                   android:drawableLeft="@drawable/callingss"
+                   android:paddingHorizontal="@dimen/_7sdp"
+                   android:paddingVertical="@dimen/_5sdp"
+                   android:text="  Call"
+                   android:textColor="@color/white"
+                   android:textSize="14dp"
+                   android:textStyle="bold" />
+
+               <ImageView
+                   android:layout_width="@dimen/_30sdp"
+                   android:layout_height="@dimen/_30sdp"
+                   android:layout_centerVertical="true"
+                   android:layout_marginRight="@dimen/_10sdp"
+                   android:layout_toLeftOf="@+id/img_rider_call"
+                   android:src="@drawable/location"
+                   android:visibility="gone"/>
+
+               <ImageView
+                   android:id="@+id/img_rider_call"
+                   android:layout_width="@dimen/_30sdp"
+                   android:layout_height="@dimen/_30sdp"
+                   android:layout_alignParentEnd="true"
+                   android:layout_centerVertical="true"
+                   android:src="@drawable/call"
+                   android:visibility="invisible" />
+
+
+           </RelativeLayout>
+       </LinearLayout>
+   </androidx.cardview.widget.CardView>
+
+
+
+
+</layout>

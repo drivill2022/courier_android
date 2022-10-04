@@ -365,7 +365,7 @@ public class ByDateFragment extends Fragment {
             mBinding.totalDrivillChargeTxt.setText(String.valueOf(statementModel.getDrivillServiceCharge()));
             mBinding.totalAvailPayTxt.setText(String.valueOf(statementModel.getTotalAvailableForPayout()));
 
-            MerchantStatementActivity.setAvailPay(String.valueOf(statementModel.getAvailablePayout()));
+            MerchantStatementActivity.setAvailPay(statementModel.getAvailablePayout().toString());
             MerchantStatementActivity.setCommission("Tk. " + statementModel.getDrivillsCommission());
 
         }

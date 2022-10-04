@@ -2,6 +2,7 @@ package com.drivill.courier.rest;
 
 
 import com.drivill.courier.merchantModul.model.PaymentDetailslist;
+import com.drivill.courier.model.model.SplashModelItem;
 import com.google.gson.JsonObject;
 import com.drivill.courier.merchantModul.model.BreakDownModel;
 import com.drivill.courier.merchantModul.model.DistrictModel;
@@ -167,6 +168,8 @@ public interface ApiManager {
             String token,
             String latitude,
             String longitude);
+
+    Call<ArrayList<SplashModelItem>> getSplashItem();
 
 
     Call<JsonObject> riderSendCurrentLocation(
@@ -362,7 +365,8 @@ public interface ApiManager {
 
     Call<EarnAndPayModel> merchantEarnAndPay(
             String token,
-            String pageNum
+            String pageNum, String dateFrom,String dateto
+
     );
 
     Call<JsonObject> withdrawRequest(

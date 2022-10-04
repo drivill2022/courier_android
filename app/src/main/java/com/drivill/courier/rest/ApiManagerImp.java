@@ -3,6 +3,7 @@ package com.drivill.courier.rest;
 import android.content.Context;
 
 import com.drivill.courier.merchantModul.model.PaymentDetailslist;
+import com.drivill.courier.model.model.SplashModelItem;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
@@ -70,7 +71,6 @@ public class ApiManagerImp implements ApiManager {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
         return retrofit.create(ApiServices.class);
-
     }
 
     @Override
@@ -375,8 +375,8 @@ public class ApiManagerImp implements ApiManager {
     }
 
     @Override
-    public Call<EarnAndPayModel> merchantEarnAndPay(String token, String pageNum) {
-        return mApiService.merchantEarnAndPay(token, pageNum);
+    public Call<EarnAndPayModel> merchantEarnAndPay(String token, String pageNum, String dateFrom,String dateto) {
+        return mApiService.merchantEarnAndPay(token, pageNum,dateFrom,dateto);
     }
 
     @Override
@@ -387,6 +387,11 @@ public class ApiManagerImp implements ApiManager {
     @Override
     public Call<ShipmentDetailModel> merchantShipmentsDetailById(String token, String shipId) {
         return mApiService.merchantShipmentsDetailById(token, shipId);
+    }
+
+    @Override
+    public Call<ArrayList<SplashModelItem>> getSplashItem() {
+        return mApiService.getSplashItems();
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.drivill.courier.rest;
 
 import com.drivill.courier.merchantModul.model.PaymentDetailslist;
-import com.google.gson.JsonArray;
+import com.drivill.courier.model.model.SplashModelItem;
 import com.google.gson.JsonObject;
 import com.drivill.courier.merchantModul.model.BreakDownModel;
 import com.drivill.courier.merchantModul.model.DistrictModel;
@@ -27,6 +27,8 @@ import com.drivill.courier.model.model.RiderPickupListModel;
 import com.drivill.courier.model.model.StatementModel;
 import com.drivill.courier.model.model.SupportModel;
 import com.drivill.courier.model.model.VehicleModel;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -59,13 +61,12 @@ import retrofit2.http.Query;
 
 public interface ApiServices {
 
-    ////////////////Post_method////////////////////////////////
+    //////////////////// Post_method////////////////////////////////
     @FormUrlEncoded
     @POST("rider/login")
     Call<LoginModel> riderLogin(@Field("mobile") String mobile,
                                 @Field("password") String password,
                                 @Field("device_token") String device_token);
-
 
     @Multipart
     @POST("rider/register")
@@ -519,7 +520,9 @@ public interface ApiServices {
     @GET("merchant/shipments/earn-pay?")
     Call<EarnAndPayModel> merchantEarnAndPay(
             @Header("Authorization") String token,
-            @Query("page") String pageNum
+            @Query("page") String pageNum,
+            @Query("date_from") String date_from,
+                    @Query("date_to") String date_to
     );
 
     @GET("merchant/shipments/withdraw-request")
@@ -532,6 +535,9 @@ public interface ApiServices {
             @Header("Authorization") String token,
             @Path("id") String shipId
     );
+
+    @GET("merchant/splash-list")
+    Call<ArrayList<SplashModelItem>> getSplashItems();
 
     @GET("merchant/shipments/payment-view-detail/{txn_id}")
     Call<PaymentDetailslist> PaymentDetails(@Header("Authorization") String token, @Path("txn_id") String shipId);

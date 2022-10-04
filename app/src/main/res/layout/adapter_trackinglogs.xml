@@ -12,13 +12,13 @@
 
         <TextView
             android:id="@+id/tv_date"
-            style="@style/textStyleMedium"
+            style="@style/monsterratSemiBold"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_5sdp"
             android:gravity="start"
             android:text=""
-            android:textSize="@dimen/hintText" />
+            android:textSize="12sp" />
 
 
         <LinearLayout
@@ -51,17 +51,17 @@
 
             <TextView
                 android:id="@+id/tv_status"
-                style="@style/textStyleBold"
+                style="@style/monsterratSemiBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
                 android:text=""
                 android:textColor="@color/black"
-                android:textSize="@dimen/nameText" />
+                android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/tv_note"
-                style="@style/textStyleRegular"
+                style="@style/montserrat_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"

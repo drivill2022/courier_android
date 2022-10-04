@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/_100sdp"
+        >
+
+
+        <ImageView
+            android:id="@+id/img_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_title"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/_70sdp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/super_app_logo" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/poppinSemibold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/onboard_desc"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="abc"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18sdp" />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_above="@id/layoutDots"
+                android:fontFamily="@font/poppins_medium"
+                android:id="@+id/onboard_desc"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="@dimen/_25sdp"
+                style="@style/montserrat_medium"
+                android:textColor="@color/greyish"
+                android:textSize="@dimen/_11sdp" />
+
+        <LinearLayout
+            android:id="@+id/layoutDots"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_40sdp"
+            android:gravity="center"
+            android:orientation="horizontal" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/backround_button_blue"
+            android:text="Get Started"
+            android:visibility="gone"
+            android:textAllCaps="false" />
+
+    </RelativeLayout>
+</layout>

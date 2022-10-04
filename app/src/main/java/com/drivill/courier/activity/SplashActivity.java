@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.drivill.courier.R;
 import com.drivill.courier.utils.MyUtil;
@@ -27,12 +28,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (mPos == 3) {
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            goNextActivity();
-                        }
-                    }, 1000);
+                    new Handler().postDelayed(() -> goNextActivity(), 1000);
 
                     endTransition("skip");
 
@@ -67,6 +63,9 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         MyUtil.getFullScreen(SplashActivity.this);
         setContentView(R.layout.activity_splash_init);
+
+        Toast.makeText(this,"This",Toast.LENGTH_SHORT).show();
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -129,7 +128,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     void goNextActivity() {
-        Intent intent = new Intent(SplashActivity.this, LetsStartActivity.class);
+        Intent intent = new Intent(SplashActivity.this, OnBoardingActivity.class);
         startActivity(intent);
         finish();
     }

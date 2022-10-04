@@ -52,6 +52,8 @@ public class DeliveryAdapter extends RecyclerView.Adapter<DeliveryAdapter.MyPick
 
         ShipmentModel detail = model.getShipments().get(position);
 
+        holder.txtRider.setText(model.getShipments().get(position).getRider().getRider().getName());
+
         if (detail.getStatus() == Integer.parseInt(Constant.RETURN) || detail.getStatus() == Integer.parseInt(Constant.CANCEL)) {
             holder.mapLLPick.setVisibility(View.VISIBLE);
             holder.changeLL.setVisibility(View.GONE);
@@ -134,7 +136,7 @@ public class DeliveryAdapter extends RecyclerView.Adapter<DeliveryAdapter.MyPick
 
     class MyPickupHolder extends RecyclerView.ViewHolder {
         LinearLayout changeLL, detailLL, mapLLPick;
-        TextView nameRV_PICKUP, addressRV_PICKUP, phoneRV_PICKUP,bussNameRV_PICKUP,tv_PkgID, tv_status;
+        TextView nameRV_PICKUP, addressRV_PICKUP, phoneRV_PICKUP,bussNameRV_PICKUP,tv_PkgID, tv_status, txtRider;
         ImageView call;
 
         public MyPickupHolder(@NonNull View itemView) {
@@ -149,6 +151,8 @@ public class DeliveryAdapter extends RecyclerView.Adapter<DeliveryAdapter.MyPick
             bussNameRV_PICKUP = itemView.findViewById(R.id.bussNameRV_PICKUP);
             tv_PkgID = itemView.findViewById(R.id.tv_PkgID);
             tv_status = itemView.findViewById(R.id.tv_status);
+            txtRider = itemView.findViewById(R.id.txt_rider);
+
         }
     }
 
@@ -166,10 +170,10 @@ public class DeliveryAdapter extends RecyclerView.Adapter<DeliveryAdapter.MyPick
     private void OpenOnMap(ShipmentModel detail){
         try {
             Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
-                    Uri.parse("geo:" + detail.getD_latitude()
-                            + "," + detail.getD_longitude()
-                            + "?q=" + detail.getD_latitude()
-                            + "," + detail.getD_longitude()
+                    Uri.parse("geo:" + detail.getdLatitude()
+                            + "," + detail.getdLongitude()
+                            + "?q=" + detail.getdLatitude()
+                            + "," + detail.getdLongitude()
                             + "(" + "Address" + ")"));
             intent.setComponent(new ComponentName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity"));
             mContext.startActivity(intent);

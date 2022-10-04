@@ -3,9 +3,11 @@ package com.drivill.courier.merchantModul.fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,15 +15,8 @@ import android.view.ViewGroup;
 import com.drivill.courier.R;
 import com.drivill.courier.databinding.FragmentTrackingBinding;
 import com.drivill.courier.merchantModul.adapter.Adapter_TrackingLogs;
-import com.drivill.courier.merchantModul.adapter.PayDetails_popupAdapter;
 import com.drivill.courier.merchantModul.model.TrackingModel;
-import com.drivill.courier.utils.AppUtil;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link TrackingFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class TrackingFragment extends Fragment {
     FragmentTrackingBinding mBinding;
 
@@ -42,7 +37,12 @@ public class TrackingFragment extends Fragment {
             mBinding.itemNameTxt.setText(model.getData().getMerchant().getName());
             mBinding.shopName.setText(model.getData().getdAddress());
             mBinding.priceItem.setText("Tk. " + model.getData().getCodAmount());
-
+            mBinding.backBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    requireActivity().onBackPressed();
+                }
+            });
             mBinding.RvTrackinglogs.setLayoutManager(new LinearLayoutManager(requireActivity()));
 
             if (model.getData().getStatusLogs() != null) {
@@ -104,8 +104,15 @@ public class TrackingFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_tracking, container, false);
         mBinding = FragmentTrackingBinding.bind(view);
         initUI();
+
+
         return view;
+
+
     }
+
+
+
 
   /*  void updateChart(int currentStatus, String date, String statusTxt) {
         Log.i("chart","data=> "+ currentStatus+" == "+date + " == "+statusTxt);
@@ -227,5 +234,30 @@ public class TrackingFragment extends Fragment {
         }
 
     }*/
+  public void switchFragment(Fragment fragment) {
+      FragmentManager fragmentManager =  (requireActivity()).getSupportFragmentManager();
+      FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+      fragmentTransaction.replace(R.id.Frame_data, fragment);
+      fragmentTransaction.addToBackStack(null);
+      fragmentTransaction.commit();
+  }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        this.getView().setFocusableInTouchMode(true);
+        this.getView().requestFocus();
+        this.getView().setOnKeyListener(new View.OnKeyListener() {
+
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_BACK) {
+                    return true;
+                }
+                return false;
+            }
+        });
+    }
+
 
 }

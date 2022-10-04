@@ -40,9 +40,11 @@ public class PayDetails_popupAdapter extends RecyclerView.Adapter<PayDetails_pop
     @Override
     public void onBindViewHolder(@NonNull @NotNull PayDetails_popupAdapter.MyViewHolder holder, int position) {
 
-        holder.shipID.setText(data.getData().get(position).getShipmentNo());
+        holder.shipID.setText(data.getData().get(position).getShipmentNo().replace("#",""));
         holder.cod.setText(data.getData().get(position).getCodAmount()+"");
         holder.cost.setText(data.getData().get(position).getShipmentCost()+"");
+        holder.shipName.setText(data.getData().get(position).getReceiver_name()+"");
+
 
         // COD - cost = available balance
 
@@ -62,15 +64,15 @@ public class PayDetails_popupAdapter extends RecyclerView.Adapter<PayDetails_pop
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView shipID,cod,cost,Avl_blnc;
+        public TextView shipID,cod,cost,Avl_blnc,shipName;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-
-            shipID =  itemView.findViewById(R.id.shipID);
-            cod =  itemView.findViewById(R.id.cod);
-            cost =  itemView.findViewById(R.id.cost);
-            Avl_blnc =  itemView.findViewById(R.id.Avl_blnc);
+            shipName =  itemView.findViewById(R.id.tv1);
+            shipID =  itemView.findViewById(R.id.tv8);
+            cod =  itemView.findViewById(R.id.tv2);
+            cost =  itemView.findViewById(R.id.tv3);
+            Avl_blnc =  itemView.findViewById(R.id.tv4);
 
         }
     }

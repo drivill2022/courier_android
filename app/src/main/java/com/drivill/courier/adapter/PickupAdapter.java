@@ -155,10 +155,10 @@ public class PickupAdapter extends RecyclerView.Adapter<PickupAdapter.MyPickupHo
     private void OpenOnMap(ShipmentModel detail){
         try {
             Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
-                    Uri.parse("geo:" + detail.getD_latitude()
-                            + "," + detail.getD_longitude()
-                            + "?q=" + detail.getD_latitude()
-                            + "," + detail.getD_longitude()
+                    Uri.parse("geo:" + detail.getdLatitude()
+                            + "," + detail.getdLongitude()
+                            + "?q=" + detail.getdLatitude()
+                            + "," + detail.getdLongitude()
                             + "(" + "Address" + ")"));
             intent.setComponent(new ComponentName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity"));
             mContext.startActivity(intent);

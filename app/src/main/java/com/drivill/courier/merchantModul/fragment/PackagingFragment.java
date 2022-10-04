@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -14,23 +15,30 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.drivill.courier.BaseActivity;
 import com.drivill.courier.R;
 import com.drivill.courier.activity.ItemDetailedView;
 import com.drivill.courier.bottomsheetFragment.BottomSheet;
+import com.drivill.courier.databinding.BottomSheetDialogBinding;
 import com.drivill.courier.databinding.FragmentPackagingBinding;
 import com.drivill.courier.merchantModul.activity.OneItemDetailActivity;
 import com.drivill.courier.merchantModul.activity.PackagingActivity;
+import com.drivill.courier.merchantModul.activity.SentActivity;
 import com.drivill.courier.merchantModul.bottom_dialog.BottomSheetPakaging;
 import com.drivill.courier.merchantModul.bottom_dialog.BottomSheet_Date;
 import com.drivill.courier.merchantModul.model.ShipmentCreateModel;
+import com.drivill.courier.merchantModul.model.ShipmentModel;
 import com.drivill.courier.merchantModul.model.WeightAndProductTypeModel;
 import com.drivill.courier.rest.ApiManagerImp;
 import com.drivill.courier.utils.AppUtil;
 import com.drivill.courier.utils.Constant;
 import com.drivill.courier.utils.MyUtil;
+import com.drivill.courier.utils.PrefsManager;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -41,6 +49,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
 import java.util.Objects;
 
@@ -57,6 +66,10 @@ import static com.drivill.courier.merchantModul.activity.PackagingActivity.mShip
  */
 public class PackagingFragment extends Fragment {
     FragmentPackagingBinding mBinding;
+    ArrayList<ShipmentModel> dataArr;
+    public PrefsManager mBasePreferenceManager;
+
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -110,12 +123,18 @@ public class PackagingFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_packaging, container, false);
         mBinding = FragmentPackagingBinding.bind(view);
         initUI();
+        mBasePreferenceManager = new PrefsManager(requireContext());
+
+
+
 
         ((PackagingActivity) requireActivity()).UpdatedHeadeerText("Frag");
 
         MyUtil.ChangeStatusBarColor(getActivity(),R.color.theme_color);
 
         getWeightListData();
+       // getAllShipDemmItem();
+
 
         return view;
     }
@@ -256,11 +275,41 @@ public class PackagingFragment extends Fragment {
                             DataManager.getINSTANCE().getCurrentItemListSize() + 1);*/
                    // Intent intent = new Intent(requireActivity(), OneItemDetailActivity.class);
 
-                    Intent intent = new Intent(requireActivity(), ItemDetailedView.class);
+                  /*  Intent intent = new Intent(requireActivity(), ItemDetailedView.class);
                     intent.putExtra("data", (Serializable) model);
                     intent.putExtra("from", Constant.CREATING_SHIP);
                     requireActivity().startActivity(intent);
-                    requireActivity().finish();
+                    requireActivity().finish();*/
+
+                    BottomSheetDialog bottomSheetDialog =new BottomSheetDialog(requireActivity(),R.style.SheetDialog);
+                   // BottomSheetDialogBinding dialogBinding= DataBindingUtil.setContentView(requireActivity(),R.layout.bottom_sheet_dialog);
+                    BottomSheetDialogBinding dialogBinding=BottomSheetDialogBinding.inflate(getLayoutInflater());
+                    bottomSheetDialog.setContentView(dialogBinding.getRoot());
+                    bottomSheetDialog.show();
+                    dialogBinding.food.setText(model.getData().getProductType());
+                    dialogBinding.weight.setText(model.getData().getProductWeight());
+                    dialogBinding.senderAddress.setText(model.getData().getReceiverName());
+                    dialogBinding.senderMobno.setText(model.getData().getdAddress()+"\n"+model.getData().getContactNo());
+
+                    dialogBinding.receiverAddress.setText(mBasePreferenceManager.get_businessName());
+                    dialogBinding.receiverMobno.setText(model.getData().getsAddress()+"\n"+mBasePreferenceManager.getMobileNum());
+
+
+
+                    dialogBinding.processPickup.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            getAllShipDemmItem();
+
+                        }
+                    });
+                    dialogBinding.addMorePickupBtn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent =new Intent(getActivity(),PackagingActivity.class);
+                            startActivity(intent);
+                        }
+                    });
                 } else {
                     try {
                         JSONObject O = new JSONObject(response.errorBody().string());
@@ -366,7 +415,92 @@ public class PackagingFragment extends Fragment {
 
         dpd.getDatePicker().setMinDate(c.getTimeInMillis());
         dpd.show();
-
-
     }
+
+
+    void sendToPickup() {
+       // ((PackagingActivity) requireActivity()).showLoading();
+        HashMap<String, String> map = new HashMap<>();
+
+        if (dataArr != null){
+            for (int i = 0; i <dataArr.size(); i++) {
+                if (dataArr.get(i).getStatus() != null && dataArr.get(i).getStatus() == 0) {
+                    String value = dataArr.get(i).getId().toString();
+                    map.put("id[" + i + "]", value);
+                }
+            }
+
+        } /*else{
+            String value = mModel.getId().toString();
+            map.put("id[" + 0 + "]", value);
+        }
+*/
+
+        Call<JsonObject> call = new ApiManagerImp().send_to_pickup(((PackagingActivity) requireActivity()).mBasePreferenceManager.getUserToken(), map);
+        call.enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                ((PackagingActivity) requireActivity()).hideLoading();
+                if (response.body() != null) {
+
+                    Intent intent = new Intent(requireContext(), SentActivity.class);
+                    startActivity(intent);
+                } else {
+                    try {
+                        JSONObject object = new JSONObject(response.errorBody().string());
+                        ((PackagingActivity) requireActivity()).onError(object.getString("error"));
+                    } catch (JSONException | IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+                ((PackagingActivity) requireActivity()).hideLoading();
+                Log.i("arp", "failure-sendToPickup= "+t);
+                ((PackagingActivity) requireActivity()).onError(getString(R.string.try_again));
+            }
+        });
+    }
+
+    void getAllShipDemmItem() {
+       // ((PackagingActivity) requireActivity()).showLoading();
+        Call<ArrayList<ShipmentModel>> call = new ApiManagerImp().getShipmentMerchant(((PackagingActivity) requireActivity()).mBasePreferenceManager.getUserToken(), Constant.CURRENT);
+        call.enqueue(new Callback<ArrayList<ShipmentModel>>() {
+            @Override
+            public void onResponse(Call<ArrayList<ShipmentModel>> call, Response<ArrayList<ShipmentModel>> response) {
+                ((PackagingActivity) requireActivity()).hideLoading();
+                if (response.body() != null) {
+                    //  Log.i("arp",new Gson().toJson(response.body()));
+                    dataArr = new ArrayList<>();
+                    for (int i = 0; i < response.body().size(); i++) {
+                        ShipmentModel model = response.body().get(i);
+                        if (model.getStatus() == 0) {
+                            dataArr.add(model);
+                            Log.i("arp", String.valueOf(model.getStatus()));
+                        }
+                    }
+                    sendToPickup();
+
+                } else {
+                    try {
+                        JSONObject object = new JSONObject(response.errorBody().string());
+                        ((PackagingActivity) requireActivity()).onError(object.get("error").toString());
+                    } catch (JSONException | IOException e) {
+                        Log.i("arp",e.toString());
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<ShipmentModel>> call, Throwable t) {
+                ((PackagingActivity) requireActivity()).hideLoading();
+                ((PackagingActivity) requireActivity()).onError(getString(R.string.try_again));
+                Log.i("arp",t.toString());
+            }
+        });
+    }
+
+
 }

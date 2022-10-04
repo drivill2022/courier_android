@@ -31,6 +31,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.drivill.courier.activity.LetsStartActivity;
+import com.drivill.courier.activity.StartNewActivity;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationServices;
@@ -209,7 +210,7 @@ abstract public class BaseActivity extends AppCompatActivity implements MvvmView
                 if (response.body() != null) {
                     FirebaseMessaging.getInstance().deleteToken();
                     mBasePreferenceManager.setIS_LOGIN(false);
-                    Intent intent = new Intent(getApplicationContext(), LetsStartActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), StartNewActivity.class);
                     startActivity(intent);
                     finishAffinity();
 
@@ -234,7 +235,7 @@ abstract public class BaseActivity extends AppCompatActivity implements MvvmView
                 if (response.body() != null) {
                     FirebaseMessaging.getInstance().deleteToken();
                     mBasePreferenceManager.setIS_LOGIN(false);
-                    Intent intent = new Intent(getApplicationContext(), LetsStartActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), StartNewActivity.class);
                     startActivity(intent);
                     finishAffinity();
 

@@ -5,13 +5,15 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 public class Constant {
-    // In house URL--
+    /*// In house URL--
     public static final String BASE_URL = "http://drivill.indianshoppingbasket.com/api/";
     public static final String IMG_BROWSER_URL = "http://drivill.indianshoppingbasket.com/public/storage/";
+*/
+    // Client URL ---
+    //public static final String BASE_URL = "http://drivill.com/api/";
+    public static final String BASE_URL = "http://3.7.199.148/api/";
 
-/*    // Client URL ---
-    public static final String BASE_URL = "http://drivill.com/api/";
-    public static final String IMG_BROWSER_URL = "http://drivill.com/public/storage/";*/
+    public static final String IMG_BROWSER_URL = "http://drivill.com/public/storage/";
 
     public static final String TOKEN_TYPE = "Bearer ";
 
@@ -99,11 +101,14 @@ public class Constant {
     /**
      * Data Fetching status code
      */
-    public static final String CURRENT = "current";
+    public static final String CURRENT =   "current";
     public static final String SCHEDULED = "scheduled";
-    public static final String SHIPPED = "shipped";
+    public static final String REQUESTED = "requested";
+    public static final String SHIPPED =   "shipped";
     public static final String DELIVERED = "delivered";
     public static final String CANCELLED = "cancelled";
+    public static final String TRANSITT = "transit";
+    public static final String ONGOING = "on-the-way";
 
     /**
      * event status code

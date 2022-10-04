@@ -47,6 +47,11 @@ public class TrackingActivity extends BaseActivity {
                 }
             }
         });
+        String getId = getIntent().getStringExtra("getId");
+
+        fetchTruckLocation(getId);
+
+        //if ()
     }
 
 

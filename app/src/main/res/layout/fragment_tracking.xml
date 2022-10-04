@@ -10,24 +10,63 @@
         android:focusable="true">-->
 
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="@dimen/_15sdp"
             android:orientation="vertical"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:layout_marginBottom="@dimen/_5sdp"
             android:background="@color/white"
             tools:context=".merchantModul.fragment.TrackingFragment">
+            <RelativeLayout
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white_light"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/backBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/forword_arrow" />
+
+                <TextView
+                    android:id="@+id/titleNotification"
+                    style="@style/textStyleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="@string/trucking"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/toolbarTitle" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_below="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_above="@id/ll_bottom"
+                android:paddingHorizontal="@dimen/_16sdp">
+
 
             <TextView
-                style="@style/textStyleMedium"
+                style="@style/monsterratSemiBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:text="@string/package_"
                 android:textColor="@color/black"
-                android:textSize="@dimen/nameText" />
+                android:textSize="13sp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -35,7 +74,7 @@
                 android:layout_marginTop="@dimen/_10sdp">
 
                 <TextView
-                    style="@style/textStyleRegular"
+                    style="@style/montserrat_medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -43,18 +82,18 @@
                     android:gravity="start"
                     android:text="@string/tracking_number"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/hintText" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/trackingNoTxt"
-                    style="@style/textStyleMedium"
+                    style="@style/monsterratSemiBold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:gravity="end"
                     android:text=""
-                    android:textSize="@dimen/hintText" />
+                    android:textSize="12sp" />
 
 
             </RelativeLayout>
@@ -65,7 +104,7 @@
                 android:layout_marginTop="@dimen/_10sdp">
 
                 <TextView
-                    style="@style/textStyleRegular"
+                    style="@style/montserrat_medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -73,18 +112,18 @@
                     android:gravity="start"
                     android:text="@string/order_creation"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/hintText" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/orderCreationTxt"
-                    style="@style/textStyleMedium"
+                    style="@style/monsterratSemiBold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:gravity="end"
                     android:text=""
-                    android:textSize="@dimen/hintText" />
+                    android:textSize="12sp" />
 
 
             </RelativeLayout>
@@ -92,7 +131,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="invisible">
+                android:layout_marginTop="@dimen/_10sdp"
+                android:visibility="gone">
 
                 <TextView
                     style="@style/textStyleRegular"
@@ -131,24 +171,24 @@
                     android:layout_height="@dimen/_60sdp"
                     android:layout_alignParentStart="true"
                     android:layout_marginEnd="@dimen/_5sdp"
-                    android:src="@drawable/dcicons"
-                    android:background="@drawable/backround_white_round" />
+                    android:background="@drawable/backround_white_round"
+                    android:src="@drawable/dcicons" />
 
                 <TextView
                     android:id="@+id/itemNameTxt"
-                    style="@style/textStyleMedium"
+                    style="@style/montserrat_medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_2sdp"
                     android:layout_toEndOf="@+id/itemImg"
                     android:text=""
                     android:textColor="@color/white"
-                    android:textSize="@dimen/nameText" />
+                    android:textSize="14sp" />
 
 
                 <TextView
                     android:id="@+id/shopName"
-                    style="@style/textStyleRegular"
+                    style="@style/montserrat_regular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/itemNameTxt"
@@ -157,11 +197,11 @@
                     android:drawablePadding="@dimen/_5sdp"
                     android:text=""
                     android:textColor="@color/white"
-                    android:textSize="@dimen/hintText" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/priceItem"
-                    style="@style/textStyleMedium"
+                    style="@style/montserrat_bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/shopName"
@@ -171,7 +211,7 @@
                     android:drawablePadding="@dimen/_5sdp"
                     android:text=""
                     android:textColor="@color/white"
-                    android:textSize="@dimen/nameText" />
+                    android:textSize="17sp" />
 
             </RelativeLayout>
 
@@ -183,6 +223,10 @@
                 android:layout_marginTop="@dimen/_3sdp">
 
             </androidx.recyclerview.widget.RecyclerView>
+            </LinearLayout>
+
+
+
 
             <!--<LinearLayout
                 android:layout_width="match_parent"
@@ -735,33 +779,39 @@
                             android:textSize="@dimen/nameText" />
 
                     </LinearLayout>
-                </LinearLayout>
+                </LinearLayout>-->
 
 
                 <LinearLayout
+                    android:id="@+id/ll_bottom"
                     android:layout_width="match_parent"
+                    android:layout_alignParentBottom="true"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_10sdp"
                     android:orientation="vertical">
 
                     <TextView
-                        style="@style/textStyleRegular"
+                        style="@style/montserrat_regular"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="Thanks for being with drivill"
                         android:textAllCaps="true"
-                        android:textSize="@dimen/nameText" />
+                        android:textSize="14sp" />
 
                     <TextView
-                        style="@style/textStyleRegular"
+                        style="@style/montserrat_medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="Your presence makes us happy"
-                        android:textSize="@dimen/hintText" />
+                        android:textSize="12sp" />
                 </LinearLayout>
-            </LinearLayout>-->
-        </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/Frame_data"/>
+        </RelativeLayout>
   <!-- </ScrollView>-->
 </layout>
