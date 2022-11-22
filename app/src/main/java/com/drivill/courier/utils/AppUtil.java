@@ -49,6 +49,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.drivill.courier.R;
 import com.drivill.courier.interfaces.YesNoInterface;
 
@@ -642,6 +643,13 @@ public class AppUtil {
     public static void setImg(Context context, String img, ImageView toImgView) {
         Glide.with(context)
                 .load(img)
+                .placeholder(R.drawable.splash_logo)
+                .into(toImgView);
+    }
+    public static void setImgCircle(Context context, String img, ImageView toImgView) {
+        Glide.with(context)
+                .load(img)
+                .apply(RequestOptions.circleCropTransform())
                 .placeholder(R.drawable.splash_logo)
                 .into(toImgView);
     }

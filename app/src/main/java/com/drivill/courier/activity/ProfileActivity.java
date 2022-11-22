@@ -434,6 +434,7 @@ public class ProfileActivity extends BaseActivity {
 
                         Log.d("res", String.valueOf(object));
                         showMessage(object.getString("message"));
+                        Log.e("csdcdsc",mBasePreferenceManager.getUserToken());
                         fetchMerchantProfile(mBasePreferenceManager.getUserToken());
                         // mBasePreferenceManager.setPaymentMethod(String.valueOf(mBinding.choosePaySpinner.getSelectedItemPosition() + 1));
 
@@ -545,6 +546,7 @@ public class ProfileActivity extends BaseActivity {
             public void onResponse(Call<MerchantProfileModel> call, Response<MerchantProfileModel> response) {
 
                 if (response.body() != null) {
+                    Log.e("dscdscs",response.toString());
                     MerchantProfileModel model = response.body();
                     mBasePreferenceManager.setMobileNum(model.getMobile());
                     mBasePreferenceManager.setLatitude(model.getLatitude());

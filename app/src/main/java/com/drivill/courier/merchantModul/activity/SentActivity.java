@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.view.View;
 
 import com.drivill.courier.R;
+import com.drivill.courier.activity.summary.SummaryActivity;
 import com.drivill.courier.databinding.ActivitySentBinding;
 import com.drivill.courier.utils.CircleAngleAnimation;
 
@@ -64,6 +65,10 @@ public class SentActivity extends AppCompatActivity {
             public void run() {
                 Animatable animatable = (Animatable) mBinding.animCheck.getDrawable();
                 animatable.start();
+                Intent intent = new Intent(SentActivity.this, SummaryActivity.class);
+                intent.putExtra("dataarray",getIntent().getSerializableExtra("data"));
+                startActivity(intent);
+                finishAffinity();
             }
         }, 1500);
     }

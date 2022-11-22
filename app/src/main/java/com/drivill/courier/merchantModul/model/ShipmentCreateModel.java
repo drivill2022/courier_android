@@ -100,10 +100,10 @@ public class ShipmentCreateModel implements Serializable {
         @Expose
         private Integer id;
 
-
         @SerializedName("s_latitude")
         @Expose
         private String s_latitude;
+
         @SerializedName("s_longitude")
         @Expose
         private String s_longitude;
@@ -866,6 +866,52 @@ public class ShipmentCreateModel implements Serializable {
 
         public boolean isValidData2(Context context) {
             if (getReceiverName() == null || getReceiverName().isEmpty()) {
+                ((BaseActivity) context).showMessage(context.getString(R.string.pls_enter_riciv_name));
+                return false;
+            } else if (getContactNo() == null || !AppUtil.isValidPhone(getContactNo())) {
+                if (getContactNo().isEmpty()) {
+                    ((BaseActivity) context).showMessage(context.getString(R.string.pls_enter_riciv_contect));
+                } else
+                    ((BaseActivity) context).showMessage(context.getString(R.string.mobile_num_is_invalid));
+
+                return false;
+            } else if (getProductType() == null || getProductType().isEmpty()) {
+                ((BaseActivity) context).showMessage(context.getString(R.string.select_product));
+                return false;
+            } else if (getProductWeight() == null || getProductWeight().isEmpty()) {
+                ((BaseActivity) context).showMessage(context.getString(R.string.select_productW));
+                return false;
+            } /*else if (getProductDetail() == null || getProductDetail().isEmpty()) {
+                ((BaseActivity) context).showMessage(context.getString(R.string.enter_product));
+                return false;
+            }*/
+            else if (getPickupDate() == null || getPickupDate().equals("")) {
+                ((BaseActivity) context).showMessage(context.getString(R.string.pls_select_date));
+                return false;
+            } else return true;
+
+        }
+
+
+        public boolean isValidData3(Context context) {
+
+            if (getdDivision() == null || getdDivision().isEmpty()) {
+                ((BaseActivity) context).showMessage(context.getString(R.string.pls_select_dvision));
+                return false;
+            } else if ( getdDistrict() == null || getdDistrict().isEmpty()) {
+                ((BaseActivity) context).showMessage(context.getString(R.string.pls_select_dist));
+                return false;
+            } else if (getdThana() == null || getdThana().isEmpty()) {
+                ((BaseActivity) context).showMessage(context.getString(R.string.pls_select_thana));
+                return false;
+            }/* else if (getPickupDate() == null || getPickupDate().equals("")) {
+                ((BaseActivity) context).showMessage(context.getString(R.string.pls_select_date));
+                return false;
+            }*/ else if (getdAddress() == null || getdAddress().isEmpty()) {
+                ((BaseActivity) context).showMessage(context.getString(R.string.enter_address));
+                return false;
+            }
+           else if (getReceiverName() == null || getReceiverName().isEmpty()) {
                 ((BaseActivity) context).showMessage(context.getString(R.string.pls_enter_riciv_name));
                 return false;
             } else if (getContactNo() == null || !AppUtil.isValidPhone(getContactNo())) {

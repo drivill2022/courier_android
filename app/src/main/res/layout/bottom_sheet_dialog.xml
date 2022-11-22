@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="data"
+            type="com.drivill.courier.merchantModul.model.ShipmentCreateModel" />
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/backround_top_corner_40dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/backround_top_corner_40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/backround_gray"
+                android:backgroundTint="@color/grey" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
+                app:cardCornerRadius="@dimen/_10sdp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f1efee"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="@dimen/_10sdp"
+                            android:padding="@dimen/_5sdp">
+
+                            <ImageView
+                                android:id="@+id/itemImg"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:background="@drawable/backround_white_round"
+                                android:backgroundTint="@color/light_blue"
+                                android:padding="@dimen/_5sdp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/icon_package" />
+
+
+                            <TextView
+                                android:id="@+id/package_name"
+                                style="@style/popinMedium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_2sdp"
+                                android:layout_toRightOf="@id/itemImg"
+                                android:text="Package"
+                                android:textColor="@color/black"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:id="@+id/food"
+                                style="@style/poppinRegular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/package_name"
+                                android:layout_toEndOf="@+id/itemImg"
+                                android:text="Food item,take with freezing"
+                                android:textColor="@color/grey"
+                                android:textSize="13dp" />
+
+                            <TextView
+                                android:id="@+id/weight"
+                                style="@style/popinMedium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/food"
+                                android:layout_toEndOf="@+id/itemImg"
+                                android:text="0.01kg-0.5kg"
+                                android:textColor="@color/black"
+                                android:textSize="15dp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_below="@+id/weight"
+                                android:layout_marginTop="5dp"
+                                android:background="@color/grey" />
+
+
+
+
+                            <TextView
+                                android:id="@+id/prod_desc"
+                                style="@style/textStyleRegular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/package_name"
+                                android:layout_marginHorizontal="@dimen/_2sdp"
+                                android:layout_toEndOf="@+id/itemImg"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/hintText" />
+
+                            <TextView
+                                android:id="@+id/Item_weight"
+                                style="@style/textStyleMedium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/prod_desc"
+                                android:layout_marginHorizontal="@dimen/_2sdp"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:layout_toEndOf="@+id/itemImg"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/nameText" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/textStyleMedium"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text=""
+                            android:textSize="@dimen/hintText"
+                            android:visibility="invisible" />
+
+                        <LinearLayout
+                            android:layout_width="12dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/confirmImg"
+                                android:layout_width="@dimen/_10sdp"
+                                android:layout_height="@dimen/_10sdp"
+                                android:background="@drawable/blue_dot"
+                                android:gravity="center" />
+
+                            <View
+                                android:id="@+id/confirmView"
+                                android:layout_width="3dp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/line" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_5sdp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/poppinRegular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:text="@string/receiver_info"
+                                android:textColor="@color/gary"
+                                android:textSize="13dp" />
+
+                            <TextView
+                                android:id="@+id/sender_address"
+                                style="@style/popinMedium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:text="AVS Digital"
+                                android:textColor="@color/black"
+                                android:textSize="16dp" />
+
+                            <TextView
+                                android:id="@+id/sender_mobno"
+                                style="@style/poppinRegular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:text="Block # SE(D),Gulshan-1,Dhaka\n +123 456789"
+                                android:textColor="@color/grey"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/textStyleMedium"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text=""
+                            android:textSize="@dimen/hintText"
+                            android:visibility="invisible" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/_10sdp"
+                                android:layout_height="@dimen/_10sdp"
+                                android:background="@drawable/black_dot"
+                                android:gravity="center" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_5sdp"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="@dimen/_20sdp">
+
+                            <TextView
+                                style="@style/poppinRegular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:text="@string/sender_info"
+                                android:textColor="@color/gary"
+                                android:textSize="13dp" />
+
+                            <TextView
+                                android:id="@+id/receiver_address"
+                                style="@style/popinMedium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:text="AVS Digital"
+                                android:textColor="@color/black"
+                                android:textSize="16dp" />
+
+                            <TextView
+                                android:id="@+id/receiver_mobno"
+                                style="@style/poppinRegular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:text="Block # SE(D),Gulshan-1,Dhaka\n +123 456789"
+                                android:textColor="@color/grey"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/textStyleMedium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/shipment_id"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/toolbarTitle" />
+
+                        <TextView
+                            android:id="@+id/TV_shipment_ID"
+                            style="@style/textStyleBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:text="@string/shipment_id"
+                            android:textColor="@color/theme_color"
+                            android:textSize="@dimen/headingText1" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+    <LinearLayout
+        android:id="@+id/LL_tandc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_above="@+id/bottomLL"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:gravity="center_vertical|center">
+
+        <CheckBox
+            android:id="@+id/checkbox_T_and_C"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:clickable="false"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_1sdp"
+            android:text="I'm agree with Drivill's terms and conditions"
+            android:textSize="@dimen/nameText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:gravity="center_vertical|center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/addMorePickupBtn"
+            style="@style/popinMedium"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/backround_theme_border"
+            android:gravity="center"
+            android:text="@string/add_more_pickup"
+            android:textColor="@color/blue3"
+            android:visibility="visible"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/oky_btn"
+            style="@style/textStyleMedium"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/theme_background_button"
+            android:gravity="center"
+            android:text="@string/okay"
+            android:textColor="@color/white"
+            android:textSize="@dimen/buttonTextSmall"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/processPickup"
+            style="@style/popinMedium"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/theme_background_button"
+            android:gravity="center"
+            android:text="@string/send_request"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/cancel_btn"
+            style="@style/textStyleMedium"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/backround_red_border"
+            android:gravity="center"
+            android:text="@string/cancel_delivery"
+            android:textColor="@color/red"
+            android:textSize="@dimen/buttonTextSmall"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</LinearLayout>
+</layout>
+

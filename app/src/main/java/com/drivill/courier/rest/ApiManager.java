@@ -2,6 +2,9 @@ package com.drivill.courier.rest;
 
 
 import com.drivill.courier.merchantModul.model.PaymentDetailslist;
+import com.drivill.courier.model.model.DeleteModel;
+import com.drivill.courier.model.model.ShipmentDetailsModel;
+import com.drivill.courier.model.model.SplashModelItem;
 import com.google.gson.JsonObject;
 import com.drivill.courier.merchantModul.model.BreakDownModel;
 import com.drivill.courier.merchantModul.model.DistrictModel;
@@ -168,6 +171,8 @@ public interface ApiManager {
             String latitude,
             String longitude);
 
+    Call<ArrayList<SplashModelItem>> getSplashItem();
+
 
     Call<JsonObject> riderSendCurrentLocation(
             String token,
@@ -291,6 +296,21 @@ public interface ApiManager {
             String pickup_date
     );
 
+
+    Call<ShipmentCreateModel> updateShipment(String token,
+                                             String id,
+                                             String receiver_name,
+                                             String contact_no,
+                                             String product_type,
+                                             String product_weight,
+                                             String note,
+                                             String d_thana,
+                                             String d_district,
+                                             String d_division,
+                                             String d_address,
+                                             String cod_amount,
+                                             String pickup_date);
+
     Call<ShipmentCreateModel> shipmentCancel(
             String token,
             String id,
@@ -338,6 +358,11 @@ public interface ApiManager {
 
     Call<ArrayList<DistrictModel>> getDistrictMerchant(String divId);
 
+
+    Call<DeleteModel> deleteShipment(String token, String divId);
+
+    Call<ShipmentDetailsModel> getShipmentDetail(String token, String divId);
+
     Call<ArrayList<ThanaModel>> getThanaMerchant(String disId);
 
     Call<ArrayList<ShipmentModel>> getShipmentMerchant(
@@ -362,7 +387,8 @@ public interface ApiManager {
 
     Call<EarnAndPayModel> merchantEarnAndPay(
             String token,
-            String pageNum
+            String pageNum, String dateFrom,String dateto
+
     );
 
     Call<JsonObject> withdrawRequest(

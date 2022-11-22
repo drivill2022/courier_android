@@ -115,11 +115,11 @@ public class OneItemDetailActivity extends BaseActivity implements BottomSheetCa
             try {
                 mBinding.addressDivTxt.setText(mModelEdit.getSthana().getName().concat(",")
                         .concat(mModelEdit.getSdistrict().getName().concat(",").concat(mModelEdit.getSdivision().getName())));
-                mBinding.addressDivTxtDeleivery.setText(mModelEdit.getDthana().getName().concat(",")
-                        .concat(mModelEdit.getDdistrict().getName().concat(",").concat(mModelEdit.getDdivision().getName())));
-
-                mBinding.productDetailTxt.setText(mModelEdit.getProductDetail());
-                mBinding.productNoteTxt.setText(mModelEdit.getNote());
+                /*mBinding.addressDivTxtDeleivery.setText(mModelEdit.getDthana().getName().concat(",")
+                        .concat(mModelEdit.getDdistrict().getName().concat(",").concat(mModelEdit.getDdivision().FgetName())));
+*/
+                mBinding.productDetailTxt.setText(mModelEdit.getProductDetail().toString());
+                mBinding.productNoteTxt.setText(mModelEdit.getNote().toString());
                 mBinding.toolbarTitleTxt.setText(mModelEdit.getShipmentNo());
                 mBinding.shipmentTxt.setText(mModelEdit.getShipmentNo());
                 mBinding.recieverNameTxt.setText(mModelEdit.getReceiverName());
@@ -134,7 +134,7 @@ public class OneItemDetailActivity extends BaseActivity implements BottomSheetCa
                 mBinding.productTypeTxt.setText(mModelEdit.getProductType());
 
                 if (mModelEdit.getShipmentType() != null)
-                    if (mModelEdit.getShipmentType() == 1) {
+                    if (Integer.parseInt(String.valueOf(mModelEdit.getShipmentType())) == 1) {
                         mBinding.shipingTypeTxt.setText(getString(R.string.stndr_delivery));
                     } else {
                         mBinding.shipingTypeTxt.setText(getString(R.string.express_delivery));

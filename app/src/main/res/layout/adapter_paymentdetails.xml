@@ -2,7 +2,92 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/rectangle_border"
+        android:weightSum="1">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:orientation="vertical">
 
+            <TextView android:id="@+id/tv1"
+                style="@style/popinMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/blackbold"
+                android:text="Shawan"
+                android:inputType="text"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textSize="13dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/tv8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:text="DR1234"
+                android:textColor="@color/grey"
+                android:textAlignment="center"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/line"/>
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:textColor="@color/blackbold"
+            android:background="@color/white_light"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="864.00"
+            android:inputType="number"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="13dp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/line"/>
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:inputType="number"
+            android:text="130.00"
+            android:textColor="@color/blackbold"
+            android:textSize="13dp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/line"/>
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:textColor="@color/blackbold"
+            android:background="@color/white_light"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="280.00"
+            android:inputType="number"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+<!--
     <LinearLayout
         android:id="@+id/LL_parent"
         android:layout_width="match_parent"
@@ -91,4 +176,5 @@
 
 
     </LinearLayout>
+-->
 </RelativeLayout>

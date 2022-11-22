@@ -15,10 +15,9 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
 import com.drivill.courier.R;
 import com.drivill.courier.activity.DashboardActivity;
 import com.drivill.courier.adapter.MyPagerAdapter;
@@ -30,6 +29,8 @@ import com.drivill.courier.model.model.RiderPickupListModel;
 import com.drivill.courier.utils.Constant;
 import com.drivill.courier.utils.DataManager;
 import com.drivill.courier.utils.PrefsManager;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.gson.Gson;
 
 /**
@@ -42,7 +43,7 @@ public class HomeFragment extends Fragment {
     MyPagerAdapter myPagerAdapter;
     PrefsManager manager;
     TabLayout mTabLayout;
-    ViewPager2 mPager;
+    ViewPager mPager;
     LinearLayoutManager mLayoutManager;
     public RiderDashboardViewModel viewModel;
 
@@ -66,21 +67,26 @@ public class HomeFragment extends Fragment {
         //  mTabLayout.addTab(mTabLayout.newTab().setText("Delivery"));
 
 
-        myPagerAdapter = new MyPagerAdapter(this, 2);
+        myPagerAdapter = new MyPagerAdapter(getParentFragmentManager());
         mPager.setAdapter(myPagerAdapter);
-        new TabLayoutMediator(mTabLayout, mPager, ((tab, position) -> {
+        mTabLayout.setupWithViewPager(mPager);
+/*        new TabLayoutMediator(mTabLayout, mPager, ((tab, position) -> {
             tab.setCustomView(R.layout.tab_item_layout);
             TextView textView = tab.getCustomView().findViewById(R.id.textTab);
 
             if (position == 0) {
                 textView.setText(getString(R.string.pickup));
                 textView.setTextColor(getResources().getColor(R.color.theme_color));
-            } else {
+            }
+            else if (position == 1) {
                 textView.setText(getString(R.string.delivery));
+            }
+            else {
+                textView.setText(getString(R.string.returntxt));
             }
             tab.setText(textView.getText());
 
-        })).attach();
+        })).attach();*/
 
 
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -163,6 +169,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         mHomeBinding = DataBindingUtil.bind(view);
+
         initUI(view);
         ((DashboardActivity) requireActivity()).passVal(new FragmentCommunicator() {
             @Override

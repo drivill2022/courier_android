@@ -10,18 +10,20 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#EFEFEF">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_26sdp">
 
             <LinearLayout
                 android:id="@+id/drawerProfileLL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                android:layout_margin="@dimen/_3sdp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="@dimen/_5sdp">
@@ -30,24 +32,24 @@
                     android:layout_width="@dimen/_25sdp"
                     android:layout_height="@dimen/_25sdp"
                     android:padding="@dimen/_5sdp"
-                    android:src="@drawable/user_icon" />
+                    android:src="@drawable/profileac" />
 
                 <TextView
-                    style="@style/textStyleMedium"
+                    style="@style/textStylePoppinMedium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:text="@string/profile"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/nameText" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/shippingHistory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
                 android:gravity="center_vertical"
+                android:layout_margin="@dimen/_3sdp"
                 android:orientation="horizontal"
                 android:padding="@dimen/_5sdp">
 
@@ -55,20 +57,21 @@
                     android:layout_width="@dimen/_25sdp"
                     android:layout_height="@dimen/_25sdp"
                     android:padding="@dimen/_5sdp"
-                    android:src="@drawable/customer_detail_icon"
+                    android:src="@drawable/document"
                     app:tint="@color/black" />
 
                 <TextView
-                    style="@style/textStyleMedium"
+                    style="@style/textStylePoppinMedium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:text="@string/shipping_history"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/nameText" />
+
+                    />
             </LinearLayout>
 
-            <LinearLayout
+            <!--<LinearLayout
                 android:id="@+id/shippingPkg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -91,13 +94,13 @@
                     android:text="@string/ship_package"
                     android:textColor="@color/black"
                     android:textSize="@dimen/nameText" />
-            </LinearLayout>
+            </LinearLayout>-->
 
             <LinearLayout
                 android:id="@+id/ernPayLL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                android:layout_margin="@dimen/_3sdp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="@dimen/_5sdp">
@@ -106,18 +109,26 @@
                     android:layout_width="@dimen/_25sdp"
                     android:layout_height="@dimen/_25sdp"
                     android:padding="@dimen/_5sdp"
-                    android:src="@drawable/i_states"
+                    android:src="@drawable/chart"
                     app:tint="@color/black" />
 
                 <TextView
-                    style="@style/textStyleMedium"
+                    style="@style/textStylePoppinMedium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_15sdp"
-                    android:text="@string/earn_pay"
+                    android:text="Earnings"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/nameText" />
+
+                    />
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gary"
+                android:layout_margin="@dimen/_3sdp"
+                />
 
             <LinearLayout
                 android:id="@+id/getQuote"
@@ -145,11 +156,21 @@
                     android:textSize="@dimen/nameText" />
             </LinearLayout>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/switch_to"
+                android:layout_marginLeft="@dimen/_15sdp"
+                style="@style/textStylePoppin"
+                android:textColor="#777A7D"
+                android:textSize="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"/>
+
             <LinearLayout
                 android:id="@+id/trukingLL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                android:layout_margin="@dimen/_3sdp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="@dimen/_5sdp">
@@ -158,17 +179,23 @@
                     android:layout_width="@dimen/_25sdp"
                     android:layout_height="@dimen/_25sdp"
                     android:padding="@dimen/_5sdp"
-                    android:src="@drawable/i_tracking" />
+                    android:src="@drawable/customer" />
 
                 <TextView
-                    style="@style/textStyleMedium"
+                    style="@style/textStylePoppinMedium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_15sdp"
-                    android:text="@string/trucking"
+                    android:text="@string/customer"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/nameText" />
+                    />
             </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gary"
+                android:layout_margin="@dimen/_3sdp"
+                />
 
             <LinearLayout
                 android:id="@+id/offerLL"
@@ -201,7 +228,7 @@
                 android:id="@+id/drawerSetting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                android:layout_margin="@dimen/_3sdp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="@dimen/_5sdp">
@@ -210,24 +237,25 @@
                     android:layout_width="@dimen/_25sdp"
                     android:layout_height="@dimen/_25sdp"
                     android:padding="@dimen/_5sdp"
-                    android:src="@drawable/settings_icon" />
+                    android:src="@drawable/setting" />
 
                 <TextView
-                    style="@style/textStyleMedium"
+                    style="@style/textStylePoppinMedium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:gravity="start"
                     android:text="@string/settings"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/nameText" />
+
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/drawerSupportLL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                android:layout_margin="@dimen/_3sdp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="@dimen/_5sdp">
@@ -236,23 +264,24 @@
                     android:layout_width="@dimen/_25sdp"
                     android:layout_height="@dimen/_25sdp"
                     android:padding="@dimen/_5sdp"
-                    android:src="@drawable/help_icon_gray" />
+                    android:src="@drawable/support" />
 
                 <TextView
-                    style="@style/textStyleMedium"
+                    style="@style/textStylePoppinMedium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:text="@string/supports"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/nameText" />
+
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/drawerLogout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                android:layout_margin="@dimen/_3sdp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="@dimen/_5sdp">
@@ -261,16 +290,16 @@
                     android:layout_width="@dimen/_25sdp"
                     android:layout_height="@dimen/_25sdp"
                     android:padding="@dimen/_5sdp"
-                    android:src="@drawable/logout_icon" />
+                    android:src="@drawable/logout" />
 
                 <TextView
-                    style="@style/textStyleMedium"
+                    style="@style/textStylePoppinMedium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:text="@string/logout"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/nameText" />
+                    />
             </LinearLayout>
 
 

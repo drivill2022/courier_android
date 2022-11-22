@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.drivill.courier.R;
 import com.drivill.courier.activity.StatementActivity;
@@ -62,6 +63,7 @@ public class TodayStatementFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_today_statement, container, false);
         mBinding = FragmentTodayStatementBinding.bind(view);
         initUI();
+//        Toast.makeText(getActivity(), "fdgdgg", Toast.LENGTH_SHORT).show();
         return view;
     }
 
@@ -70,10 +72,8 @@ public class TodayStatementFragment extends Fragment {
         super.onResume();
         if (mViewModel != null) {
             if (manager.getIsRider())
-                mViewModel.getRiderStatementApi(manager, "today",
-                        "", "");
-            else mViewModel.getMerchantBreakdown(manager, "today",
-                    "", "");
+                mViewModel.getRiderStatementApi(manager, "today", "", "");
+            else mViewModel.getMerchantBreakdown(manager, "today", "", "");
         }
     }
 
@@ -96,7 +96,7 @@ public class TodayStatementFragment extends Fragment {
     private Observer<BreakDownModel> success_observerMerchant = new Observer<BreakDownModel>() {
         @Override
         public void onChanged(BreakDownModel statementModel) {
-            Log.d("res", String.valueOf(statementModel));
+            Log.d("res", String.valueOf(statementModel.getPending()));
             mBinding.packagesTxt.setText(String.valueOf(statementModel.getShipped()));
             mBinding.packagedeliveryTxt.setText(String.valueOf(statementModel.getDelivered()));
             mBinding.packagesReturnTxt.setText(String.valueOf(statementModel.getCancelled()));
@@ -107,7 +107,7 @@ public class TodayStatementFragment extends Fragment {
             mBinding.totalDrivillChargeTxt.setText(String.valueOf(statementModel.getDrivillServiceCharge()));
             mBinding.totalAvailPayTxt.setText(String.valueOf(statementModel.getTotalAvailableForPayout()));
 
-            MerchantStatementActivity.setAvailPay(String.valueOf(statementModel.getAvailablePayout()));
+            MerchantStatementActivity.setAvailPay(statementModel.getAvailablePayout().toString());
             MerchantStatementActivity.setCommission("Tk. " + statementModel.getDrivillsCommission());
 
         }

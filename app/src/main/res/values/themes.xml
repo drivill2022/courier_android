@@ -85,11 +85,142 @@
         <item name="android:textSize">@dimen/largeText</item>
     </style>
 
+    <style name="helveticaneuebold" parent="Widget.AppCompat.TextView">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">#484848</item>
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">28dp</item>
+    </style>
+
     <style name="textStyleMedium" parent="Widget.AppCompat.TextView">
         <!-- Customize your theme here. -->
         <item name="android:textColor">@color/black</item>
         <!-- Defining that new color in ColorPrimaryDark -->
         <item name="android:fontFamily">@font/montserrat_medium</item>
+    </style>
+
+    <style name="montserrat_semibold" parent="Widget.AppCompat.TextView">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">#242134</item>
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="montserrat_medium" parent="Widget.AppCompat.TextView">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">#484848</item>
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">13dp</item>
+    </style>
+
+    <style name="poppinSemibold" parent="Widget.AppCompat.TextView">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18dp</item>
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+    </style>
+    <style name="SheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <!--<item name="android:windowCloseOnTouchOutside">false</item>-->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackground">     @android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.3</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="poppinRegular" parent="Widget.AppCompat.TextView">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/grey</item>
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+
+    <style name="popinMedium" parent="Widget.AppCompat.TextView">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">14dp</item>
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="monsterratSemiBold" parent="Widget.AppCompat.TextView">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">#242134</item>
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="montserrat_semiboldsmall" parent="Widget.AppCompat.TextView">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">#494747</item>
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="montserrat_regular" parent="Widget.AppCompat.TextView">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">#484848</item>
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="montserrat_bold" parent="Widget.AppCompat.TextView">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">#494747</item>
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="textStylePoppin" parent="Widget.AppCompat.TextView">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/black</item>
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">@dimen/_16sdp</item>
+    </style>
+
+    <style name="textStylePoppinMedium" parent="Widget.AppCompat.TextView">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/black</item>
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="textStylePoppinSemiBold" parent="Widget.AppCompat.TextView">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/black</item>
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="textStylePoppinRegular" parent="Widget.AppCompat.TextView">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/black</item>
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="textStylePopin" parent="Widget.AppCompat.TextView">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/white</item>
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">@dimen/_16sdp</item>
     </style>
 
     <style name="textStyleRegular" parent="Widget.AppCompat.TextView">
@@ -134,6 +265,11 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">false</item>
         <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="ThemeOverlay.Drivil.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
+        <item name="fullscreenTextColor">@color/light_blue_A200</item>
     </style>
 
 </resources>

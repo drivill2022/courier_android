@@ -16,7 +16,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/white_light"
+            android:background="#DDF4F3F3"
             android:orientation="horizontal">
 
             <ImageView
@@ -25,21 +25,22 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:layout_margin="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
                 android:padding="@dimen/_5sdp"
                 android:src="@drawable/forword_arrow" />
 
             <TextView
                 android:id="@+id/titleTxt"
-                style="@style/textStyleMedium"
+                style="@style/montserrat_semibold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
+                android:layout_centerInParent="true"
                 android:gravity="center"
                 android:text="@string/earn_pay"
-                android:textColor="@color/black"
-                android:textSize="@dimen/toolbarTitle" />
+                android:textColor="@color/black" />
         </RelativeLayout>
 
         <androidx.cardview.widget.CardView
@@ -52,42 +53,84 @@
             android:layout_marginEnd="@dimen/_10sdp"
             app:cardCornerRadius="@dimen/_5sdp">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_horizontal"
-                android:orientation="vertical"
                 android:background="@color/white">
 
-                <TextView
-                    android:id="@+id/dateTxt"
-                    style="@style/textStyleMedium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/nameText"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/totalCashOutTxt"
-                    style="@style/textStyleBold"
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:id="@+id/LL_header"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_5sdp"
-                    android:text="TK."
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/headingText"
-                    android:textStyle="bold" />
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/compTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Available CoD for Cashout"
-                    android:textColor="@color/gary"
-                    android:textSize="@dimen/hintText" />
+                    <ImageView
+                        android:id="@+id/backarrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_25sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/arrowleft" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/dateTxt"
+                            style="@style/montserrat_semiboldsmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/totalCashOutTxt"
+                            style="@style/textStyleBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/dateTxt"
+                            android:layout_marginVertical="@dimen/_5sdp"
+                            android:text="TK."
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/compTxt"
+                            style="@style/montserrat_regular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Available CoD for Cashout" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/rightarrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="@dimen/_25sdp"
+                        android:layout_marginRight="@dimen/_40sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:rotation="180"
+                        android:src="@drawable/arrowleft" />
+
+                </RelativeLayout>
+
 
 
                 <LinearLayout
@@ -97,7 +140,7 @@
                     android:layout_marginHorizontal="@dimen/_10sdp"
                     android:layout_marginVertical="@dimen/_20sdp"
                     android:orientation="horizontal"
-                    app:layout_constraintTop_toBottomOf="@+id/compTxt">
+                    android:layout_below="@+id/LL_header">
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -108,30 +151,26 @@
 
                         <TextView
                             android:id="@+id/completedTxt"
-                            style="@style/textStyleMedium"
+                            style="@style/montserrat_bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="0/0"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/nameText"
-                            android:textStyle="bold" />
+                            />
 
                         <TextView
-                            style="@style/textStyleRegular"
+                            style="@style/montserrat_regular"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/completed"
+                            android:text="@string/delivered"
                             android:textAllCaps="true"
-                            android:textColor="@color/hint_color"
-                            android:textSize="@dimen/nameText"
-                            android:textStyle="bold" />
+                             />
                     </LinearLayout>
 
                     <View
                         android:layout_width="1sp"
                         android:layout_height="match_parent"
-                        android:layout_marginVertical="@dimen/_5sdp"
-                        android:background="@color/gary" />
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:background="#DFD8C8" />
 
 
                     <LinearLayout
@@ -143,30 +182,24 @@
 
                         <TextView
                             android:id="@+id/pendingTxt"
-                            style="@style/textStyleMedium"
+                            style="@style/montserrat_bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0/0"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/nameText"
-                            android:textStyle="bold" />
+                            android:text="0/0" />
 
                         <TextView
-                            style="@style/textStyleRegular"
+                            style="@style/montserrat_regular"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/pending"
-                            android:textAllCaps="true"
-                            android:textColor="@color/hint_color"
-                            android:textSize="@dimen/nameText"
-                            android:textStyle="bold" />
+                            android:textAllCaps="true" />
                     </LinearLayout>
 
                     <View
                         android:layout_width="1sp"
                         android:layout_height="match_parent"
-                        android:layout_marginVertical="@dimen/_5sdp"
-                        android:background="@color/gary" />
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:background="#DFD8C8" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -177,29 +210,23 @@
 
                         <TextView
                             android:id="@+id/returnTxt"
-                            style="@style/textStyleMedium"
+                            style="@style/montserrat_bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0/0"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/nameText"
-                            android:textStyle="bold" />
+                            android:text="0/0" />
 
                         <TextView
-                            style="@style/textStyleRegular"
+                            style="@style/montserrat_regular"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/returntxt"
-                            android:textAllCaps="true"
-                            android:textColor="@color/hint_color"
-                            android:textSize="@dimen/nameText"
-                            android:textStyle="bold" />
+                            android:textAllCaps="true" />
                     </LinearLayout>
 
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
         <ScrollView
@@ -288,36 +315,37 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
+                            android:gravity="center"
                             android:orientation="horizontal">
 
                             <TextView
-                                style="@style/textStyleMedium"
+                                style="@style/montserrat_semibold"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="@dimen/_5sdp"
                                 android:gravity="center"
                                 android:text="@string/today"
-                                android:textSize="@dimen/nameText" />
+                                android:textSize="14dp"
+                                android:textColor="#242134"/>
 
                             <TextView
                                 android:id="@+id/montDateTxt"
-                                style="@style/textStyleRegular"
+                                style="@style/montserrat_semibold"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="@dimen/_5sdp"
                                 android:gravity="center"
                                 android:text="May 14"
-                                android:textColor="@color/hint_color" />
+                                android:textColor="#A09E9E" />
                         </LinearLayout>
 
                         <TextView
                             android:id="@+id/todayCmpShipTxt"
-                            style="@style/textStyleRegular"
+                            style="@style/montserrat_medium"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="@dimen/_10sdp"
-                            android:gravity="start"
+                            android:gravity="center"
                             android:text="@string/you_have_completed_6_shipping_today"
                             android:textColor="@color/black"
                             android:textSize="@dimen/nameText" />
@@ -340,15 +368,15 @@
                             android:background="@color/gary" />
 
                         <TextView
-                            style="@style/textStyleMedium"
+                            style="@style/montserrat_semibold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:layout_margin="@dimen/_5sdp"
                             android:drawablePadding="@dimen/_5sdp"
                             android:text="@string/see_all_activity"
-                            android:textColor="@color/theme_color"
-                            android:textSize="@dimen/nameText"
+                            android:textSize="14dp"
+                            android:textColor="#3CA9DE"
                             app:drawableEndCompat="@drawable/forword_blue" />
 
                     </LinearLayout>
@@ -368,13 +396,13 @@
             android:layout_margin="@dimen/_5sdp">
 
             <TextView
-                style="@style/textStyleMedium"
+                style="@style/montserrat_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawablePadding="@dimen/_5sdp"
                 android:text="@string/payment_breakdown"
-                android:textColor="@color/theme_color"
-                android:textSize="@dimen/nameText"
+                android:textColor="#3CA9DE"
+                android:textSize="14dp"
                 app:drawableEndCompat="@drawable/forword_blue" />
 
         </LinearLayout>
@@ -391,41 +419,39 @@
 
             <TextView
                 android:id="@+id/payBtn"
-                style="@style/textStyleMedium"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
+                style="@style/montserrat_medium"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
                 android:layout_marginHorizontal="@dimen/_5sdp"
-                android:layout_weight="1"
                 android:background="@drawable/backround_theme_border"
                 android:gravity="center"
                 android:text="@string/payment_history"
                 android:textColor="@color/black"
-                android:textSize="@dimen/buttonTextSmall" />
+                android:textSize="14dp" />
 
             <TextView
                 android:id="@+id/shipingBtn"
-                style="@style/textStyleMedium"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
+                style="@style/montserrat_medium"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
                 android:layout_marginHorizontal="@dimen/_5sdp"
-                android:layout_weight="1"
                 android:background="@drawable/backround_theme_border"
                 android:gravity="center"
                 android:text="@string/shipping_database"
                 android:textColor="@color/black"
-                android:textSize="@dimen/buttonTextSmall" />
+                android:textSize="14dp" />
 
         </LinearLayout>
 
 
         <FrameLayout
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_10sdp"
             android:id="@+id/fragmentContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/topHeader"
-            android:layout_marginTop="@dimen/_5sdp" />
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_10sdp" />
     </RelativeLayout>
 
 </layout>

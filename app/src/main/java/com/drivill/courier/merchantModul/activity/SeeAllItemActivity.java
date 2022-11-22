@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.drivill.courier.adapter.DeliveryStatusAdapter;
 import com.google.gson.JsonObject;
 import com.drivill.courier.BaseActivity;
 import com.drivill.courier.R;
@@ -24,7 +25,6 @@ import com.drivill.courier.databinding.ActivitySeeAllItemBinding;
 import com.drivill.courier.merchantModul.adapter.RecentDeliveryAdapter;
 import com.drivill.courier.merchantModul.model.ShipmentModel;
 import com.drivill.courier.rest.ApiManagerImp;
-import com.drivill.courier.utils.AppUtil;
 import com.drivill.courier.utils.Constant;
 import com.drivill.courier.utils.DataManager;
 
@@ -42,6 +42,7 @@ public class SeeAllItemActivity extends BaseActivity implements RecentDeliveryAd
     String item;
     ActivitySeeAllItemBinding mBinding;
     RecentDeliveryAdapter mAdapter;
+    DeliveryStatusAdapter adapter;
     ArrayList<ShipmentModel> mDISPLAYList = new ArrayList<>();
 
     void initUI() {
@@ -51,6 +52,7 @@ public class SeeAllItemActivity extends BaseActivity implements RecentDeliveryAd
                 onBackPressed();
             }
         });
+        getList("All");
 
         if (DataManager.from.equals("All")) {
             mBinding.recentTxt.setVisibility(View.GONE);
@@ -66,9 +68,9 @@ public class SeeAllItemActivity extends BaseActivity implements RecentDeliveryAd
             item = Constant.DELIVERED;
         }
 
+
         mAdapter = new RecentDeliveryAdapter(SeeAllItemActivity.this, item, SeeAllItemActivity.this);
         mBinding.allItemRV.setLayoutManager(new LinearLayoutManager(SeeAllItemActivity.this));
-        mBinding.allItemRV.setAdapter(mAdapter);
 
         mBinding.allItemToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @SuppressLint("NonConstantResourceId")
@@ -121,7 +123,7 @@ public class SeeAllItemActivity extends BaseActivity implements RecentDeliveryAd
     }
 
     void getList(String item) {
-        showLoading();
+        //showLoading();
         Call<ArrayList<ShipmentModel>> call = new ApiManagerImp().getShipmentMerchant(mBasePreferenceManager.getUserToken(), item);
         call.enqueue(new Callback<ArrayList<ShipmentModel>>() {
             @Override
@@ -134,6 +136,11 @@ public class SeeAllItemActivity extends BaseActivity implements RecentDeliveryAd
 
                     mDISPLAYList = response.body();
                     mAdapter.setData(response.body());
+                    adapter= new DeliveryStatusAdapter(SeeAllItemActivity.this,mDISPLAYList);
+                    mBinding.allItemRV.setAdapter(adapter);
+
+
+
 
                 }
             }
@@ -259,7 +266,7 @@ public class SeeAllItemActivity extends BaseActivity implements RecentDeliveryAd
                     }
                 }
                 if (d.getCreatedAt() != null) {
-                    if (d.getCreated_date().toLowerCase().contains(text.toLowerCase())) {
+                    if (d.getCreatedDate().toLowerCase().contains(text.toLowerCase())) {
                         isIn.append(d.getCreatedAt());
                     }
                 }

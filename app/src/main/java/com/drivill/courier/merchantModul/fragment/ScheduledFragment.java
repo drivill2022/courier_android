@@ -1,7 +1,10 @@
 package com.drivill.courier.merchantModul.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -11,7 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.drivill.courier.R;
+import com.drivill.courier.adapter.DeliveryStatusAdapter;
 import com.drivill.courier.databinding.FragmentScheduledBinding;
+import com.drivill.courier.merchantModul.activity.PackagingActivity;
 import com.drivill.courier.merchantModul.interfases.FragmentListener;
 import com.drivill.courier.merchantModul.adapter.RecentDeliveryAdapter;
 import com.drivill.courier.merchantModul.model.ShipmentModel;
@@ -39,6 +44,7 @@ public class ScheduledFragment extends Fragment {
     FragmentScheduledBinding mBinding;
     PrefsManager manager;
     RecentDeliveryAdapter mAdapter;
+    DeliveryStatusAdapter adapter;
     ArrayList<ShipmentModel> dataArr;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -51,7 +57,8 @@ public class ScheduledFragment extends Fragment {
 
     void initUI() {
         mListener = (FragmentListener) requireActivity();
-        getAllShipItem(mParam2);
+        String value = getArguments().getString("status");
+        getAllShipItem(value);
     }
 
     public ScheduledFragment() {
@@ -95,10 +102,30 @@ public class ScheduledFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_scheduled, container, false);
         mBinding = FragmentScheduledBinding.bind(view);
         initUI();
-        mListener.changeToolTitle(mParam1);
+       // mListener.changeToolTitle(mParam1);
+        mBinding.backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                requireActivity().onBackPressed();
+            }
+        });
+
+        mBinding.btnAddNew.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(requireActivity(), PackagingActivity.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        String value = getArguments().getString("status");
+       // getAllShipItem(value);
+    }
 
     void getAllShipItem(String type) {
         DataManager.getINSTANCE().showProgressBar(requireActivity());
@@ -110,14 +137,20 @@ public class ScheduledFragment extends Fragment {
                 if (response.body() != null) {
                     Log.d("responce", String.valueOf(response.body()));
                     dataArr = response.body();
-                    settingAdapter();
+                   // Log.e("dsadasgdjgasjd","djagsdhgashdgdsa"+dataArr.get(0).getContactNo());
                     if(response.body().size()==0){
                         mBinding.noDataTxt.setVisibility(View.VISIBLE);
                     }else {
+                        settingAdapter();
+
                         mBinding.noDataTxt.setVisibility(View.GONE);
                     }
                 } else {
+
+                    mBinding.recyclerView.setVisibility(View.GONE);
+                    mBinding.noDataTxt.setVisibility(View.VISIBLE);
                     try {
+
                         JSONObject object = new JSONObject(response.errorBody().string());
                         Log.d("er", String.valueOf(object));
                     } catch (JSONException | IOException e) {
@@ -134,10 +167,12 @@ public class ScheduledFragment extends Fragment {
     }
 
     void settingAdapter() {
-        mAdapter = new RecentDeliveryAdapter(requireContext(), mParam2, (RecentDeliveryAdapter.RecentAdapterClick) requireActivity());
+        adapter=new DeliveryStatusAdapter(requireContext(),dataArr);
+        Log.e("dshakjdhgjasgdhjgsd","dsdasfasfd"+dataArr);
+        mAdapter = new RecentDeliveryAdapter(requireContext(), "home", (RecentDeliveryAdapter.RecentAdapterClick) requireActivity());
         mAdapter.setData(dataArr);
         mBinding.recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
-        mBinding.recyclerView.setAdapter(mAdapter);
+        mBinding.recyclerView.setAdapter(adapter);
     }
 
 }

@@ -77,8 +77,8 @@ public class SelectHubActivity extends BaseActivity implements SendToAdapter.Sel
             @Override
             public void run() {
                 if (mModel != null)
-                    getNearByHubList(mModel.getS_latitude(), mModel.getS_longitude());
-                else getNearByHubList(arrayList.get(0).getS_latitude(),arrayList.get(0).getS_longitude());
+                    getNearByHubList(mModel.getsLatitude().toString(), mModel.getsLongitude().toString());
+                else getNearByHubList(arrayList.get(0).getsLatitude().toString(),arrayList.get(0).getsLongitude().toString());
 
             }
         });

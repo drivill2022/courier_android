@@ -45,7 +45,7 @@ public class SplashUsingActivity extends FragmentActivity {
     void initUI() {
         mViewPager2 = findViewById(R.id.vipager);
         skipTxt = findViewById(R.id.skipTxt);
-        mNextTxt = findViewById(R.id.nextText);
+
         mAppLogo = findViewById(R.id.AppLogo);
         mAppLogo.setVisibility(View.INVISIBLE);
 
@@ -79,16 +79,20 @@ public class SplashUsingActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         MyUtil.getFullScreen(this);
         setContentView(R.layout.activity_splash_using);
+
         mPrefsManager = new PrefsManager(this);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (mPrefsManager.getIsFirst()) {
+                goNextActivity();
+               /* if (mPrefsManager.getIsFirst()) {
                     initUI();
                     mPrefsManager.setIsFirst(false);
-                } else goNextActivity();
+                } else
+                    goNextActivity();*/
             }
-        }, 2000);
+        }, 4000);
+
 
     }
 
@@ -117,7 +121,7 @@ public class SplashUsingActivity extends FragmentActivity {
 
 
         } else {
-            Intent intent = new Intent(SplashUsingActivity.this, LetsStartActivity.class);
+            Intent intent = new Intent(SplashUsingActivity.this, OnBoardingActivity.class);
             startActivity(intent);
             finish();
         }

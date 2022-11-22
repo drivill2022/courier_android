@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -96,6 +95,7 @@
                         android:gravity="center"
                         android:text="@string/order_cancel"
                         android:textColor="@color/black"
+                        android:visibility="gone"
                         android:textSize="@dimen/nameText"
                         app:drawableTopCompat="@drawable/order_cancel" />
 
@@ -110,14 +110,6 @@
                         android:text="@string/inTrans"
                         android:textColor="@color/black"
                         android:textSize="@dimen/nameText" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:orientation="horizontal">
-
                     <TextView
                         android:id="@+id/transferredPickup"
                         style="@style/textStyleRegular"
@@ -129,6 +121,15 @@
                         android:text="@string/transferred"
                         android:textColor="@color/black"
                         android:textSize="@dimen/nameText" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
 
                     <TextView
                         android:id="@+id/merchantNotTxtBtn"
@@ -142,6 +143,19 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/nameText"
                         android:visibility="visible" />
+
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/merchant_not_avail_icon"
+                        android:gravity="center"
+                        android:text="@string/transferred"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText"
+                        android:visibility="invisible" />
+
 
                     <TextView
                         style="@style/textStyleRegular"
@@ -190,6 +204,7 @@
                         android:layout_weight="1"
                         android:drawableTop="@drawable/order_cancel_icon"
                         android:gravity="center"
+                        android:visibility="gone"
                         android:text="@string/order_cancel"
                         android:textColor="@color/black"
                         android:textSize="@dimen/nameText" />
@@ -205,16 +220,6 @@
                         android:text="@string/transferred"
                         android:textColor="@color/black"
                         android:textSize="@dimen/nameText" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:orientation="horizontal">
-
                     <TextView
                         android:id="@+id/customerNotTxtBtn"
                         style="@style/textStyleRegular"
@@ -228,6 +233,17 @@
                         android:textSize="@dimen/nameText"
                         android:visibility="visible" />
 
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+
+
                     <TextView
                         android:id="@+id/inTransitDeliveryTxtBtn"
                         style="@style/textStyleRegular"
@@ -240,6 +256,17 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/nameText" />
 
+                    <TextView
+                        style="@style/textStyleRegular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/merchant_not_avail_icon"
+                        android:gravity="center"
+                        android:text="@string/transferred"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nameText"
+                        android:visibility="invisible" />
                     <TextView
                         style="@style/textStyleRegular"
                         android:layout_width="0dp"

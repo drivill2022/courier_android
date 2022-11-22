@@ -16,7 +16,7 @@
             android:background="@color/white_light"
             android:orientation="horizontal">
 
-        <ImageView
+            <ImageView
 
                 android:id="@+id/backBtn"
                 android:padding="@dimen/_5sdp"
@@ -59,7 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:drawableStart="@drawable/edit_icon"
+                    android:drawableStart="@drawable/edit_icon_new"
                     android:drawablePadding="@dimen/_5sdp"
                     android:gravity="center"
                     android:text="@string/edit"

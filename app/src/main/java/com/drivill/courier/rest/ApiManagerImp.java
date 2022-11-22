@@ -3,6 +3,9 @@ package com.drivill.courier.rest;
 import android.content.Context;
 
 import com.drivill.courier.merchantModul.model.PaymentDetailslist;
+import com.drivill.courier.model.model.DeleteModel;
+import com.drivill.courier.model.model.ShipmentDetailsModel;
+import com.drivill.courier.model.model.SplashModelItem;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
@@ -70,7 +73,6 @@ public class ApiManagerImp implements ApiManager {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
         return retrofit.create(ApiServices.class);
-
     }
 
     @Override
@@ -291,6 +293,25 @@ public class ApiManagerImp implements ApiManager {
                 d_longitude, cod_amount, pickup_date);
     }
 
+
+    @Override
+    public Call<ShipmentCreateModel> updateShipment(String token,
+                                                    String id,
+                                                    String receiver_name,
+                                                    String contact_no,
+                                                    String product_type,
+                                                    String product_weight,
+                                                    String note,
+                                                    String d_thana,
+                                                    String d_district,
+                                                    String d_division,
+                                                    String d_address,
+                                                    String cod_amount,
+                                                    String pickup_date) {
+        return mApiService.updateShipment(token,id, receiver_name, contact_no, product_type, product_weight, note, d_thana, d_district, d_division, d_address, cod_amount, pickup_date);
+    }
+
+
     @Override
     public Call<ShipmentCreateModel> shipmentCancel(String token, String id, String reason) {
         return mApiService.shipmentCancel(token, id, reason);
@@ -345,6 +366,16 @@ public class ApiManagerImp implements ApiManager {
     }
 
     @Override
+    public Call<DeleteModel> deleteShipment(String token,String divId) {
+        return mApiService.deleteMerchantShipment(token,divId);
+    }
+
+    @Override
+    public Call<ShipmentDetailsModel> getShipmentDetail(String token, String divId) {
+        return mApiService.getMerchantShipment(token,divId);
+    }
+
+    @Override
     public Call<ArrayList<ThanaModel>> getThanaMerchant(String disId) {
         return mApiService.getThanaMerchant(disId);
     }
@@ -375,8 +406,8 @@ public class ApiManagerImp implements ApiManager {
     }
 
     @Override
-    public Call<EarnAndPayModel> merchantEarnAndPay(String token, String pageNum) {
-        return mApiService.merchantEarnAndPay(token, pageNum);
+    public Call<EarnAndPayModel> merchantEarnAndPay(String token, String pageNum, String dateFrom,String dateto) {
+        return mApiService.merchantEarnAndPay(token, pageNum,dateFrom,dateto);
     }
 
     @Override
@@ -387,6 +418,11 @@ public class ApiManagerImp implements ApiManager {
     @Override
     public Call<ShipmentDetailModel> merchantShipmentsDetailById(String token, String shipId) {
         return mApiService.merchantShipmentsDetailById(token, shipId);
+    }
+
+    @Override
+    public Call<ArrayList<SplashModelItem>> getSplashItem() {
+        return mApiService.getSplashItems();
     }
 
     @Override

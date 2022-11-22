@@ -1,7 +1,9 @@
 package com.drivill.courier.rest;
 
 import com.drivill.courier.merchantModul.model.PaymentDetailslist;
-import com.google.gson.JsonArray;
+import com.drivill.courier.model.model.DeleteModel;
+import com.drivill.courier.model.model.ShipmentDetailsModel;
+import com.drivill.courier.model.model.SplashModelItem;
 import com.google.gson.JsonObject;
 import com.drivill.courier.merchantModul.model.BreakDownModel;
 import com.drivill.courier.merchantModul.model.DistrictModel;
@@ -27,6 +29,8 @@ import com.drivill.courier.model.model.RiderPickupListModel;
 import com.drivill.courier.model.model.StatementModel;
 import com.drivill.courier.model.model.SupportModel;
 import com.drivill.courier.model.model.VehicleModel;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -59,13 +63,12 @@ import retrofit2.http.Query;
 
 public interface ApiServices {
 
-    ////////////////Post_method////////////////////////////////
+    //////////////////// Post_method////////////////////////////////
     @FormUrlEncoded
     @POST("rider/login")
     Call<LoginModel> riderLogin(@Field("mobile") String mobile,
                                 @Field("password") String password,
                                 @Field("device_token") String device_token);
-
 
     @Multipart
     @POST("rider/register")
@@ -164,7 +167,7 @@ public interface ApiServices {
 
 
     @FormUrlEncoded
-    @POST("rider/shipments/status-update")
+    @POST("`rider/shipments/status-update`")
     Call<JsonObject> riderShipmentUpdate(
             @Header("Authorization") String token,
             @Field("id") String id,
@@ -410,6 +413,25 @@ public interface ApiServices {
 
 
     @FormUrlEncoded
+    @POST("api/merchant/update")
+    Call<ShipmentCreateModel> updateShipment(
+            @Header("Authorization") String token,
+            @Field("id") String id,
+            @Field("receiver_name") String receiver_name,
+            @Field("contact_no") String contact_no,
+            @Field("product_type") String product_type,
+            @Field("product_weight") String product_weight,
+            @Field("note") String note,
+            @Field("d_thana") String d_thana,
+            @Field("d_district") String d_district,
+            @Field("d_division") String d_division,
+            @Field("d_address") String d_address,
+            @Field("cod_amount") String cod_amount,
+            @Field("pickup_date") String pickup_date
+    ); //date format must  "2021-07-31 13:30:00",
+
+
+    @FormUrlEncoded
     @POST("merchant/shipments/cancel")
     Call<ShipmentCreateModel> shipmentCancel(
             @Header("Authorization") String token,
@@ -479,6 +501,17 @@ public interface ApiServices {
     @GET("merchant/divisions")
     Call<ArrayList<DivisionModel>> getDivisionMerchant();
 
+    @GET("merchant/delete-record/{id}")
+    Call<DeleteModel> deleteMerchantShipment(@Header("Authorization") String token,@Path("id") String divId);
+
+
+
+
+
+    @GET("merchant/get-details/{id}")
+    Call<ShipmentDetailsModel> getMerchantShipment(@Header("Authorization") String token, @Path("id") String divId);
+
+
     @GET("merchant/district/{id}")
     Call<ArrayList<DistrictModel>> getDistrictMerchant(@Path("id") String divId);
 
@@ -519,7 +552,9 @@ public interface ApiServices {
     @GET("merchant/shipments/earn-pay?")
     Call<EarnAndPayModel> merchantEarnAndPay(
             @Header("Authorization") String token,
-            @Query("page") String pageNum
+            @Query("page") String pageNum,
+            @Query("date_from") String date_from,
+                    @Query("date_to") String date_to
     );
 
     @GET("merchant/shipments/withdraw-request")
@@ -532,6 +567,9 @@ public interface ApiServices {
             @Header("Authorization") String token,
             @Path("id") String shipId
     );
+
+    @GET("merchant/splash-list")
+    Call<ArrayList<SplashModelItem>> getSplashItems();
 
     @GET("merchant/shipments/payment-view-detail/{txn_id}")
     Call<PaymentDetailslist> PaymentDetails(@Header("Authorization") String token, @Path("txn_id") String shipId);
@@ -550,6 +588,11 @@ public interface ApiServices {
 
     @GET("merchant/shipments/notification-list")
     Call<MerchantNotificationModel> getMerchantNotificationList(
+            @Header("Authorization") String token
+    );
+
+    @GET("merchant/shipments/notification-list")
+    Call<MerchantNotificationModel> getSummaryList(
             @Header("Authorization") String token
     );
 

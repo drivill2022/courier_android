@@ -43,7 +43,7 @@ public class CompletedDeliveryActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String shipID = getIntent().getStringExtra("pos");
+        String shipID = getIntent().getStringExtra( "pos");
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_completed_delivery);
         initUI();
 

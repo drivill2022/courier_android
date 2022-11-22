@@ -41,6 +41,18 @@ public class PaymentDetailslist {
         @Expose
         private Integer shipmentCost;
 
+        public String getReceiver_name() {
+            return receiver_name;
+        }
+
+        public void setReceiver_name(String receiver_name) {
+            this.receiver_name = receiver_name;
+        }
+
+        @SerializedName("receiver_name")
+        @Expose
+        private String receiver_name;
+
         public String getShipmentNo() {
             return shipmentNo;
         }

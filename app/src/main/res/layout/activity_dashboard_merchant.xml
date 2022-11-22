@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?><!-- Use DrawerLayout as root container for activity -->
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
@@ -13,18 +14,20 @@
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="true"
+        tools:openDrawer="end">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
+            android:background="#DDF4F3F3"
             android:orientation="vertical">
 
             <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/white">
+                android:background="@color/white"
+                android:visibility="gone">
 
                 <!---->
                 <androidx.appcompat.widget.Toolbar
@@ -75,13 +78,39 @@
 
                 <ImageView
                     android:id="@+id/addNewBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="@dimen/_10sdp"
-                    android:src="@drawable/add_new_icon"
+                    android:src="@drawable/upwardsarrow"
                     android:translationZ="@dimen/_10sdp" />
+
+                <ImageView
+                    android:id="@+id/dropBtn"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:src="@drawable/upwardsarrow"
+                    android:rotation="180"
+                    android:visibility="gone"
+                    android:translationZ="@dimen/_10sdp" />
+
+
+                <include
+                    android:id="@+id/bottom_sheet_parent32"
+                    layout="@layout/bottom_sheet_new"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/nav_host_fragmentMechant"
+                    android:layout_marginBottom="-2dp"
+                    app:layout_anchorGravity="bottom"
+                    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+                    android:visibility="gone">
+
+                </include>
 
                 <com.google.android.material.bottomnavigation.BottomNavigationView
                     android:id="@+id/bottomNV"
@@ -105,7 +134,7 @@
             android:id="@+id/nav_viewMerchant"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="start"
+            android:layout_gravity="end"
             android:fitsSystemWindows="true">
 
             <LinearLayout

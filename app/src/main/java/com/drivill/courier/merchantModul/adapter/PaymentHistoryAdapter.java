@@ -1,40 +1,22 @@
 package com.drivill.courier.merchantModul.adapter;
 
-import android.app.Activity;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
-import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.PopupWindow;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.arch.core.internal.SafeIterableMap;
-import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.drivill.courier.R;
+import com.drivill.courier.activity.PaymentInvoice;
 import com.drivill.courier.activity.supportActivity.SupportActivity;
-import com.drivill.courier.merchantModul.activity.PaymentDetails;
 import com.drivill.courier.merchantModul.model.PaymentModel;
-import com.drivill.courier.utils.AppUtil;
 import com.drivill.courier.utils.PrefsManager;
-
-import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class PaymentHistoryAdapter extends RecyclerView.Adapter<PaymentHistoryAdapter.MyStatementHolder> {
     Context mContext;
@@ -53,7 +35,7 @@ public class PaymentHistoryAdapter extends RecyclerView.Adapter<PaymentHistoryAd
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyStatementHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyStatementHolder holder, @SuppressLint("RecyclerView") int position) {
 
         PrefsManager pm =  new PrefsManager(mContext);
 
@@ -76,17 +58,26 @@ public class PaymentHistoryAdapter extends RecyclerView.Adapter<PaymentHistoryAd
             }
         });
 
+        holder.tv_details.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, PaymentInvoice.class);
+                intent.putExtra("txtid", String.valueOf(mHistoryList.get(position).getId()));
+                mContext.startActivity(intent);
+            }
+        });
+
         if(pm.getIsRider()){
             holder.tv_details.setVisibility(View.GONE);
         }else {
             holder.tv_details.setVisibility(View.VISIBLE);
         }
 
-        holder.tv_details.setOnClickListener(new View.OnClickListener() {
+        /*holder.tv_details.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              /*  Intent intent = new Intent(mContext, PaymentDetails.class);
-                mContext.startActivity(intent);*/
+              *//*  Intent intent = new Intent(mContext, PaymentDetails.class);
+                mContext.startActivity(intent);*//*
 
                 // http://www.codeplayon.com/2020/04/how-to-open-a-dialogfragment-in-activity-android-tutorial/
                 Bundle bundle = new Bundle();
@@ -97,12 +88,14 @@ public class PaymentHistoryAdapter extends RecyclerView.Adapter<PaymentHistoryAd
                 newFragment.setArguments(bundle);
 
             }
-        });
+        });*/
 
     }
 
     @Override
     public int getItemCount() {
+
+        //return 10;
         if (mHistoryList != null) return mHistoryList.size();
         else
             return 0;

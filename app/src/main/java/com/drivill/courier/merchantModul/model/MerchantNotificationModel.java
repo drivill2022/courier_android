@@ -53,6 +53,18 @@ public class MerchantNotificationModel implements Serializable {
         @Expose
         private String message;
 
+        public String getCreated_at_for_human() {
+            return created_at_for_human;
+        }
+
+        public void setCreated_at_for_human(String created_at_for_human) {
+            this.created_at_for_human = created_at_for_human;
+        }
+
+        @SerializedName("created_at_for_human")
+        @Expose
+        private String created_at_for_human;
+
         public Integer getId() {
             return id;
         }

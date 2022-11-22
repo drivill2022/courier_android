@@ -4,13 +4,20 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.databinding.DataBindingUtil;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
@@ -23,14 +30,22 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.drivill.courier.fragment.BottmSheetDialog;
+import com.drivill.courier.fragment.DeliveryStatusFragment;
+import com.drivill.courier.merchantModul.fragment.MerchantHomeFragment;
+import com.drivill.courier.merchantModul.fragment.ScheduledFragment;
+import com.drivill.courier.utils.Constant;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.gson.JsonObject;
 import com.drivill.courier.BaseActivity;
 import com.drivill.courier.R;
@@ -51,6 +66,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -64,11 +80,14 @@ public class DashboardActivityMerchant extends BaseActivity implements FragmentL
     boolean doubleBackToExitPressedOnce = false;
     TextView mNotCount;
     FrameLayout frameLayout;
+    Bundle bundle=new Bundle();
+    private RelativeLayout bottomSheetParentLayout;
+    private BottomSheetBehavior mBottomSheetBehaviour;
 
     void initUI() {
-        mNavHostFragment =
-                (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragmentMechant);
+        mNavHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragmentMechant);
         NavController mNavController = mNavHostFragment.getNavController();
+        //bottmSheetDialogFragment =BottmSheetDialogFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragmentMechant);
         //NavigationView navView = findViewById(R.id.nav_view);
 
         AppBarConfiguration mAppBarConfiguration = new AppBarConfiguration.Builder(mNavController.getGraph())
@@ -108,6 +127,118 @@ public class DashboardActivityMerchant extends BaseActivity implements FragmentL
             }
         });
 
+        mBinding.bottomSheetParent32.all.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mBinding.bottomSheetParent32.rlTop.setVisibility(View.GONE);
+                mBinding.addNewBtn.setVisibility(View.VISIBLE);
+                mBinding.dropBtn.setVisibility(View.GONE);
+
+                ScheduledFragment ldf = new ScheduledFragment ();
+                Bundle args = new Bundle();
+                args.putString("status", "All");
+                ldf.setArguments(args);
+                switchFragment(ldf);
+            }
+        });
+
+        mBinding.bottomSheetParent32.requested.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mBinding.bottomSheetParent32.rlTop.setVisibility(View.GONE);
+                mBinding.addNewBtn.setVisibility(View.VISIBLE);
+                mBinding.dropBtn.setVisibility(View.GONE);
+
+                ScheduledFragment ldf = new ScheduledFragment ();
+                Bundle args = new Bundle();
+                args.putString("status", Constant.REQUESTED);
+                ldf.setArguments(args);
+                switchFragment(ldf);
+            }
+        });
+
+        mBinding.bottomSheetParent32.transit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mBinding.bottomSheetParent32.rlTop.setVisibility(View.GONE);
+                mBinding.addNewBtn.setVisibility(View.VISIBLE);
+                mBinding.dropBtn.setVisibility(View.GONE);
+
+                Log.e("gdsagjdjagsdjsd","dagshdgahjsgdhjgdas"+Constant.SCHEDULED.toString());
+
+                ScheduledFragment ldf = new ScheduledFragment ();
+                Bundle args = new Bundle();
+                args.putString("status", Constant.TRANSITT);
+                ldf.setArguments(args);
+                switchFragment(ldf);
+
+            }
+        });
+
+        mBinding.bottomSheetParent32.ontheway.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mBinding.bottomSheetParent32.rlTop.setVisibility(View.GONE);
+                mBinding.addNewBtn.setVisibility(View.VISIBLE);
+                mBinding.dropBtn.setVisibility(View.GONE);
+
+                ScheduledFragment ldf = new ScheduledFragment ();
+                Bundle args = new Bundle();
+                args.putString("status", Constant.ONGOING);
+                ldf.setArguments(args);
+                switchFragment(ldf);
+            }
+        });
+
+        mBinding.bottomSheetParent32.delivered.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mBinding.bottomSheetParent32.rlTop.setVisibility(View.GONE);
+                mBinding.addNewBtn.setVisibility(View.VISIBLE);
+                mBinding.dropBtn.setVisibility(View.GONE);
+
+                ScheduledFragment ldf = new ScheduledFragment ();
+                Bundle args = new Bundle();
+                args.putString("status", Constant.DELIVERED);
+                ldf.setArguments(args);
+                switchFragment(ldf);
+
+            }
+        });
+
+        mBinding.bottomSheetParent32.retn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mBinding.bottomSheetParent32.rlTop.setVisibility(View.GONE);
+                mBinding.addNewBtn.setVisibility(View.VISIBLE);
+                mBinding.dropBtn.setVisibility(View.GONE);
+
+                ScheduledFragment ldf = new ScheduledFragment ();
+                Bundle args = new Bundle();
+                args.putString("status", Constant.CANCELLED);
+                ldf.setArguments(args);
+                switchFragment(ldf);
+            }
+        });
+
+      /*  mBinding.bottomSheetParent32.rlTop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mBinding.bottomSheetParent32.rlTop.setVisibility(View.GONE);
+                mBinding.addNewBtn.setVisibility(View.VISIBLE);
+                mBinding.dropBtn.setVisibility(View.GONE);
+
+                ScheduledFragment ldf = new ScheduledFragment ();
+                Bundle args = new Bundle();
+                args.putString("status", Constant.DELIVERED);
+                ldf.setArguments(args);
+                switchFragment(ldf);
+
+            }
+        });*/
+
+
+
         mBinding.bottomNV.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @SuppressLint("NonConstantResourceId")
             @Override
@@ -116,28 +247,82 @@ public class DashboardActivityMerchant extends BaseActivity implements FragmentL
 
                 switch (item.getItemId()) {
                     case R.id.homeBV:
+                        switchFragment(new MerchantHomeFragment());
                         break;
                     case R.id.ern_payBV:
-                        Intent intent = new Intent(DashboardActivityMerchant.this, EarnAndPayActivity.class);
+                        Intent intent = new Intent(DashboardActivityMerchant.this, MerchantStatementActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.helpBV:
-                        Intent intent1 = new Intent(DashboardActivityMerchant.this, SupportActivity.class);
+                        Intent intent1 = new Intent(DashboardActivityMerchant.this, NotificationActivity.class);
                         startActivity(intent1);
                         break;
                     case R.id.messageBV:
                         //  case R.id.AddBV:
-                        Intent intent4 = new Intent(DashboardActivityMerchant.this, TrackingActivity.class);
-                        startActivity(intent4);
+                        DrawerLayout navDrawer = findViewById(R.id.drawer_layout);
+                        // If the navigation drawer is not open then open it, if its already open then close it.
+                        if(!navDrawer.isDrawerOpen(GravityCompat.END)) navDrawer.openDrawer(GravityCompat.END);
+                        else navDrawer.closeDrawer(GravityCompat.START);
+                       /* Intent intent4 = new Intent(DashboardActivityMerchant.this, TrackingActivity.class);
+                        startActivity(intent4);*/
                         break;
                 }
                 return false;
             }
         });
 
-        mBinding.addNewBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
+        mBinding.addNewBtn.setOnClickListener(v -> {
+           // getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_container, BottmSheetDialogFragment).commit();
+
+            //animateViewFromBottomToTop();
+
+
+            /*Transition transition = new Slide(Gravity.BOTTOM);
+            transition.setDuration(1000);
+            transition.addTarget(R.id.bottom_sheet_parent);
+            bottomSheetParentLayout = findViewById(R.id.bottom_sheet_parent);
+            TransitionManager.beginDelayedTransition(bottomSheetParentLayout, transition);
+            mBinding.bottomSheetParent.setVisibility(View.VISIBLE);*/
+            //mBinding.bottomSheetParent.animate().alpha(0.0f);
+           // mBinding.bottomSheetParent.animate().alpha(0.0f).setDuration(5000);
+            mBinding.addNewBtn.setVisibility(View.GONE);
+            mBinding.dropBtn.setVisibility(View.VISIBLE);
+            mBinding.bottomSheetParent32.rlTop.setVisibility((View.VISIBLE));
+            //v.animate().alpha(0.0f).setDuration(2000);
+            //BottmSheetDialog bottomSheet = new BottmSheetDialog();
+           // bottomSheet.show(getSupportFragmentManager(), "ModalBottomSheet");
+
+
+        });
+
+        mBinding.dropBtn.setOnClickListener(v -> {
+
+            //BottmSheetDialogFragment bottomSheet = new BottmSheetDialogFragment();
+            //bottomSheet.show(getSupportFragmentManager(), "ModalBottomSheet");
+           // bottomSheet.dismiss();
+
+            mBinding.bottomSheetParent32.rlTop.setVisibility(View.GONE);
+            mBinding.addNewBtn.setVisibility(View.VISIBLE);
+            mBinding.dropBtn.setVisibility(View.GONE);
+        });
+
+
+
+
+       // mBottomSheetBehaviour = BottomSheetBehavior.from(bottomSheetParentLayout);
+
+
+           /* @Override
             public void onClick(View view) {
+                DataManager.getINSTANCE().setCurrentItemListSize(0);
+                Intent intent = new Intent(DashboardActivityMerchant.this, PackagingActivity.class);
+                startActivity(intent);
+            }
+        });*/
+
+        mBinding.headerLayoutDrawerMerchant.btnShip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 DataManager.getINSTANCE().setCurrentItemListSize(0);
                 Intent intent = new Intent(DashboardActivityMerchant.this, PackagingActivity.class);
                 startActivity(intent);
@@ -152,7 +337,7 @@ public class DashboardActivityMerchant extends BaseActivity implements FragmentL
         mBinding.drawerActionMerchant.getQuote.setOnClickListener(this);
         mBinding.drawerActionMerchant.trukingLL.setOnClickListener(this);
         mBinding.drawerActionMerchant.shippingHistory.setOnClickListener(this);
-        mBinding.drawerActionMerchant.shippingPkg.setOnClickListener(this);
+       // mBinding.drawerActionMerchant.shippingPkg.setOnClickListener(this);
         mBinding.drawerActionMerchant.offerLL.setOnClickListener(this);
 
        /*     Glide.with(this)
@@ -175,19 +360,48 @@ public class DashboardActivityMerchant extends BaseActivity implements FragmentL
 
     }
 
+    public static void animateViewFromBottomToTop(final View view){
+
+        view.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+
+            @Override
+            public void onGlobalLayout() {
+
+                view.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+
+                final int TRANSLATION_Y = view.getHeight();
+                view.setTranslationY(TRANSLATION_Y);
+                view.setVisibility(View.GONE);
+                view.animate()
+                        .translationYBy(-TRANSLATION_Y)
+                        .setDuration(500)
+                        .setStartDelay(200)
+                        .setListener(new AnimatorListenerAdapter() {
+
+                            @Override
+                            public void onAnimationStart(final Animator animation) {
+
+                                view.setVisibility(View.VISIBLE);
+                            }
+                        })
+                        .start();
+            }
+        });
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
 
         mBinding.headerLayoutDrawerMerchant.nameDrawer.setText(mBasePreferenceManager.getUserName());
         mBinding.headerLayoutDrawerMerchant.compNameDrawer.setText(mBasePreferenceManager.getMobileNum());
-        AppUtil.setImg(this, mBasePreferenceManager.getProfileImg(), mBinding.headerLayoutDrawerMerchant.profileDrawer);
+        AppUtil.setImgCircle(this, mBasePreferenceManager.getProfileImg(), mBinding.headerLayoutDrawerMerchant.profileDrawer);
 
         getNotificationCount(mBasePreferenceManager.getUserToken());
 
     }
 
-    @Override
+/*    @Override
     public void onBackPressed() {
         if (mNavHostFragment.getChildFragmentManager().getBackStackEntryCount() == 0) {
             if (doubleBackToExitPressedOnce) {
@@ -209,7 +423,7 @@ public class DashboardActivityMerchant extends BaseActivity implements FragmentL
             super.onBackPressed();
         }
 
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -282,13 +496,13 @@ public class DashboardActivityMerchant extends BaseActivity implements FragmentL
                 DataManager.from = "";
                 startActivity(intent1);
                 break;
-            case R.id.shippingPkg:
+            /*case R.id.shippingPkg:
                 DataManager.getINSTANCE().setCurrentItemListSize(0);
                 Intent intent2 = new Intent(DashboardActivityMerchant.this, PackagingActivity.class);
                 startActivity(intent2);
-                break;
+                break;*/
             case R.id.ernPayLL:
-                Intent intent3 = new Intent(DashboardActivityMerchant.this, EarnAndPayActivity.class);
+                Intent intent3 = new Intent(DashboardActivityMerchant.this, MerchantStatementActivity.class);
                 startActivity(intent3);
                 break;
             case R.id.getQuote:
@@ -296,8 +510,9 @@ public class DashboardActivityMerchant extends BaseActivity implements FragmentL
                 // startActivity(intent4);
                 break;
             case R.id.trukingLL:
-                Intent intent4 = new Intent(DashboardActivityMerchant.this, TrackingActivity.class);
-                startActivity(intent4);
+                Toast.makeText(this,"Coming Soon",Toast.LENGTH_SHORT).show();
+                /*Intent intent4 = new Intent(DashboardActivityMerchant.this, TrackingActivity.class);
+                startActivity(intent4);*/
                 break;
             case R.id.offerLL:
                 break;
@@ -317,6 +532,15 @@ public class DashboardActivityMerchant extends BaseActivity implements FragmentL
                 break;
 
         }
+    }
+
+
+    public void switchFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.nav_host_fragmentMechant, fragment, fragment.toString());
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 
 

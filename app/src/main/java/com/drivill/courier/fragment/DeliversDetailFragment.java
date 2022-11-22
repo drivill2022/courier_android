@@ -66,12 +66,12 @@ public class DeliversDetailFragment extends Fragment {
                 mBinding.deliveryIDTxt.setText(mData.getShipmentNo());
             if (mData.getProductWeight() != null)
                 mBinding.weightTxt.setText(mData.getProductWeight());
-            if (mData.getCod_amount() != null)
-                mBinding.totalCodCost.setText(mData.getCod_amount());
+            if (mData.getCodAmount() != null)
+                mBinding.totalCodCost.setText(mData.getCodAmount());
             if (mData.getProductDetail() != null)
-                mBinding.productDetailTxt.setText(mData.getProductDetail());
+                mBinding.productDetailTxt.setText(mData.getProductDetail().toString());
             if (mData.getNote() != null)
-                mBinding.productNots.setText(mData.getNote());
+                mBinding.productNots.setText(mData.getNote().toString());
 
             if (mData.getStatus() == 2 || mData.getStatus() == 3) {
                 mBinding.deliveryTxt.setText(getString(R.string.pickup));
@@ -95,7 +95,7 @@ public class DeliversDetailFragment extends Fragment {
             mBinding.docTypeTxt.setText(mData.getProductType());
 
             if (mData.getShipmentType() != null)
-                if (mData.getShipmentType() == 1) {
+                if (Integer.parseInt(String.valueOf(mData.getShipmentType())) == 1) {
                     mBinding.shippingTyp.setText(getString(R.string.stndr_delivery));
                 } else {
                     mBinding.shippingTyp.setText(getString(R.string.express_delivery));
@@ -115,10 +115,10 @@ public class DeliversDetailFragment extends Fragment {
     private void OpenOnMap(ShipmentModel detail){
         try {
             Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
-                    Uri.parse("geo:" + detail.getD_latitude()
-                            + "," + detail.getD_longitude()
-                            + "?q=" + detail.getD_latitude()
-                            + "," + detail.getD_longitude()
+                    Uri.parse("geo:" + detail.getdLatitude()
+                            + "," + detail.getdLongitude()
+                            + "?q=" + detail.getdLatitude()
+                            + "," + detail.getdLongitude()
                             + "(" + "Address" + ")"));
             intent.setComponent(new ComponentName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity"));
             requireActivity().startActivity(intent);

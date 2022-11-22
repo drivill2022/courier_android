@@ -38,11 +38,11 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         // holder.binding.
 
 
-        if (mModel.getData().get(position).getIsViewed().equals("0")) {
+       /* if (mModel.getData().get(position).getIsViewed().equals("0")) {
             holder.binding.llNotification.setBackground(mContext.getResources().getDrawable(R.drawable.backround_blue_transe));
         } else {
             holder.binding.llNotification.setBackground(mContext.getResources().getDrawable(R.drawable.backround_gray));
-        }
+        }*/
         holder.binding.llNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

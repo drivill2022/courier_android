@@ -146,6 +146,8 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActivityBinding = DataBindingUtil.setContentView(this, R.layout.activity_dashboard);
+        Toast.makeText(this,"This",Toast.LENGTH_SHORT).show();
+
         initUI();
 
     }

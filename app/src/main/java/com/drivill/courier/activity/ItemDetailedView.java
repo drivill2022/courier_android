@@ -16,6 +16,8 @@ import com.drivill.courier.BaseActivity;
 import com.drivill.courier.R;
 import com.drivill.courier.databinding.ActivityOneItemDetailNewBinding;
 import com.drivill.courier.merchantModul.activity.DashboardActivityMerchant;
+import com.drivill.courier.merchantModul.activity.OneItemDetailActivity;
+import com.drivill.courier.merchantModul.activity.PackagingActivity;
 import com.drivill.courier.merchantModul.activity.SentActivity;
 import com.drivill.courier.merchantModul.model.ShipmentCreateModel;
 import com.drivill.courier.merchantModul.model.ShipmentModel;
@@ -56,6 +58,8 @@ public class ItemDetailedView extends BaseActivity {
                 sendToPickup();
             }
         });
+
+
 
         SetUpData();
 

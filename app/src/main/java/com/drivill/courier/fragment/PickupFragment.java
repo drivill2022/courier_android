@@ -108,6 +108,7 @@ public class PickupFragment extends Fragment {
                 Log.d("", "");
                 if (response.body() != null) {
                     RiderPickupListModel model = response.body();
+
                     mAdapter.setData(model);
                     mBinding.pickupRY.setAdapter(mAdapter);
                 } else {

@@ -62,17 +62,17 @@ public class GoogleMapActivity extends AppCompatActivity implements OnMapReadyCa
             mMap.animateCamera(CameraUpdateFactory.newLatLng(sydney));
         }*/
         if (mData != null) {
-            if (mData.getS_latitude() != null && mData.getS_longitude() != null
-                    && mData.getD_latitude() != null && mData.getD_longitude() != null) {
-                LatLng pickPoint = new LatLng(Double.parseDouble(mData.getS_latitude()),
-                        Double.parseDouble((mData.getS_longitude())));
+            if (mData.getsLatitude() != null && mData.getsLongitude() != null
+                    && mData.getdLatitude() != null && mData.getdLongitude() != null) {
+                LatLng pickPoint = new LatLng(Double.parseDouble(mData.getsLatitude().toString()),
+                        Double.parseDouble((mData.getsLongitude()).toString()));
                 mMap.addMarker(new MarkerOptions()
                         .position(pickPoint)
                         .title(mData.getsAddress()));
                 mMap.animateCamera(CameraUpdateFactory.newLatLng(pickPoint));
 
-                LatLng dropPoint = new LatLng(Double.parseDouble(mData.getD_latitude()),
-                        Double.parseDouble((mData.getD_longitude())));
+                LatLng dropPoint = new LatLng(Double.parseDouble(mData.getdLatitude().toString()),
+                        Double.parseDouble((mData.getdLongitude()).toString()));
                 mMap.addMarker(new MarkerOptions()
                         .position(dropPoint)
                         .title(mData.getdAddress()));
@@ -90,15 +90,15 @@ public class GoogleMapActivity extends AppCompatActivity implements OnMapReadyCa
         Polyline polyline1 = mMap.addPolyline(new PolylineOptions()
                 .clickable(true)
                 .add(
-                        new LatLng(Double.parseDouble(mData.getS_latitude()),
-                                Double.parseDouble((mData.getS_longitude()))),
-                        new LatLng(Double.parseDouble(mData.getD_latitude()),
-                                Double.parseDouble((mData.getD_longitude())))));
+                        new LatLng(Double.parseDouble(mData.getsLatitude().toString()),
+                                Double.parseDouble((mData.getsLongitude()).toString())),
+                        new LatLng(Double.parseDouble(mData.getdLatitude().toString()),
+                                Double.parseDouble((mData.getdLongitude()).toString()))));
 
         // Position the map's camera near Alice Springs in the center of Australia,
         // and set the zoom factor so most of Australia shows on the screen.
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-                new LatLng(Double.parseDouble(mData.getS_latitude()), Double.parseDouble(mData.getS_longitude())), 8));
+                new LatLng(Double.parseDouble(mData.getsLatitude().toString()), Double.parseDouble(mData.getsLongitude().toString())), 8));
 
         // Set listeners for click events.
         // mMap.setOnPolylineClickListener(this);

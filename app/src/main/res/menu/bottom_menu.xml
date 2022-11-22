@@ -3,22 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/homeBV"
-        android:icon="@drawable/home_blue"
-        android:title="@string/home" />
+        android:icon="@drawable/home"
+        android:title="" />
     <item
         android:id="@+id/ern_payBV"
-        android:icon="@drawable/earn_apy_icon"
-        android:title="@string/earn_pay" />
+        android:icon="@drawable/ic_taka2"
+        android:title="" />
     <item
         android:id="@+id/AddBV"
         android:title=""
         app:showAsAction="never" />
     <item
         android:id="@+id/helpBV"
-        android:icon="@drawable/get_and_quat_icon"
-        android:title="@string/help" />
+        android:icon="@drawable/notification"
+        android:title="" />
     <item
         android:id="@+id/messageBV"
-        android:icon="@drawable/bicycle_rider"
-        android:title="@string/trucking" />
+        android:icon="@drawable/profilenew"
+        android:title="" />
 </menu>

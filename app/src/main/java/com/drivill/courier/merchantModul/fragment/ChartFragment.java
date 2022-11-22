@@ -122,9 +122,12 @@ public class ChartFragment extends Fragment {
             public void onClick(View view) {
                 if (today) {
                     mBinding.progrss.setVisibility(View.VISIBLE);
-                    mBinding.todayTxt.setBackground(getResources().getDrawable(R.drawable.backround_theme_border));
-                    mBinding.weeklyTxt.setBackground(getResources().getDrawable(R.drawable.backround_input));
-                    mBinding.monthlyTxt.setBackground(getResources().getDrawable(R.drawable.backround_input));
+                    mBinding.todayTxt.setBackground(getResources().getDrawable(R.drawable.background_selected));
+                    mBinding.weeklyTxt.setBackground(getResources().getDrawable(R.drawable.background_unselected));
+                    mBinding.monthlyTxt.setBackground(getResources().getDrawable(R.drawable.background_unselected));
+                    mBinding.todayTxt.setTextColor(getResources().getColor(R.color.blue3));
+                    mBinding.weeklyTxt.setTextColor(getResources().getColor(R.color.black));
+                    mBinding.monthlyTxt.setTextColor(getResources().getColor(R.color.black));
                     getDatabaseApi("today");
                 }
                 today = false;
@@ -138,9 +141,12 @@ public class ChartFragment extends Fragment {
 
                 if (week) {
                     mBinding.progrss.setVisibility(View.VISIBLE);
-                    mBinding.todayTxt.setBackground(getResources().getDrawable(R.drawable.backround_input));
-                    mBinding.weeklyTxt.setBackground(getResources().getDrawable(R.drawable.backround_theme_border));
-                    mBinding.monthlyTxt.setBackground(getResources().getDrawable(R.drawable.backround_input));
+                    mBinding.todayTxt.setBackground(getResources().getDrawable(R.drawable.background_unselected));
+                    mBinding.weeklyTxt.setBackground(getResources().getDrawable(R.drawable.background_selected));
+                    mBinding.monthlyTxt.setBackground(getResources().getDrawable(R.drawable.background_unselected));
+                    mBinding.todayTxt.setTextColor(getResources().getColor(R.color.black));
+                    mBinding.weeklyTxt.setTextColor(getResources().getColor(R.color.blue3));
+                    mBinding.monthlyTxt.setTextColor(getResources().getColor(R.color.black));
                     getDatabaseApi("weekly");
                 }
 
@@ -154,9 +160,12 @@ public class ChartFragment extends Fragment {
             public void onClick(View view) {
                 if (month) {
                     mBinding.progrss.setVisibility(View.VISIBLE);
-                    mBinding.todayTxt.setBackground(getResources().getDrawable(R.drawable.backround_input));
-                    mBinding.weeklyTxt.setBackground(getResources().getDrawable(R.drawable.backround_input));
-                    mBinding.monthlyTxt.setBackground(getResources().getDrawable(R.drawable.backround_theme_border));
+                    mBinding.todayTxt.setBackground(getResources().getDrawable(R.drawable.background_unselected));
+                    mBinding.weeklyTxt.setBackground(getResources().getDrawable(R.drawable.background_unselected));
+                    mBinding.monthlyTxt.setBackground(getResources().getDrawable(R.drawable.background_selected));
+                    mBinding.todayTxt.setTextColor(getResources().getColor(R.color.black));
+                    mBinding.weeklyTxt.setTextColor(getResources().getColor(R.color.black));
+                    mBinding.monthlyTxt.setTextColor(getResources().getColor(R.color.blue3));
                     getDatabaseApi("monthly");
                 }
 

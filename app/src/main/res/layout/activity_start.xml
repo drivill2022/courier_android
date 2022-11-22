@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_start">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_start" />
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_80sdp"
+        android:src="@drawable/iv_dc" />
+
+    <TextView
+        android:id="@+id/tv_deliver"
+        style="@style/popinMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WE DELIVER FOR YOU"
+        android:layout_below="@+id/iv_logo"
+        android:gravity="center"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"/>
+
+
+    <TextView
+        android:id="@+id/tv_Select"
+        style="@style/popinMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_deliver"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:gravity="center"
+        android:text="Select the service you need"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/_17sdp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_Select"
+        android:weightSum="5"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/layout_merchant"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/ic_customer"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:backgroundTint="@color/blue3"
+                android:padding="@dimen/_15sdp"
+                android:background="@drawable/backround_button_blue_extra_round"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Merchant"
+                android:singleLine="true"
+                android:textSize="11sp"
+                style="@style/popinMedium"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textColor="@color/black"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_path"
+            android:layout_gravity="center"
+            android:text="---------------"
+            android:rotation="160"
+            android:textColor="@color/grey"
+            android:scaleType="fitXY"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/layout_rider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/ic_rider"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/blue3"
+                android:scaleType="fitCenter"
+                android:padding="@dimen/_15sdp"
+                android:background="@drawable/backround_button_blue_extra_round"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rider"
+                android:singleLine="true"
+                android:textSize="11sp"
+                style="@style/popinMedium"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textColor="@color/black"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_path"
+            android:layout_gravity="center"
+            android:text="---------------"
+            android:rotation="20"
+            android:textColor="@color/grey"
+            />
+
+
+
+        <LinearLayout
+            android:id="@+id/layout_customer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/blue3"
+                android:src="@drawable/ic_merchant"
+                android:scaleType="fitCenter"
+                android:padding="@dimen/_15sdp"
+                android:background="@drawable/backround_button_blue_extra_round"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Customer"
+                android:textSize="11sp"
+                style="@style/popinMedium"
+                android:singleLine="true"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textColor="@color/black"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

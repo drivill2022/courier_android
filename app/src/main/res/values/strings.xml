@@ -31,7 +31,7 @@
     <string name="enter_hub_id"><font size="12">  Enter your Hub Id </font></string>
     <string name="address">Address</string>
     <string name="referral_code_optional">Referral Code <font size="12">(optional) </font></string>
-    <string name="continue_txt">CONTINUE</string>
+    <string name="continue_txt">Continue</string>
     <string name="hub_id">Hub Id</string>
     <string name="personal_information">Personal Information</string>
     <string name="nid_number">NID Number</string>
@@ -127,7 +127,7 @@
     <string name="done">Done</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-    <string name="logout">Logout</string>
+    <string name="logout">Log Out</string>
     <string name="are_you_sure_to_logout">Are you sure to logout?</string>
     <string name="are_you_sure_to_transfer">Are you sure transfer this shipment?</string>
     <string name="plse_provide_location">Location permission must required</string>
@@ -143,7 +143,7 @@
     <string name="order_cancel">Order Cancel</string>
     <string name="transferred">Transferred</string>
     <string name="select_current_status">Select Current Status</string>
-    <string name="customer_not_available">Delivery attempt failed</string>
+    <string name="customer_not_available">Failed</string>
     <string name="merchant_not_available">Merchant\nNot Available</string>
     <string name="resend">Resend</string>
     <string name="din_t_get_otp">Didn\'t get OTP?</string>
@@ -162,7 +162,7 @@
     <string name="business_name">Business Name</string>
     <string name="phone">Phone</string>
     <string name="emergency_mobile_number">Emergency Mobile Number</string>
-    <string name="payment_method">Payment Method</string>
+    <string name="payment_method">Payment Method:</string>
     <string name="receive_notifications">Receive notifications</string>
     <string name="camera_access">Camera access</string>
     <string name="cod_to_deposit">COD to Deposit</string>
@@ -274,7 +274,7 @@
     <string name="receiver_phone_number">Receiver Phone Number</string>
     <string name="product_weight">Product Weight</string>
     <string name="type_product_details">Type product details</string>
-    <string name="note">Notes (Optional)</string>
+    <string name="note">Notes</string>
     <string name="note_colon">Note:</string>
     <string name="type_notes">Type notes</string>
     <string name="delivery_cost">Delivery Cost</string>
@@ -286,7 +286,7 @@
     <string name="pickup_address">Pickup Address</string>
     <string name="delivery_address">Delivery Address</string>
     <string name="documents">Documents</string>
-    <string name="add_more_pickup">Add More Pickup</string>
+    <string name="add_more_pickup">Add More Items</string>
     <string name="request_for_pickup">Request for Pickup</string>
     <string name="pickup_items">Pickup Items</string>
     <string name="send_to_pickup">Send to Pickup</string>
@@ -305,7 +305,7 @@
     <string name="are_you_realy_want_to_cancel_the_delivery">Are you really want to cancel the delivery</string>
     <string name="are_you_realy_want_to_delete_the_shipment">Are you really want to delete the shipment</string>
     <string name="trxid">TrxID:</string>
-    <string name="cod_amount">Cash collection Amount </string>
+    <string name="cod_amount">CoD Amount:</string>
     <string name="paid_by">Paid By:</string>
     <string name="payment_history">Payment History</string>
     <string name="select_divi">Select Division</string>
@@ -333,7 +333,7 @@
     <string name="your_order_is_confirmed_by_seller_drivill">Your order is confirmed by seller. -Drivill</string>
     <string name="document">Document</string>
     <string name="heavy_Weight">Heavy Weight</string>
-    <string name="package_">Package </string>
+    <string name="package_">Package</string>
     <string name="help">Help</string>
     <string name="select_pickup_date">Select Pickup Date</string>
     <string name="dd_mm_yyyy">DD-MM-YYYY</string>
@@ -352,11 +352,11 @@
     Your account is not Active. Please contact with Drivill Administrator
 </string>
     <string name="stndr_delivery">Standard Delivery</string>
-    <string name="reports">Reports------------------------------------------------------------</string>
+    <string name="reports"><b>Reports</b>   ---------------------------------------------------</string>
     <string name="no_data_available">No Data Available</string>
     <string name="send_request">Send Request</string>
     <string name="enter_cod_amount">Enter COD Amount</string>
-    <string name="add_courier">Add Shipment</string>
+    <string name="add_courier">Add Courier</string>
     <string name="step_1">Step 1 Of 3</string>
     <string name="step_2">Step 2 Of 3</string>
     <string name="sender_location">Sender Location</string>
@@ -364,9 +364,9 @@
     <string name="shipment_id">Shipment ID</string>
     <string name="courier_details">Courier Details</string>
     <string name="house_road_no_village">House/Road no., Village</string>
-    <string name="cod_amountt">Total Cash Collection Amount</string>
+    <string name="cod_amountt">Cash on Delivery Amount</string>
     <string name="date">Date</string>
-    <string name="invoice">Invoice</string>
+    <string name="invoice">Payment Invoice</string>
     <string name="add_bank_details">Add Bank Details</string>
     <string name="bank_details">Bank Details</string>
     <string name="bank_name">BANK NAME</string>
@@ -380,8 +380,9 @@
     <string name="follow_us_on_social_media">Follow us on social media</string>
     <string name="hubhint">Submit delivery to HUB</string>
 
-   <!-- Tracking Logs-->
+    <!-- Tracking Logs-->
     <string name="On_going_delivery">On going delivery</string>
+    <string name="On_going_return">On going return</string>
     <string name="Rejected">Rejected</string>
     <string name="Onboarding">Onboarding</string>
     <string name="cancel_bformark">Cancel by admin/merchant before mark pickup</string>
@@ -389,6 +390,7 @@
     <string name="pending">Pending</string>
     <string name="cancelled">Cancelled</string>
     <string name="delivered">Delivered</string>
+    <string name="returned">Returned</string>
     <string name="picked_up">Picked Up</string>
     <string name="inTrans">In Transit</string>
     <string name="completed">Completed</string>
@@ -403,5 +405,13 @@
     <string name="cancelalertmsg">This shipment is Cancelled</string>
     <string name="req_orders">Requested Orders</string>
     <string name="delete_order">Delete Order</string>
+    <string name="switch_to">Switch to..</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="add_new">Add New</string>
+    <string name="add_more_items">Add More Items</string>
+    <string name="sender_info">Sender Info</string>
+    <string name="receiver_info">Reciever Info</string>
+    <string name="customer">Customer</string>
 
 </resources>
